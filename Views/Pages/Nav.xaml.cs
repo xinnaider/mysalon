@@ -21,12 +21,15 @@ namespace wpf_sallonnovo.Views.Pages
     /// </summary>
     public partial class Nav : Page
     {
+        private Window _window;
+
         private Frame _frame;
 
-        public Nav(Frame frame)
+        public Nav(Frame frame, Window window)
         {
             InitializeComponent();
             _frame = frame;
+            _window = window;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -37,6 +40,24 @@ namespace wpf_sallonnovo.Views.Pages
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             _frame.Content = new Inicio(_frame);
+        }
+
+        private void Bt_Sair_Click(object sender, RoutedEventArgs e)
+        {
+            _window.Close();
+
+
+
+
+
+
+
+            /* 
+             Agendamento Agenda = new Agendamento();
+             Agenda.Close();
+
+             Salao Salon = new Salao();
+             Salon.Close();*/
         }
     }
 }
