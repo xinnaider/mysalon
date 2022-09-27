@@ -12,12 +12,12 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using wpf_sallon.Views;
+using wpf_sallonnovo.Views;
 
-namespace wpf_sallon
+namespace wpf_sallonnovo
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interação lógica para MainWindow.xam
     /// </summary>
     public partial class MainWindow : Window
     {
@@ -25,10 +25,9 @@ namespace wpf_sallon
         {
             InitializeComponent();
         }
-
         void OnClick2(object sender, RoutedEventArgs e)
         {
-            Cadastro Telas = new Cadastro();
+            Registro Telas = new Registro();
             this.Close();
             Telas.ShowDialog();
         }

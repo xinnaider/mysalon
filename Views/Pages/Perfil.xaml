@@ -1,0 +1,71 @@
+﻿<Page x:Class="wpf_sallonnovo.Views.Pages.Perfil"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:wpf_sallonnovo.Views.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="720" d:DesignWidth="980"
+      Title="Perfil">
+
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="100"/>
+
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Ellipse Width="90" Height="90">
+                    <Ellipse.Fill>
+                        <ImageBrush ImageSource="/Imagens/aluno.PNG" />
+                    </Ellipse.Fill>
+                </Ellipse>
+                <TextBox FontSize="25" Margin="0 15" IsReadOnly="True" TextAlignment="Center" CaretBrush="{x:Null}" SelectionBrush="{x:Null}" Foreground="Black" Background="{x:Null}" BorderBrush="{x:Null}"> Lukas Bonitão Fodão </TextBox>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <StackPanel Margin="20">
+                    <Label HorizontalAlignment="Center" FontSize="20">Informações pessoais</Label>
+                    <Label FontSize="20"> Nome </Label>
+                    <TextBox FontSize="16"> Lukas da Silva Barbosa Neto Ferreira Junior</TextBox>
+                    <Label FontSize="20">CPF</Label>
+                    <TextBox FontSize="16">029.457.543-75</TextBox>
+                    <Label FontSize="20">RG</Label>
+                    <TextBox FontSize="16">47.442.721-3</TextBox>
+                    <Label FontSize="20">Telefone</Label>
+                    <TextBox FontSize="16">(69) 992025607</TextBox>
+                    <Label FontSize="20">Sexo</Label>
+                    <StackPanel Orientation="Horizontal">
+                        <RadioButton Margin="0 0 40 0"> Masculino </RadioButton>
+                        <RadioButton Margin="0 0 40 0">Feminino </RadioButton>
+                        <RadioButton> Prefiro não dizer </RadioButton>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Column="1">
+                <StackPanel Margin="20">
+                    <Label HorizontalAlignment="Center" FontSize="20">Dados de Login</Label>
+                    <Label FontSize="20">Email</Label>
+                    <TextBox FontSize="16">lukasbonitao@gmail.com</TextBox>
+                    <Label FontSize="20">Senha</Label>
+                    <TextBox FontSize="16">Lembrar de trocar para passwordbox</TextBox>
+                </StackPanel>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="3">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Visibility="Visible">Cancelar</Button>
+                <Button Margin="30 0 30 0" Cursor="Hand">Editar</Button>
+            </StackPanel>
+        </Grid>
+        
+    </Grid>
+</Page>

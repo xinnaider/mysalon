@@ -1,21 +1,21 @@
-﻿<Window x:Class="wpf_sallon.MainWindow"
+﻿<Window x:Class="wpf_sallonnovo.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:wpf_sallon"
+        xmlns:local="clr-namespace:wpf_sallonnovo"
         mc:Ignorable="d"
         Title="MainWindow" Height="720" Width="1280"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
-         TextElement.FontWeight="Regular"
-         TextElement.FontSize="15"
-         TextOptions.TextFormattingMode="Ideal"
-         TextOptions.TextRenderingMode="Auto"
-         Background="{DynamicResource MaterialDesignPaper}"
-         FontFamily="{DynamicResource MaterialDesignFont}"
-         ResizeMode="NoResize"
-         WindowStartupLocation="CenterOwner">
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterOwner">
     <Grid Background="#FF9A8FC8">
         <Grid.OpacityMask>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -23,7 +23,7 @@
                 <GradientStop Color="#FF9A8FC8" Offset="1"/>
             </LinearGradientBrush>
         </Grid.OpacityMask>
-        <Image HorizontalAlignment="Center" Height="994" VerticalAlignment="Top" Width="2116" Source="/_9A8FC8__1_-removebg-preview.png" Margin="0,-140,0,0" Visibility="Visible" RenderTransformOrigin="0.5,0.5">
+        <Image HorizontalAlignment="Center" Height="994" VerticalAlignment="Top" Width="2116" Source="imagens/_9A8FC8__1_-removebg-preview.png" Margin="0,-140,0,0" Visibility="Visible" RenderTransformOrigin="0.5,0.5">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -39,8 +39,9 @@
                 <TextBox
                     Margin="0, 0, 0, 30"
                     FontSize="25"
+                    FontFamily="Spartan"
                     x:Name="NameTextBox"
-                    materialDesign:HintAssist.Hint="Usuário">
+                    materialDesign:HintAssist.Hint="Usuário" Cursor="Arrow">
                     <TextBox.Text>
                         <Binding
                           Path="Name"
@@ -51,23 +52,24 @@
                 <PasswordBox
                   FontSize="25"
                   x:Name="PasswordBox"
+                  FontFamily="Spartan"
                   materialDesign:HintAssist.Hint="Senha"
                   materialDesign:TextFieldAssist.HasClearButton="True"/>
                 <StackPanel Margin="5, 15, 5, 15" Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Button Margin="0, 0, 170, 0" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#DD000000">Esqueci minha senha
+                    <Button Margin="0, 0, 170, 0" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Spartan" Foreground="#DD000000">Esqueci minha senha
                     </Button>
-                    <Button Click="OnClick2" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#DD000000" Cursor="Hand">Não tenho uma conta
+                    <Button Click="OnClick2" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Spartan" Foreground="#DD000000" Cursor="Hand">Não tenho uma conta
                     </Button>
                 </StackPanel>
                 <StackPanel>
-                    <Button Width="120" Height="45" FontSize="18" BorderThickness="15" Cursor="Hand">Entrar</Button>
+                    <Button Width="120" Height="45" FontSize="18" BorderThickness="15" FontFamily="Spartan"  Cursor="Hand" Background="#FF2F3559" BorderBrush="#FF2F3559">Entrar</Button>
                 </StackPanel>
             </StackPanel>
         </Grid>
         <Grid HorizontalAlignment="Center" VerticalAlignment="Bottom">
-            <TextBlock FontSize="18" Margin="0,0,0,10" Foreground="White">Copyright (c) 2022 MySalon All Rights Reserved</TextBlock>
+            <TextBlock FontSize="18" Margin="0,0,0,10" FontFamily="Spartan" Foreground="White">Copyright (c) 2022 MySalon All Rights Reserved</TextBlock>
         </Grid>
-        <Image HorizontalAlignment="Left" Height="572" Margin="708,182,0,0" VerticalAlignment="Top" Width="572" Source="/MARIO ROSSI.png"/>
+        <Image HorizontalAlignment="Left" Height="572" Margin="708,197,0,0" VerticalAlignment="Top" Width="572" Source="Imagens/MARIO ROSSI.png"/>
 
     </Grid>
 </Window>
