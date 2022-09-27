@@ -40,9 +40,10 @@ namespace wpf_sallonnovo.Views.Pages
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             _frame.Content = new Inicio(_frame);
+            btInicio.Background = new SolidColorBrush(Color.FromRgb(125, 100, 227));
         }
 
-        private void Bt_Sair_Click(object sender, RoutedEventArgs e)
+        /*private void Bt_Sair_Click(object sender, RoutedEventArgs e)
         {
             _window.Close();
 
@@ -57,7 +58,13 @@ namespace wpf_sallonnovo.Views.Pages
              Agenda.Close();
 
              Salao Salon = new Salao();
-             Salon.Close();*/
+             Salon.Close();
+        }*/
+
+        private void btSair_Click(object sender, RoutedEventArgs e)
+        {
+            _window.Close();
+
         }
     }
 }
