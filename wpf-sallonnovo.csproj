@@ -106,6 +106,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="bancodados\conexao.cs" />
     <Compile Include="Helpers\DAOHelper.cs" />
     <Compile Include="UserControls\UserInicial.xaml.cs">
       <DependentUpon>UserInicial.xaml</DependentUpon>
