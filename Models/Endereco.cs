@@ -7,13 +7,17 @@ using System.Threading.Tasks;
 namespace wpf_sallonnovo.Models
 {
     public class Endereco
+
     {
-        public int Id { get; set; }
-        public string rua { get; set; }
-        public string bairro { get; set; }
-        public int numero {get; set; }
-        public string cidade { get; set; }
-        public string estado { get; set; }
-        public string cep { get; set; }
+            public int Id { get; set; }
+            public string Rua { get; set; }
+            public string Bairro { get; set; }
+            public int Numero { get; set; }
+            public string Cidade { get; set; }
+            public string Estado { get; set; }
+            public string Cep { get; set; }
     }
+
+
+
 }

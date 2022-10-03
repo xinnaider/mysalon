@@ -15,7 +15,7 @@ namespace wpf_sallonnovo.Models
         private static conexao _conn = new conexao();
 
 
-        public void Insert (Endereco endereco)
+        public void Insert(Endereco endereco)
         {
             try
             {
@@ -23,12 +23,12 @@ namespace wpf_sallonnovo.Models
 
                 comando.CommandText = "insert into endereco values (null, @rua, @bairro, @numero, @cidade, @estado, @cep);";
 
-                comando.Parameters.AddWithValue("@rua", endereco.rua);
-                comando.Parameters.AddWithValue("@bairro", endereco.bairro);
-                comando.Parameters.AddWithValue("@numero", endereco.numero);
-                comando.Parameters.AddWithValue("@cidade", endereco.cidade);
-                comando.Parameters.AddWithValue("@estado", endereco.estado);
-                comando.Parameters.AddWithValue("@cep", endereco.cep);
+                comando.Parameters.AddWithValue("@rua", endereco.Rua);
+                comando.Parameters.AddWithValue("@bairro", endereco.Bairro);
+                comando.Parameters.AddWithValue("@numero", endereco.Numero);
+                comando.Parameters.AddWithValue("@cidade", endereco.Cidade);
+                comando.Parameters.AddWithValue("@estado", endereco.Estado);
+                comando.Parameters.AddWithValue("@cep", endereco.Cep);
 
 
                 var resultado = comando.ExecuteNonQuery();
@@ -64,12 +64,12 @@ namespace wpf_sallonnovo.Models
                 {
                     var endereco = new Endereco();
                     endereco.Id = reader.GetInt32("id_end");
-                    endereco.rua = DAOHelper.GetString(reader,"rua_end");
-                    endereco.bairro = DAOHelper.GetString(reader,"bairro_end");
-                    endereco.numero = reader.GetInt32("numero_end");
-                    endereco.cidade = DAOHelper.GetString(reader,"cidade_end");
-                    endereco.estado = DAOHelper.GetString(reader,"estado_end");
-                    endereco.cep = DAOHelper.GetString(reader,"cep_end");
+                    endereco.Rua = DAOHelper.GetString(reader, "rua_end");
+                    endereco.Bairro = DAOHelper.GetString(reader, "bairro_end");
+                    endereco.Numero = reader.GetInt32("numero_end");
+                    endereco.Cidade = DAOHelper.GetString(reader, "cidade_end");
+                    endereco.Estado = DAOHelper.GetString(reader, "estado_end");
+                    endereco.Cep = DAOHelper.GetString(reader, "cep_end");
 
 
                     lista.Add(endereco);
@@ -83,7 +83,60 @@ namespace wpf_sallonnovo.Models
             }
 
         }
+        public void Delete(Endereco endereco)
+        {
+            try
+            {
+                var comando = _conn.Query();
 
-        //terminar essa parada
+                comando.CommandText = "DELETE FROM Endereco WHERE (id_end = @id)";
+
+                comando.Parameters.AddWithValue("@id", endereco.Id);
+
+                var resultado = comando.ExecuteNonQuery();
+
+                if (resultado == 0)
+                {
+                    throw new Exception("Ocorreram erros ao deletar as informações");
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+        public void Update(Endereco endereco)
+        {
+            try
+            {
+                var comando = _conn.Query();
+
+                comando.CommandText = "update endereco set " +
+                    "rua_end = @rua, bairro_end = @bairro, numero_end= @numero, " +
+                    "cidade_end = @cidade, estado_end = @estado, cep_end = @cep;";
+
+                comando.Parameters.AddWithValue("@rua", endereco.Rua);
+                comando.Parameters.AddWithValue("@bairro", endereco.Bairro);
+                comando.Parameters.AddWithValue("@numero", endereco.Numero);
+                comando.Parameters.AddWithValue("@cidade", endereco.Cidade);
+                comando.Parameters.AddWithValue("@estado", endereco.Estado);
+                comando.Parameters.AddWithValue("@cep", endereco.Cep);
+
+                var resultado = comando.ExecuteNonQuery();
+
+                if (resultado == 0)
+                {
+                    throw new Exception("Ocorreram erros ao salvar as informações");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
     }
 }
