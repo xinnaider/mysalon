@@ -24,5 +24,15 @@ namespace wpf_sallonnovo.Views.Pages
         {
             InitializeComponent();
         }
+
+        private void Bt_Salvar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void bt_Cancelar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

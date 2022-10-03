@@ -69,7 +69,7 @@
         </Grid>
         <Grid Grid.Row="3" Margin="0 10 0 0">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                <Button x:Name="bt_Cancelar" Visibility="Hidden" Click="bt_Cancelar_Click">Cancelar</Button>
+                <Button x:Name="bt_Cancelar" Visibility="Visible" Click="bt_Cancelar_Click">Cancelar</Button>
                 <Button Margin="30 0 30 0" Cursor="Hand" x:Name="Bt_Salvar" Width="86.3366666666667" Click="Bt_Salvar_Click" >Editar</Button>
             </StackPanel>
         </Grid>

@@ -9,10 +9,8 @@
       d:DesignHeight="720" d:DesignWidth="980" Title="Inicio">
 
     <Grid Background="White">
-        
+        <ScrollViewer>
             <StackPanel Margin="20 50 20 50" x:Name="listAgenda" HorizontalAlignment="Stretch" />
-            <!--<uc:UserInicial Title="SALON" />-->
-
-
+        </ScrollViewer>
     </Grid>
 </Page>

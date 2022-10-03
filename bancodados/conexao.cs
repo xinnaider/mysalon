@@ -18,7 +18,7 @@ namespace wpf_sallonnovo.bancodados
 
         private static string password = "root";
 
-        private static string dbname = "bd_escola";
+        private static string dbname = "db_mysalon";
 
         private static MySqlConnection connection;
 

@@ -7,6 +7,7 @@ using wpf_sallonnovo.Helpers;
 using wpf_sallonnovo.Models;
 using wpf_sallonnovo.bancodados;
 using MySql.Data.MySqlClient;
+using wpf_sallonnovo.Views;
 
 namespace wpf_sallonnovo.Models
 {
@@ -32,11 +33,10 @@ namespace wpf_sallonnovo.Models
                     salao.Id = reader.GetInt32("id_sal");
                     salao.Nome = DAOHelper.GetString(reader, "nome_sal");
                     salao.Telefone = DAOHelper.GetString(reader, "telefone_sal");
-                    salao.Proprietario = DAOHelper.GetString(reader, "proprietario_sal");
+                    salao.Descricao = DAOHelper.GetString(reader, "descricao_sal");
                     salao.Razao_Social = DAOHelper.GetString(reader, "razao_social_sal");
                     salao.CNPJ = DAOHelper.GetString(reader, "cnpj_sal");
                     salao.Email = DAOHelper.GetString(reader, "email_sal");
-                    salao.Descricao = DAOHelper.GetString(reader, "descriçao_sal");
 
                     lista.Add(salao);
                 }

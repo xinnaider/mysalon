@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using wpf_sallonnovo.UserControls;
+using wpf_sallonnovo.Models;
 
 namespace wpf_sallonnovo.Views.Pages
 {
@@ -32,12 +33,20 @@ namespace wpf_sallonnovo.Views.Pages
 
         private void Inicio_Loaded(object sender, RoutedEventArgs e)
         {
-
-            for(int i = 0; i < 3; i++)
+            try
             {
-                var a = new UserInicial() { Title = $"ANTONIO {i}", Descricao = $"DESCRICAO {i}", Preco = $"PRECO {i}"};
+                var dao = new SalaoDAO();
+                var listaSalao = dao.List();
+                foreach (var salao in listaSalao)
+                {
+                    var a = new UserInicial() { Title = $"{salao.Nome}", Descricao = $"{salao.Descricao}", Preco = $"PRECO adicionar" };
 
-                listAgenda.Children.Add(a);
+                    listAgenda.Children.Add(a);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
             
         }
@@ -46,5 +55,6 @@ namespace wpf_sallonnovo.Views.Pages
         {
             _frame.Content = new Subinicio();
         }
+
     }
 }
