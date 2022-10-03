@@ -108,6 +108,8 @@
     </ApplicationDefinition>
     <Compile Include="bancodados\conexao.cs" />
     <Compile Include="Helpers\DAOHelper.cs" />
+    <Compile Include="Models\Salao.cs" />
+    <Compile Include="Models\SalaoDAO.cs" />
     <Compile Include="UserControls\UserInicial.xaml.cs">
       <DependentUpon>UserInicial.xaml</DependentUpon>
     </Compile>
@@ -208,9 +210,7 @@
     <Resource Include="Imagens\MARIO ROSSI.png" />
     <Resource Include="Imagens\_9A8FC8__1_-removebg-preview.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Imagens\aluno.PNG" />
   </ItemGroup>
