@@ -12,6 +12,8 @@ estado_end varchar (50),
 cep_end varchar (50)
 );
 
+insert into Endereco values (null, 'Rua da Cachoeira', 'Bairro das Luas', '1049', 'Ji-Paraná', 'Rondônia', '19997-54');
+
 create table Cliente(
 id_cli int primary key auto_increment,
 foto_cli blob,
@@ -30,12 +32,23 @@ id_sal int primary key auto_increment,
 foto_sal blob,
 nome_sal varchar (500),
 telefone_sal varchar (50),
+descricao_sal varchar (300),
 razao_social_sal varchar (500),
 cnpj_sal varchar (50),
 email_sal varchar (500),
 id_end_fk int,
 foreign key (id_end_fk) references Endereco (id_end)
 );
+
+#Adicionar descricao na view de adicionar salao
+
+insert into Salao values (null, null, 'Entre belas', '12 3456-7890','Salão para mulheres', 'S.A', '123', 'salao@gmail.com', 1);
+insert into Salao values (null, null, 'Entre feios', '12 3456-7890','Salão para feios', 'S.A', '123', 'salao@gmail.com', 1);
+insert into Salao values (null, null, 'Bolsonaro 2022', '12 3456-7890','Salão para o Bolsonaro', 'S.A', '123', 'salao@gmail.com', 1);
+insert into Salao values (null, null, 'Fechados com Jesus Cristo','Salão para os Fechados com Jesus Cristo', '12 3456-7890', 'S.A', '123', 'salao@gmail.com', 1);
+insert into Salao values (null, null, 'Tropa do amém', '12 3456-7890','Salão da Tropa', 'S.A', '123', 'salao@gmail.com', 1);
+
+#select * from salao;
 
 create table Funcionario(
 id_func int primary key auto_increment,
@@ -92,5 +105,4 @@ foreign key (id_func_fk) references Funcionario (id_func),
 id_ser_fk int,
 foreign key (id_ser_fk) references Servico (id_ser)
 );
- 
  
