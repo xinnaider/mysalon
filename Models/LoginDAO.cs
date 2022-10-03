@@ -3,33 +3,36 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
+using wpf_sallonnovo.bancodados;
 
 namespace wpf_sallonnovo.Models
 {
-    class LoginDAO : AbstractDAO<Usuario>
+    class LoginDAO : AbstractDAO<Login>
     {
-//terminar de mexer login
+        //terminar de mexer login
+        private static conexao conn = new conexao();
         public Login GetByUsuario(string usuarioNome, string senha)
         {
             try
             {
                 var query = conn.Query();
-                query.CommandText = "SELECT * FROM usuario LEFT JOIN funcionario ON cod_func = cod_func_fk " +
-                    "WHERE usuario_usu = @usuario AND senha_usu = @senha";
+                query.CommandText = "SELECT * FROM login LEFT JOIN Cliente ON id_cli = id_cli_fk " +
+                    "WHERE user_log = @usuario AND senha_log = @senha";
 
                 query.Parameters.AddWithValue("@usuario", usuarioNome);
                 query.Parameters.AddWithValue("@senha", senha);
 
                 MySqlDataReader reader = query.ExecuteReader();
 
-                Usuario usuario = null;
+                Login usuario = null;
 
                 while (reader.Read())
                 {
-                    usuario = Usuario.GetInstance();
-                    usuario.Id = reader.GetInt32("cod_usu");
-                    usuario.UsuarioNome = reader.GetString("usuario_usu");
-                    usuario.Funcionario = new Funcionario() { Id = reader.GetInt32("cod_func"), Nome = reader.GetString("nome_func") };
+                    usuario = Login.GetInstance();
+                    usuario.Id = reader.GetInt32("id_log");
+                    usuario.User = reader.GetString("user_log");
+                    usuario.Cliente = new Cliente() { Id = reader.GetInt32("id_cli"), Nome = reader.GetString("nome_cli") };
                 }
 
                 return usuario;

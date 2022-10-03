@@ -40,7 +40,7 @@
                     Margin="0, 0, 0, 30"
                     FontSize="25"
                     FontFamily="Spartan"
-                    x:Name="NameTextBox"
+                    x:Name="txtUsuario"
                     materialDesign:HintAssist.Hint="Usuário" Cursor="Arrow">
                     <TextBox.Text>
                         <Binding
@@ -51,7 +51,7 @@
                 </TextBox>
                 <PasswordBox
                   FontSize="25"
-                  x:Name="PasswordBox"
+                  x:Name="passbSenha"
                   FontFamily="Spartan"
                   materialDesign:HintAssist.Hint="Senha"
                   materialDesign:TextFieldAssist.HasClearButton="True"/>
@@ -62,7 +62,7 @@
                     </Button>
                 </StackPanel>
                 <StackPanel>
-                    <Button Width="120" Height="45" FontSize="18" BorderThickness="15" FontFamily="Spartan"  Cursor="Hand" Background="#FF2F3559" BorderBrush="#FF2F3559">Entrar</Button>
+                    <Button x:Name="btnEntrar"  Width="120" Height="45" FontSize="18" BorderThickness="15" FontFamily="Spartan"  Cursor="Hand" Background="#FF2F3559" BorderBrush="#FF2F3559" Click="btnEntrar_Click" >Entrar</Button>
                 </StackPanel>
             </StackPanel>
         </Grid>

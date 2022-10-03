@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using wpf_sallonnovo.Views;
+using wpf_sallonnovo.Models;
 
 namespace wpf_sallonnovo
 {
@@ -22,6 +23,7 @@ namespace wpf_sallonnovo
     public partial class MainWindow : Window
     {
         public MainWindow()
+
         {
             InitializeComponent();
         }
@@ -30,6 +32,28 @@ namespace wpf_sallonnovo
             Registro Telas = new Registro();
             this.Close();
             Telas.ShowDialog();
+        }
+
+
+
+
+        private void btnEntrar_Click(object sender, RoutedEventArgs e)
+        {
+
+            string usuario = txtUsuario.Text;
+            string senha = passbSenha.Password.ToString();
+
+            if (Login.Loginn(usuario, senha))
+            {
+                Agendamento main = new Agendamento();
+                main.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Usuario e/ou senha incorretos! Tente novamente", "Autorização negada", MessageBoxButton.OK, MessageBoxImage.Warning);
+
+            }
         }
     }
 }

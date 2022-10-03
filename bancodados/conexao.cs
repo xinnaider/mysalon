@@ -12,11 +12,11 @@ namespace wpf_sallonnovo.bancodados
     {
         private static string host = "localhost";
 
-        private static string port = "3360";
+        private static string port = "3306";
 
         private static string user = "root";
 
-        private static string password = "root";
+        private static string password = "Q5so8$n%Ga";
 
         private static string dbname = "db_mysalon";
 

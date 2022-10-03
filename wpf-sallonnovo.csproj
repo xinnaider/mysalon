@@ -108,6 +108,7 @@
     </ApplicationDefinition>
     <Compile Include="bancodados\conexao.cs" />
     <Compile Include="Helpers\DAOHelper.cs" />
+    <Compile Include="Models\AbstractDAO.cs" />
     <Compile Include="Models\Agenda.cs" />
     <Compile Include="Models\AgendaDAO.cs" />
     <Compile Include="Models\AgendaServico.cs" />
@@ -118,6 +119,8 @@
     <Compile Include="Models\EnderecoDAO.cs" />
     <Compile Include="Models\Funcionario.cs" />
     <Compile Include="Models\FuncionarioServico.cs" />
+    <Compile Include="Models\Login.cs" />
+    <Compile Include="Models\LoginDAO.cs" />
     <Compile Include="Models\Salao.cs" />
     <Compile Include="Models\SalaoDAO.cs" />
     <Compile Include="Models\Servico.cs" />
