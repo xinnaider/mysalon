@@ -108,8 +108,20 @@
     </ApplicationDefinition>
     <Compile Include="bancodados\conexao.cs" />
     <Compile Include="Helpers\DAOHelper.cs" />
+    <Compile Include="Models\Agenda.cs" />
+    <Compile Include="Models\AgendaDAO.cs" />
+    <Compile Include="Models\AgendaServico.cs" />
+    <Compile Include="Models\AgendaServicoDAO.cs" />
+    <Compile Include="Models\Cliente.cs" />
+    <Compile Include="Models\ClienteDAO.cs" />
+    <Compile Include="Models\Endereco.cs" />
+    <Compile Include="Models\EnderecoDAO.cs" />
+    <Compile Include="Models\Funcionario.cs" />
+    <Compile Include="Models\FuncionarioServico.cs" />
     <Compile Include="Models\Salao.cs" />
     <Compile Include="Models\SalaoDAO.cs" />
+    <Compile Include="Models\Servico.cs" />
+    <Compile Include="Models\ServicoDAO.cs" />
     <Compile Include="UserControls\UserInicial.xaml.cs">
       <DependentUpon>UserInicial.xaml</DependentUpon>
     </Compile>
