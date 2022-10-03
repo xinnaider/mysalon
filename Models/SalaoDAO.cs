@@ -22,7 +22,7 @@ namespace wpf_sallonnovo.Models
                 var lista = new List<Salao>();
                 var comando = _conn.Query();
 
-                comando.CommandText = "SELECT * FROM Salao";
+                comando.CommandText = "SELECT * FROM salao";
 
                 MySqlDataReader reader = comando.ExecuteReader();
 

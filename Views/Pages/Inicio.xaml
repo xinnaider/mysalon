@@ -9,7 +9,7 @@
       d:DesignHeight="720" d:DesignWidth="980" Title="Inicio">
 
     <Grid Background="White">
-        <ScrollViewer>
+        <ScrollViewer CanContentScroll="True" Width="960" Height="720" HorizontalAlignment="Left">
             <StackPanel Margin="20 50 20 50" x:Name="listAgenda" HorizontalAlignment="Stretch" />
         </ScrollViewer>
     </Grid>
