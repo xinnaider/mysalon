@@ -30,11 +30,9 @@ id_sal int primary key auto_increment,
 foto_sal blob,
 nome_sal varchar (500),
 telefone_sal varchar (50),
-proprietario_sal varchar (500),
 razao_social_sal varchar (500),
 cnpj_sal varchar (50),
 email_sal varchar (500),
-descriçao_sal text,
 id_end_fk int,
 foreign key (id_end_fk) references Endereco (id_end)
 );
