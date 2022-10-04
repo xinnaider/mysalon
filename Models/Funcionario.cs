@@ -21,7 +21,7 @@ namespace wpf_sallonnovo.Models
 
         public Endereco Endereco { get; set; }
 
-        public Salao Salao { get; set; }
+       // public Salao Salao { get; set; }
     
     
     }
