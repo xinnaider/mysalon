@@ -27,6 +27,7 @@ namespace wpf_sallonnovo.Models
                 comando.Parameters.AddWithValue("@email", cliente.Email);
                 comando.Parameters.AddWithValue("@sexo", cliente.Sexo);
                 comando.Parameters.AddWithValue("@endereco", cliente.Endereco);
+      
 
                 var resultado = comando.ExecuteNonQuery();
 

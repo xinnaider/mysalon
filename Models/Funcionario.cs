@@ -9,6 +9,7 @@ namespace wpf_sallonnovo.Models
     public class Funcionario
     {
         public int Id { get; set; }
+
         //foto 
         public string Nome { get; set; }
         public string CPF { get; set; }
@@ -18,8 +19,9 @@ namespace wpf_sallonnovo.Models
         public string Email { get; set; }
         public string Sexo { get; set; }
 
-        //fk Endereco 
-        //fk Salao
+        public Endereco Endereco { get; set; }
+
+        public Salao Salao { get; set; }
     
     
     }

@@ -9,6 +9,7 @@ namespace wpf_sallonnovo.Models
     public class Cliente
     {
         public int Id { get; set; }
+
         // pubic foto {get;set} dar uma olhada como faz
         public string Nome { get; set; }
         public string CPF { get; set; }

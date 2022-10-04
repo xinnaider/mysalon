@@ -10,7 +10,10 @@ namespace wpf_sallonnovo.Models
     {
         public int Id { get; set; }
         public string Quantidade { get; set;}
-        //fk servico
-        //fk de agenda
+
+        public Servico Servico { get; set; }
+
+        public Agenda Agenda { get; set; }
+        
     }
 }

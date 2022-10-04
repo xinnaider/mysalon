@@ -9,8 +9,11 @@ namespace wpf_sallonnovo.Models
     public class FuncionarioServico
     {
         public  int Id { get; set; }
-        //fk Funcionario
-        //fk Servico
+
+        public Funcionario Funcionario { get; set; }
+
+        public Servico Servico { get; set; }
+        
 
     }
 }

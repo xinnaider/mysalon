@@ -8,5 +8,6 @@ namespace wpf_sallonnovo.Models
 {
     internal class AgendaServicoDAO
     {
+
     }
 }
