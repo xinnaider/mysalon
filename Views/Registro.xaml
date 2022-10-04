@@ -40,7 +40,7 @@
                     Margin="0, 0, 0, 15"
                     FontSize="25"
                     FontFamily="Spartan" 
-                    x:Name="NomeCompleto"
+                    x:Name="txtNome"
                     materialDesign:HintAssist.Hint="Nome completo" Cursor="Arrow">
                     <TextBox.Text>
                         <Binding
@@ -53,7 +53,7 @@
                     Margin="0, 0, 0, 15"
                     FontSize="25"
                     FontFamily="Spartan" 
-                    x:Name="NomeUsuario"
+                    x:Name="txtUser"
                     materialDesign:HintAssist.Hint="Nome de usuário">
 
                 </TextBox>
@@ -61,7 +61,7 @@
                     Margin="0, 0, 0, 15"
                     FontSize="25"
                     FontFamily="Spartan" 
-                    x:Name="Email"
+                    x:Name="txtEmail"
                     materialDesign:HintAssist.Hint="Email">
                     <TextBox.Text>
                         <Binding
@@ -74,23 +74,23 @@
                   Margin="0, 0, 0, 15"
                   FontSize="25"
                   FontFamily="Spartan" 
-                  x:Name="PasswordBox"
+                  x:Name="passbSenha"
                   materialDesign:HintAssist.Hint="Senha"
                   materialDesign:TextFieldAssist.HasClearButton="True"/>
                 <PasswordBox
                   FontSize="25"
                   FontFamily="Spartan" 
-                  x:Name="PasswordBox2"
+                  x:Name="passbSconfirma"
                   materialDesign:HintAssist.Hint="Confirmar senha"
                   materialDesign:TextFieldAssist.HasClearButton="True"/>
                 <StackPanel Margin="0, 5, 0, 0">
-                    <CheckBox FontFamily="Spartan" Foreground="Gray">Concordo com os termos de uso</CheckBox>
+                    <CheckBox FontFamily="Spartan" Foreground="Gray" x:Name="chcbTermos">Concordo com os termos de uso</CheckBox>
                 </StackPanel>
                 <StackPanel Margin="5, 1, 5, 15" Orientation="Horizontal" HorizontalAlignment="Center">
                     <Button x:Name="botaovoltar" Click="OnClick1" Background="{x:Null}" FontFamily="Spartan" BorderBrush="{x:Null}" Foreground="Gray" Cursor="Hand" Content="Login"/>
                 </StackPanel>
                 <StackPanel Margin="0, -13, 0, 0">
-                    <Button Width="120" Height="45" FontSize="18" FontFamily="Spartan" BorderThickness="20" Cursor="Hand" Background="#FF2F3559" BorderBrush="#FF2F3559">Registrar</Button>
+                    <Button Width="120" Height="45" FontSize="18" FontFamily="Spartan" BorderThickness="20" Cursor="Hand" Background="#FF2F3559" BorderBrush="#FF2F3559" x:Name="btnRegistrar" Click="btnRegistrar_Click">Registrar</Button>
                 </StackPanel>
             </StackPanel>
         </Grid>

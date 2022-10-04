@@ -46,5 +46,35 @@ namespace wpf_sallonnovo.Models
                 conn.Close();
             }
         }
+        public void Insert(Login login)
+        {
+            try
+            {
+                var comando = conn.Query();
+
+                comando.CommandText = "insert into login values (null, @user, @senha, @cliente);";
+
+                comando.Parameters.AddWithValue("@user", login.User) ;
+                comando.Parameters.AddWithValue("@senha", login.Password) ;
+                comando.Parameters.AddWithValue("@cliente", login.Cliente) ;
+                
+
+
+                var resultado = comando.ExecuteNonQuery();
+
+
+                if (resultado == 0)
+                {
+                    throw new Exception("Deu erro no momento de salvar as informações");
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
     }
 }
