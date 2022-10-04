@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace wpf_sallonnovo.Models
+namespace wpf_sallonnovo.Models.Salao
 {
     internal class Salao
     {
@@ -15,7 +15,6 @@ namespace wpf_sallonnovo.Models
         public string Razao_Social { get; set; }
         public string CNPJ { get; set; }
         public string Email { get; set; }
-        public string Descricao { get; set; }
 
     }
 }
