@@ -29,7 +29,7 @@
                     <TextBlock Margin="5 5" VerticalAlignment="Center" FontSize="22"> PERFIL</TextBlock>
                 </StackPanel>
             </Button>
-            <Button Margin="0 275 0 10" Foreground="White" FontFamily="Spartan" FontSize="22" Background="#FF9A8FC8" BorderBrush="#FF9A8FC8" x:Name="btSair" Cursor="Hand">SAIR</Button>
+            <Button Margin="0 275 0 10" Foreground="White" FontFamily="Spartan" FontSize="22" Background="#FF9A8FC8" BorderBrush="#FF9A8FC8" x:Name="btSair" Cursor="Hand" Click="btSair_Click_1">SAIR</Button>
         </StackPanel>
     </Grid>
 </Page>

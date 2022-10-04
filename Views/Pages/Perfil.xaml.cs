@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using wpf_sallonnovo.Models;
 
 namespace wpf_sallonnovo.Views.Pages
 {
@@ -20,11 +21,30 @@ namespace wpf_sallonnovo.Views.Pages
     /// </summary>
     public partial class Perfil : Page
     {
+        private Cliente _cli = new Cliente();
         public Perfil()
         {
             InitializeComponent();
+            Loaded += Perfil_Loaded;
         }
+        public Perfil(Cliente cliente)
+        {
+            InitializeComponent();
+            _cli = cliente;
+            Loaded += Perfil_Loaded;
+        }
+        
 
+        private void Perfil_Loaded(object sender, RoutedEventArgs e)
+        {
+            tbNome.Text = _cli.Nome;
+            txtNome.Text = _cli.Nome;
+            txtCPF.Text = _cli.CPF;
+            txtRG.Text = _cli.RG;
+            txtTelefone.Text = _cli.Telefone;
+            txtEmail.Text = _cli.Email;
+
+        }
         private void Bt_Salvar_Click(object sender, RoutedEventArgs e)
         {
             if (txtNome.IsReadOnly == true)

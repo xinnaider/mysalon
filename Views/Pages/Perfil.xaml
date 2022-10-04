@@ -23,7 +23,7 @@
                         <ImageBrush ImageSource="/Imagens/aluno.PNG" />
                     </Ellipse.Fill>
                 </Ellipse>
-                <TextBox FontSize="25" Margin="0 15" IsReadOnly="True" TextAlignment="Center" CaretBrush="{x:Null}" SelectionBrush="{x:Null}" Foreground="Black" Background="{x:Null}" BorderBrush="{x:Null}">Lukas Bonitão Fodão</TextBox>
+                <TextBox x:Name="tbNome" FontSize="25" Margin="0 15" IsReadOnly="True" TextAlignment="Center" CaretBrush="{x:Null}" SelectionBrush="{x:Null}" Foreground="Black" Background="{x:Null}" BorderBrush="{x:Null}">Lukas Bonitão Fodão</TextBox>
             </StackPanel>
         </Grid>
         <Grid Grid.Row="1">
