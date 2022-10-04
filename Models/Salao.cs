@@ -6,16 +6,7 @@ using System.Threading.Tasks;
 
 namespace wpf_sallonnovo.Models
 {
-    public class Salao
+    internal class Salao
     {
-        public int Id { get; set; }
-        public string Nome { get; set; }
-        public string Telefone { get; set; }
-        public string Proprietario { get; set; }
-        public string Razao_Social { get; set; }
-        public string CNPJ { get; set; }
-        public string Email { get; set; }
-        public string Descricao { get; set; }
-
     }
 }

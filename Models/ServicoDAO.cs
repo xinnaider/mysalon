@@ -7,7 +7,7 @@ using wpf_sallonnovo.bancodados;
 using wpf_sallonnovo.Helpers;
 using MySql.Data.MySqlClient;
 
-namespace wpf_sallonnovo.Models.Salao
+namespace wpf_sallonnovo.Models
 {
     internal class ServicoDAO
     {

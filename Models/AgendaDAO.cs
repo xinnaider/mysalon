@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using wpf_sallonnovo.bancodados;
 using wpf_sallonnovo.Helpers;
 
-namespace wpf_sallonnovo.Models.Cliente
+namespace wpf_sallonnovo.Models
 {
     internal class AgendaDAO
     {
@@ -27,7 +27,7 @@ namespace wpf_sallonnovo.Models.Cliente
                 comando.Parameters.AddWithValue("@valor", agenda.Valor);
                 comando.Parameters.AddWithValue("@tempoEstimado", agenda.TempoEstimado);
                 comando.Parameters.AddWithValue("@email", agenda.Cliente);
-                comando.Parameters.AddWithValue("@sexo", agenda.Salao);
+           //     comando.Parameters.AddWithValue("@sexo", agenda.Salao);
 
                 var resultado = comando.ExecuteNonQuery();
 
@@ -64,7 +64,7 @@ namespace wpf_sallonnovo.Models.Cliente
                     agenda.Horario = DAOHelper.GetString(reader, "horario_age");
                     agenda.Valor = reader.GetFloat("valor_age");
                     agenda.TempoEstimado = DAOHelper.GetString(reader, "tempo_estimado");
-                    agenda.Cliente = reader.GetInt32("id_cli_fk");
+                //    agenda.Cliente = reader.GetInt32("id_cli_fk");
 
                     lista.Add(agenda);
                 }
@@ -117,7 +117,7 @@ namespace wpf_sallonnovo.Models.Cliente
                 comando.Parameters.AddWithValue("@valor", agenda.Valor);
                 comando.Parameters.AddWithValue("@tempo_estimado", agenda.TempoEstimado);
                 comando.Parameters.AddWithValue("@cliente", agenda.Cliente);
-                comando.Parameters.AddWithValue("@salao", agenda.Salao);
+               // comando.Parameters.AddWithValue("@salao", agenda.Salao);
 
                 var resultado = comando.ExecuteNonQuery();
 
