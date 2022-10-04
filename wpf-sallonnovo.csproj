@@ -116,7 +116,9 @@
     <Compile Include="Models\Endereco.cs" />
     <Compile Include="Models\EnderecoDAO.cs" />
     <Compile Include="Models\Funcionario.cs" />
+    <Compile Include="Models\FuncionarioDAO.cs" />
     <Compile Include="Models\FuncionarioServico.cs" />
+    <Compile Include="Models\FuncionarioServicoDAO.cs" />
     <Compile Include="Models\Login.cs" />
     <Compile Include="Models\LoginDAO.cs" />
     <Compile Include="Models\Salao.cs" />
