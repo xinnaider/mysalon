@@ -22,7 +22,7 @@ namespace wpf_sallonnovo.Views
     public partial class Registro : Window
     {
         private Cliente _cliente = new Cliente();
-    //    private Login _login = new Login();
+      // private Login _login = new Login();
         public Registro()
         {
             InitializeComponent();

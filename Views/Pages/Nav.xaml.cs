@@ -66,5 +66,10 @@ namespace wpf_sallonnovo.Views.Pages
             _window.Close();
 
         }
+
+        private void btSair_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -35,7 +35,7 @@
                 <StackPanel Margin="20">
                     <Label HorizontalAlignment="Center" FontSize="20">Informações pessoais</Label>
                     <Label FontSize="20">Nome</Label>
-                    <TextBox IsReadOnly="True" FontSize="16" x:Name="txtNome">Lukas da Silva Barbosa Neto Ferreira Junior</TextBox>
+                    <TextBox IsReadOnly="True" FontSize="16" x:Name="txtNome" Cursor="Arrow">Lukas da Silva Barbosa Neto Ferreira Junior</TextBox>
                     <Label FontSize="20">CPF</Label>
                     <TextBox IsReadOnly="True" FontSize="16" x:Name="txtCPF">029.457.543-75</TextBox>
                     <Label FontSize="20">RG</Label>
