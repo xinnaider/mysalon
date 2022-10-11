@@ -19,13 +19,13 @@ namespace wpf_sallonnovo.Models
             {
                 var comando = _conn.Query();
 
-                comando.CommandText = "insert into servico values (null, @valor, @nome, @tipo, @descricao, @salao);";
+                comando.CommandText = "insert into servico values (null, @valor, @nome, @tipo, @descricao, null);";
 
                 comando.Parameters.AddWithValue("@valor", servico.Valor);
                 comando.Parameters.AddWithValue("@nome", servico.Name);
                 comando.Parameters.AddWithValue("@tipo", servico.Tipo);
                 comando.Parameters.AddWithValue("@descricao", servico.Descricao);
-                comando.Parameters.AddWithValue("@salao", servico.Salao);
+                //comando.Parameters.AddWithValue("@salao", servico.Salao);
 
                 var resultado = comando.ExecuteNonQuery();
 
@@ -115,7 +115,7 @@ namespace wpf_sallonnovo.Models
                 comando.Parameters.AddWithValue("@nome", servico.Name);
                 comando.Parameters.AddWithValue("@tipo", servico.Tipo);
                 comando.Parameters.AddWithValue("@descricao", servico.Descricao);
-                comando.Parameters.AddWithValue("@salao", servico.Salao);
+                //comando.Parameters.AddWithValue("@salao", servico.Salao);
 
                 var resultado = comando.ExecuteNonQuery();
 

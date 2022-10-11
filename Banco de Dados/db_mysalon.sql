@@ -12,7 +12,11 @@ estado_end varchar (50),
 cep_end varchar (50)
 );
 
-insert into Endereco values (null, 'Rua da Cachoeira', 'Bairro das Luas', '1049', 'Ji-Paraná', 'Rondônia', '19997-54');
+insert into endereco values (null, 'rua jk', 'cunha e silva', '1010', 'Presidente Medici', 'RO', '76916-000');
+insert into endereco values (null, 'rua jk', 'cunha e silva', '1010', 'Presidente Medici', 'AC', '76916-000');
+insert into endereco values (null, 'rua jk', 'cunha e silva', '1010', 'Presidente Medici', 'RJ', '76916-000');
+insert into endereco values (null, 'rua jk', 'cunha e silva', '1010', 'Presidente Medici', 'SP', '76916-000');
+insert into endereco values (null, 'rua jk', 'cunha e silva', '1010', 'Presidente Medici', 'MG', '76916-000');
 
 create table Cliente(
 id_cli int primary key auto_increment,
@@ -27,12 +31,13 @@ id_end_fk int,
 foreign key (id_end_fk) references Endereco (id_end)
 );
 
+insert into cliente values (null, null, 'douglas', '32131', '32131', '321321', '312@email', 'masculino', 1);
+
 create table Salao(
 id_sal int primary key auto_increment,
 foto_sal blob,
 nome_sal varchar (500),
 telefone_sal varchar (50),
-descricao_sal varchar (300),
 razao_social_sal varchar (500),
 cnpj_sal varchar (50),
 email_sal varchar (500),
@@ -40,25 +45,21 @@ id_end_fk int,
 foreign key (id_end_fk) references Endereco (id_end)
 );
 
-#Adicionar descricao na view de adicionar salao
+insert into salao values (null, null, 'salao para feios', '9999', 'spf', '123123', '2@hotmali.com', 1);
+insert into salao values (null, null, 'salao para lindo', '9999', 'spf', '123123', '2@hotmali.com', 2);
+insert into salao values (null, null, 'salao para cabelos', '9999', 'spf', '123123', '2@hotmali.com', 3);
+insert into salao values (null, null, 'salao para carecas', '9999', 'spf', '123123', '2@hotmali.com', 4);
 
-insert into Salao values (null, null, 'Entre belas', '12 3456-7890','Salão para mulheres', 'S.A', '123', 'salao@gmail.com', 1);
-insert into Salao values (null, null, 'Entre feios', '12 3456-7890','Salão para feios', 'S.A', '123', 'salao@gmail.com', 1);
-insert into Salao values (null, null, 'Bolsonaro 2022', '12 3456-7890','Salão para o Bolsonaro', 'S.A', '123', 'salao@gmail.com', 1);
-insert into Salao values (null, null, 'Fechados com Jesus Cristo','Salão para os Fechados com Jesus Cristo', '12 3456-7890', 'S.A', '123', 'salao@gmail.com', 1);
-insert into Salao values (null, null, 'Tropa do amém', '12 3456-7890','Salão da Tropa', 'S.A', '123', 'salao@gmail.com', 1);
-
-#select * from salao;
 
 create table Funcionario(
 id_func int primary key auto_increment,
-foto_func blob,
-nome_func varchar (500),
-cpf_func varchar (50),
-rg_func varchar (50),
-telefone_func varchar (50),
-email_func varchar (500),
-sexo_func varchar (50),
+foto_cli blob,
+nome_cli varchar (500),
+cpf_cli varchar (50),
+rg_cli varchar (50),
+telefone_cli varchar (50),
+email_cli varchar (500),
+sexo_cli varchar (50),
 id_end_fk int,
 foreign key (id_end_fk) references Endereco (id_end),
 id_sal_fk int,
@@ -105,4 +106,14 @@ foreign key (id_func_fk) references Funcionario (id_func),
 id_ser_fk int,
 foreign key (id_ser_fk) references Servico (id_ser)
 );
- 
+
+create table login (
+id_log int primary key auto_increment, 
+user_log varchar(300),
+senha_log varchar(300),
+id_cli_fk int,
+foreign key (id_cli_fk) references Cliente (id_cli)
+);
+
+insert into login values (null, 'user', 'senha', 1);
+
