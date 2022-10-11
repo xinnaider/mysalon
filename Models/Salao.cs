@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace wpf_sallonnovo.Models.Salao
 {
-    internal class Salao
+     public class Salao
     {
         public int Id { get; set; }
         public string Nome { get; set; }

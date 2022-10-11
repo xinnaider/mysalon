@@ -14,6 +14,6 @@ namespace wpf_sallonnovo.Models
         public string Name { get; set; }
         public string Tipo { get; set; }
         public string Descricao { get; set; }
-        public virtual Salao Salao { get; set; }
+        //public Salao Salao { get; set; }
     }
 }
