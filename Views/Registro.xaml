@@ -16,17 +16,7 @@
         FontFamily="{DynamicResource MaterialDesignFont}"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterOwner">
-    <Grid <Image HorizontalAlignment="Center" Height="994" VerticalAlignment="Top" Width="2116" Source="/imagens/_9A8FC8__1_-removebg-preview.png" Margin="0,-140,0,0" Visibility="Visible" RenderTransformOrigin="0.5,0.5">
-        <Image.RenderTransform>
-            <TransformGroup>
-                <ScaleTransform/>
-                <SkewTransform/>
-                <RotateTransform Angle="0"/>
-                <TranslateTransform/>
-            </TransformGroup>
-        </Image.RenderTransform>
-        </Image> Background="#FF9A8FC8">
-        
+    <Grid Background="#FF9A8FC8">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
@@ -37,9 +27,67 @@
                 <GradientStop Color="#FF9A8FC8" Offset="1"/>
             </LinearGradientBrush>
         </Grid.OpacityMask>
-        
-
-        <Grid HorizontalAlignment="Center" VerticalAlignment="Bottom">
+        <Grid Grid.ColumnSpan="2">
+            <Image HorizontalAlignment="Center" Height="994" VerticalAlignment="Top" Width="2116" Source="/imagens/_9A8FC8__1_-removebg-preview.png" Margin="0,-140,0,0" Visibility="Visible" RenderTransformOrigin="0.5,0.5">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="0"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+        </Grid>
+        <Grid Grid.Column="0">
+            <StackPanel Margin="20,150,20,20">
+                <Label HorizontalAlignment="Center" FontSize="20" FontWeight="Bold">Informações Pessoais</Label>
+                <Label FontSize="20">Nome</Label>
+                <TextBox FontSize="16" x:Name="txtNome" Cursor="Arrow"></TextBox>
+                <Label FontSize="20">CPF</Label>
+                <TextBox FontSize="16" x:Name="txtCPF"></TextBox>
+                <Label FontSize="20">RG</Label>
+                <TextBox FontSize="16" x:Name="txtRG"></TextBox>
+                <Label FontSize="20">Telefone</Label>
+                <TextBox FontSize="16" x:Name="txtTelefone"></TextBox>
+                <Label FontSize="20">Sexo</Label>
+                <StackPanel Orientation="Horizontal">
+                    <RadioButton Margin="0 5 40 0" x:Name="rbMasculino">Masculino</RadioButton>
+                    <RadioButton Margin="0 5 40 0" x:Name="rbFeminino">Feminino</RadioButton>
+                    <RadioButton Margin="0 5 0 0" x:Name="rbNDizer">Prefiro não dizer</RadioButton>
+                </StackPanel>
+                
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Column="1">
+            <StackPanel Margin="20,150,20,20">
+                <Label HorizontalAlignment="Center" FontSize="20" FontWeight="Bold">Informações de Login</Label>
+                <Label FontSize="20">E-mail</Label>
+                <TextBox FontSize="16" x:Name="txtEmail" Cursor="Arrow"></TextBox>
+                <Label FontSize="20">Senha</Label>
+                <PasswordBox
+                  FontSize="16"
+                  FontFamily="Spartan" 
+                  x:Name="passbSenha"/>
+                <Label FontSize="20">Confirmar Senha</Label>
+                <PasswordBox
+                  FontSize="16"
+                  FontFamily="Spartan" 
+                  x:Name="passbSconfirma"/>
+                <StackPanel Margin="0, 20, 0, 0">
+                    <CheckBox FontFamily="Spartan" Foreground="Gray" x:Name="chcbTermos">Concordo com os termos de uso</CheckBox>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Margin="0 490 0 0">
+                <StackPanel Margin="5, 1, 5, 15" Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button x:Name="botaovoltar" Click="OnClick1" Background="{x:Null}" FontFamily="Spartan" BorderBrush="{x:Null}" Foreground="Gray" Cursor="Hand" Content="Login"/>
+                </StackPanel>
+                <StackPanel Margin="0, -13, 0, 0">
+                    <Button Width="120" Height="45" FontSize="18" FontFamily="Spartan" BorderThickness="20" Cursor="Hand" Background="#FF2F3559" BorderBrush="#FF2F3559" x:Name="btnRegistrar" Click="btnRegistrar_Click">Registrar</Button>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Bottom">
             <TextBlock FontSize="18" Margin="0,0,0,10" FontFamily="Spartan" Foreground="#E6E1E1">Copyright (c) 2022 MySalon All Rights Reserved</TextBlock>
         </Grid>
         
