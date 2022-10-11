@@ -76,11 +76,72 @@ namespace wpf_sallonnovo.Models
                 throw ex;
             }
         }
+        /*public Funcionario GetById(int id)
+        {
+            try
+            {
+                var query = conn.Query();
+                query.CommandText = "SELECT * FROM funcionario " +
+                                                "LEFT JOIN sexo ON cod_sex = cod_sex_fk " +
+                                                "LEFT JOIN endereco ON cod_end = cod_end_fk " +
+                                                "WHERE cod_func = @id";
+
+                query.Parameters.AddWithValue("@id", id);
+
+                MySqlDataReader reader = query.ExecuteReader();
+
+                if (!reader.HasRows)
+                    throw new Exception("Nenhum registro foi encontrado!");
+
+                var funcionario = new Funcionario();
+
+                while (reader.Read())
+                {
+                    funcionario.Id = reader.GetInt32("cod_func");
+                    funcionario.Nome = reader.GetString("nome_func");
+                    funcionario.CPF = reader.GetString("cpf_func");
+                    funcionario.RG = reader.GetString("rg_func");
+                    funcionario.DataNascimento = DAOHelper.GetDateTime(reader, "datanasc_func");
+                    funcionario.Email = reader.GetString("email_func");
+                    funcionario.Celular = reader.GetString("celular_func");
+                    funcionario.Funcao = reader.GetString("funcao_func");
+                    funcionario.Salario = DAOHelper.GetDouble(reader, "salario_func");
+
+                    if (!DAOHelper.IsNull(reader, "cod_sex_fk"))
+                        funcionario.Sexo = new Sexo()
+                        {
+                            Id = reader.GetInt32("cod_sex"),
+                            Nome = reader.GetString("nome_sex")
+                        };
+
+                    if (!DAOHelper.IsNull(reader, "cod_end_fk"))
+                        funcionario.Endereco = new Endereco()
+                        {
+                            Id = reader.GetInt32("cod_end"),
+                            Rua = reader.GetString("rua_end"),
+                            Numero = reader.GetInt32("numero_end"),
+                            Bairro = reader.GetString("bairro_end"),
+                            Cidade = reader.GetString("cidade_end"),
+                            Estado = reader.GetString("estado_end")
+                        };
+                }
+
+                return funcionario;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                conn.Query();
+            }
+        }
         /*public List<Cliente> List()
         {
             try
             {
-            var lista = new List<Cliente>();
+                var lista = new List<Cliente>();
                 var comando = _conn.Query();
 
                 comando.CommandText = "select * from cliente;";
@@ -91,7 +152,7 @@ namespace wpf_sallonnovo.Models
                 {
                     var cliente = new Cliente();
                     cliente.Id = reader.GetInt32("id_cli");
-                    //fotinha
+                    cliente.
                     cliente.Nome = DAOHelper.GetString(reader, "nome_cli");
                     cliente.CPF = DAOHelper.GetString(reader, "cpf_cli");
                     cliente.RG = DAOHelper.GetString(reader, "rg_cli");

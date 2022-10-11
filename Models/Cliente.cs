@@ -9,8 +9,7 @@ namespace wpf_sallonnovo.Models
     public class Cliente
     {
         public int Id { get; set; }
-
-        // pubic foto {get;set} dar uma olhada como faz
+        
         public string Nome { get; set; }
         public string CPF { get; set; }
         public string RG { get; set; }
@@ -18,6 +17,6 @@ namespace wpf_sallonnovo.Models
         public string Email { get; set; }
         public string Sexo { get; set; }
 
-        public virtual Endereco Endereco { get; set; }
+        public  Endereco Endereco { get; set; }
     }
 }
