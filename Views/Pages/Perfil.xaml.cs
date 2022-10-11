@@ -1,4 +1,4 @@
-﻿using System;
+﻿                                                                                                                       using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +13,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using wpf_sallonnovo.Models;
-
 namespace wpf_sallonnovo.Views.Pages
 {
     /// <summary>
@@ -22,6 +21,7 @@ namespace wpf_sallonnovo.Views.Pages
     public partial class Perfil : Page
     {
         private Cliente _cli = new Cliente();
+
         public Perfil()
         {
             InitializeComponent();
@@ -37,6 +37,10 @@ namespace wpf_sallonnovo.Views.Pages
 
         private void Perfil_Loaded(object sender, RoutedEventArgs e)
         {
+            /*var dao = new ClienteDAO();
+            var cliente = dao.GetById(1);*/
+
+
             tbNome.Text = _cli.Nome;
             txtNome.Text = _cli.Nome;
             txtCPF.Text = _cli.CPF;
