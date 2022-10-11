@@ -16,8 +16,8 @@ namespace wpf_sallonnovo.Models
         public string RG { get; set; }
         public string Telefone { get; set; }
         public string Email { get; set; }
-        public string Sexo  { get; set; }
+        public string Sexo { get; set; }
 
-        public Endereco Endereco { get; set; }
+        public virtual Endereco Endereco { get; set; }
     }
 }

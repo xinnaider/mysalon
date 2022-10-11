@@ -28,10 +28,10 @@ namespace wpf_sallonnovo.Views.Pages
         {
             InitializeComponent();
             _frame = frame;
-            Loaded += Inicio_Loaded;
+            //Loaded += Inicio_Loaded;
         }
 
-        private void Inicio_Loaded(object sender, RoutedEventArgs e)
+        /*private void Inicio_Loaded(object sender, RoutedEventArgs e)
         {
             try
             {
@@ -49,7 +49,7 @@ namespace wpf_sallonnovo.Views.Pages
                 MessageBox.Show(ex.Message);
             }
             
-        }
+        }*/
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {

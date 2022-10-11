@@ -9,11 +9,47 @@ using wpf_sallonnovo.bancodados;
 using MySql.Data.MySqlClient;
 using wpf_sallonnovo.Views;
 
-namespace wpf_sallonnovo.Models
+namespace wpf_sallonnovo.Models.Salao
 {
     class SalaoDAO
     {
         private static conexao _conn = new conexao();
+
+        public void Insert(Salao salao)
+        {
+            try
+            {
+                var comando = _conn.Query();
+
+                comando.CommandText = "insert into endereco values (null, null, @nome, @telefone, @proprietario, @razaoSocial, @cnpj, @cep);";
+
+                //comando.Parameters.AddWithValue("@null", salao.Foto);//
+
+                comando.Parameters.AddWithValue("@nome", salao.Nome);
+                comando.Parameters.AddWithValue("@telefone", salao.Telefone);
+                comando.Parameters.AddWithValue("@proprietario", salao.Proprietario);
+                comando.Parameters.AddWithValue("@razaoSocial", salao.Razao_Social);
+                comando.Parameters.AddWithValue("@cnpj", salao.CNPJ);
+                comando.Parameters.AddWithValue("@email", salao.Email);
+
+
+                var resultado = comando.ExecuteNonQuery();
+
+
+                if (resultado == 0)
+                {
+                    throw new Exception("Deu erro no momento de salvar as informações");
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+        }
 
         public List<Salao> List()
         {
@@ -31,9 +67,9 @@ namespace wpf_sallonnovo.Models
                     var salao = new Salao();
 
                     salao.Id = reader.GetInt32("id_sal");
+                    //salao.Foto = DAOHelper.GetString(reader, "foto_sal");//
                     salao.Nome = DAOHelper.GetString(reader, "nome_sal");
                     salao.Telefone = DAOHelper.GetString(reader, "telefone_sal");
-                    salao.Descricao = DAOHelper.GetString(reader, "descricao_sal");
                     salao.Razao_Social = DAOHelper.GetString(reader, "razao_social_sal");
                     salao.CNPJ = DAOHelper.GetString(reader, "cnpj_sal");
                     salao.Email = DAOHelper.GetString(reader, "email_sal");
@@ -50,5 +86,64 @@ namespace wpf_sallonnovo.Models
                 throw ex;
             }
         }
+
+        public void Delete(Salao salao)
+        {
+            try
+            {
+                var comando = _conn.Query();
+
+                comando.CommandText = "DELETE FROM Endereco WHERE (id_sal = @id)";
+
+                comando.Parameters.AddWithValue("@id", salao.Id);
+
+                var resultado = comando.ExecuteNonQuery();
+
+                if (resultado == 0)
+                {
+                    throw new Exception("Ocorreram erros ao deletar as informações");
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public void Update(Salao salao)
+        {
+            try
+            {
+                var comando = _conn.Query();
+
+                comando.CommandText = "update salao set " +
+                    "foto_sal = @foto, nome_sal = @nome, telefone_sal= @telefone, " +
+                    "razao_social_sal = @razaoSocial, cnpj_sal = @cnpj, email_sal = @email;";
+
+                //comando.Parameters.AddWithValue("@foto", salao.Foto);//
+                comando.Parameters.AddWithValue("@nome", salao.Nome);
+                comando.Parameters.AddWithValue("@telefone", salao.Telefone);
+                comando.Parameters.AddWithValue("@razaoSocial", salao.Razao_Social);
+                comando.Parameters.AddWithValue("@cnpj", salao.CNPJ);
+                comando.Parameters.AddWithValue("@email", salao.Email);
+
+                var resultado = comando.ExecuteNonQuery();
+
+                if (resultado == 0)
+                {
+                    throw new Exception("Ocorreram erros ao salvar as informações");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
     }
 }
+
+

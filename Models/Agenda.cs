@@ -14,6 +14,6 @@ namespace wpf_sallonnovo.Models
         public float Valor { get; set; }
         public string TempoEstimado { get; set; } //fazer esquema para o date -> olhar no projeto da escola!
         public virtual Cliente Cliente { get; set; }
-        public virtual Salao Salao { get; set; }
+      //  public virtual Salao Salao { get; set; }
     }
 }
