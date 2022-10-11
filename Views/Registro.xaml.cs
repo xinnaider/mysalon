@@ -37,42 +37,9 @@ namespace wpf_sallonnovo.Views
 
         private void btnRegistrar_Click(object sender, RoutedEventArgs e)
         {
-            if (chcbTermos.IsChecked == true)
-            {
-                if (passbSenha.Password.ToString() == passbSconfirma.Password.ToString())
-                {
-                    if ((txtNome.Text == null) | (txtEmail.Text == String.Empty) 
-                        | (txtUser.Text == String.Empty) | (passbSenha.Password.ToString() == String.Empty)
-                        | (passbSconfirma.Password.ToString() == String.Empty))
-                    {
-
-                        MessageBox.Show("Por favor preencha os campos corretamente");
-                    }
-                    else {
-                        string senha = passbSenha.Password.ToString();
-                        _cliente.Nome = txtNome.Text;
-                        string user = txtUser.Text;
-
-                        _cliente.Email = txtEmail.Text;
-                        try
-                        {
-                            var dao = new ClienteDAO();
-                            dao.Insert(_cliente);
-                        }
-                        catch (Exception ex)
-                        {
-
-                            throw ex;
-                        }
-                    }
-                }
-                else { MessageBox.Show("Senha não corresponde"); }
-                
-            }
-            else
-            {
-                MessageBox.Show("Aceite os termos para concluir o registro!");
-            }
+          _cliente.Nome = txtNome.Text;
+          _cliente.CPF = txtCPF.Text;
+            
         }
     }
 }
