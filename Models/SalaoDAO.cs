@@ -4,12 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using wpf_sallonnovo.Helpers;
-using wpf_sallonnovo.Models;
 using wpf_sallonnovo.bancodados;
 using MySql.Data.MySqlClient;
-using wpf_sallonnovo.Views;
 
-namespace wpf_sallonnovo.Models.Salao
+
+namespace wpf_sallonnovo.Models
 {
     class SalaoDAO
     {

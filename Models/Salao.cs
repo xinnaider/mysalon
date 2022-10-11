@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace wpf_sallonnovo.Models.Salao
+namespace wpf_sallonnovo.Models
 {
      public class Salao
     {
