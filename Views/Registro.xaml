@@ -16,88 +16,33 @@
         FontFamily="{DynamicResource MaterialDesignFont}"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterOwner">
-    <Grid Background="#FF9A8FC8">
+    <Grid <Image HorizontalAlignment="Center" Height="994" VerticalAlignment="Top" Width="2116" Source="/imagens/_9A8FC8__1_-removebg-preview.png" Margin="0,-140,0,0" Visibility="Visible" RenderTransformOrigin="0.5,0.5">
+        <Image.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform/>
+                <SkewTransform/>
+                <RotateTransform Angle="0"/>
+                <TranslateTransform/>
+            </TransformGroup>
+        </Image.RenderTransform>
+        </Image> Background="#FF9A8FC8">
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
         <Grid.OpacityMask>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                 <GradientStop Color="Black"/>
                 <GradientStop Color="#FF9A8FC8" Offset="1"/>
             </LinearGradientBrush>
         </Grid.OpacityMask>
-        <Image HorizontalAlignment="Center" Height="994" VerticalAlignment="Top" Width="2116" Source="/imagens/_9A8FC8__1_-removebg-preview.png" Margin="0,-140,0,0" Visibility="Visible" RenderTransformOrigin="0.5,0.5">
-            <Image.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="0"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Image.RenderTransform>
-        </Image>
+        
 
-        <Grid Margin="59,300,705,150">
-            <StackPanel Margin="0,-92,0,-93">
-                <TextBox
-                    Margin="0, 0, 0, 15"
-                    FontSize="25"
-                    FontFamily="Spartan" 
-                    x:Name="txtNome"
-                    materialDesign:HintAssist.Hint="Nome completo" Cursor="Arrow">
-                    <TextBox.Text>
-                        <Binding
-                          Path="NomeCompleto"
-                          UpdateSourceTrigger="PropertyChanged">
-                        </Binding>
-                    </TextBox.Text>
-                </TextBox>
-                <TextBox
-                    Margin="0, 0, 0, 15"
-                    FontSize="25"
-                    FontFamily="Spartan" 
-                    x:Name="txtUser"
-                    materialDesign:HintAssist.Hint="Nome de usuário">
-
-                </TextBox>
-                <TextBox
-                    Margin="0, 0, 0, 15"
-                    FontSize="25"
-                    FontFamily="Spartan" 
-                    x:Name="txtEmail"
-                    materialDesign:HintAssist.Hint="Email">
-                    <TextBox.Text>
-                        <Binding
-                          Path="Email"
-                          UpdateSourceTrigger="PropertyChanged">
-                        </Binding>
-                    </TextBox.Text>
-                </TextBox>
-                <PasswordBox
-                  Margin="0, 0, 0, 15"
-                  FontSize="25"
-                  FontFamily="Spartan" 
-                  x:Name="passbSenha"
-                  materialDesign:HintAssist.Hint="Senha"
-                  materialDesign:TextFieldAssist.HasClearButton="True"/>
-                <PasswordBox
-                  FontSize="25"
-                  FontFamily="Spartan" 
-                  x:Name="passbSconfirma"
-                  materialDesign:HintAssist.Hint="Confirmar senha"
-                  materialDesign:TextFieldAssist.HasClearButton="True"/>
-                <StackPanel Margin="0, 5, 0, 0">
-                    <CheckBox FontFamily="Spartan" Foreground="Gray" x:Name="chcbTermos">Concordo com os termos de uso</CheckBox>
-                </StackPanel>
-                <StackPanel Margin="5, 1, 5, 15" Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Button x:Name="botaovoltar" Click="OnClick1" Background="{x:Null}" FontFamily="Spartan" BorderBrush="{x:Null}" Foreground="Gray" Cursor="Hand" Content="Login"/>
-                </StackPanel>
-                <StackPanel Margin="0, -13, 0, 0">
-                    <Button Width="120" Height="45" FontSize="18" FontFamily="Spartan" BorderThickness="20" Cursor="Hand" Background="#FF2F3559" BorderBrush="#FF2F3559" x:Name="btnRegistrar" Click="btnRegistrar_Click">Registrar</Button>
-                </StackPanel>
-            </StackPanel>
-        </Grid>
         <Grid HorizontalAlignment="Center" VerticalAlignment="Bottom">
             <TextBlock FontSize="18" Margin="0,0,0,10" FontFamily="Spartan" Foreground="#E6E1E1">Copyright (c) 2022 MySalon All Rights Reserved</TextBlock>
         </Grid>
-        <Image HorizontalAlignment="Left" Height="572" Margin="708,182,0,0" VerticalAlignment="Top" Width="572" Source="/Imagens/MARIO ROSSI.png"/>
+        
 
     </Grid>
 </Window>

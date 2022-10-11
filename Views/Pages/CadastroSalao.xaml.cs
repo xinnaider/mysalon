@@ -12,18 +12,29 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using wpf_sallonnovo.Models;
 
 namespace wpf_sallonnovo.Views.Pages
 {
-    /// <summary>
-    /// Interação lógica para CadastroSalao.xam
-    /// </summary>
     public partial class CadastroSalao : Page
     {
         public CadastroSalao()
         {
             InitializeComponent();
+            Loaded += CadastroSalao_Loaded;
         }
+
+        private void CadastroSalao_Loaded(object sender, RoutedEventArgs e)
+        {
+            CarregarListagem();
+        }
+
+        private void CarregarListagem()
+        {
+
+
+        }
+
 
         private void Bt_Salvar_Click(object sender, RoutedEventArgs e)
         {
