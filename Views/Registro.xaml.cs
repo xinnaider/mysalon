@@ -69,9 +69,6 @@ namespace wpf_sallonnovo.Views
 
         private void btnRegistrar_Click(object sender, RoutedEventArgs e)
         {
-          
-           
-
             _cliente.Nome = txtNome.Text;
             _cliente.CPF = txtCPF.Text;
             _cliente.RG = txtRG.Text;
@@ -90,7 +87,7 @@ namespace wpf_sallonnovo.Views
             try
             {
                 var dao = new ClienteDAO();
-
+                
                 if (_cliente.Id > 0)
                 {
                     dao.Update(_cliente);
