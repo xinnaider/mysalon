@@ -19,8 +19,8 @@ namespace wpf_sallonnovo.Models
             {
                 var comando = _conn.Query();
 
-                comando.CommandText = "insert into cliente values(null, null, @nome, @cpf, " +
-                    "@rg, @telefone, @email, @sexo);";
+                comando.CommandText = "insert into cliente values (null, null, @nome, @cpf, " +
+                    "@rg, @telefone, @email, @sexo, @endereco);";
 
                 comando.Parameters.AddWithValue("@nome", cliente.Nome);
                 comando.Parameters.AddWithValue("@cpf", cliente.CPF);
@@ -28,6 +28,7 @@ namespace wpf_sallonnovo.Models
                 comando.Parameters.AddWithValue("@telefone", cliente.Telefone);
                 comando.Parameters.AddWithValue("@email", cliente.Email);
                 comando.Parameters.AddWithValue("@sexo", cliente.Sexo);
+                comando.Parameters.AddWithValue("@endereco", cliente.Endereco);
       
 
                 var resultado = comando.ExecuteNonQuery();

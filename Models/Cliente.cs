@@ -16,5 +16,7 @@ namespace wpf_sallonnovo.Models
         public string Telefone { get; set; }
         public string Email { get; set; }
         public string Sexo { get; set; }
+
+        public  Endereco Endereco { get; set; }
     }
 }
