@@ -56,7 +56,7 @@
                     <RadioButton Margin="0 5 40 0" x:Name="rbFeminino">Feminino</RadioButton>
                     <RadioButton Margin="0 5 0 0" x:Name="rbNDizer">Prefiro não dizer</RadioButton>
                 </StackPanel>
-                
+
             </StackPanel>
         </Grid>
         <Grid Grid.Column="1">
@@ -83,14 +83,14 @@
                     <Button x:Name="botaovoltar" Click="OnClick1" Background="{x:Null}" FontFamily="Spartan" BorderBrush="{x:Null}" Foreground="Gray" Cursor="Hand" Content="Login"/>
                 </StackPanel>
                 <StackPanel Margin="0, -13, 0, 0">
-                    <Button Width="120" Height="45" FontSize="18" FontFamily="Spartan" BorderThickness="20" Cursor="Hand" Background="#FF2F3559" BorderBrush="#FF2F3559" x:Name="btnRegistrar" Click="btnRegistrar_Click">Registrar</Button>
+                    <Button Width="120" Height="45" FontSize="18" FontFamily="Spartan" BorderThickness="10" Cursor="Hand" Background="#FF2F3559" BorderBrush="#FF2F3559" x:Name="btnRegistrar" Click="btnRegistrar_Click" Foreground="White">Registrar</Button>
                 </StackPanel>
             </StackPanel>
         </Grid>
         <Grid Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Bottom">
             <TextBlock FontSize="18" Margin="0,0,0,10" FontFamily="Spartan" Foreground="#E6E1E1">Copyright (c) 2022 MySalon All Rights Reserved</TextBlock>
         </Grid>
-        
+
 
     </Grid>
 </Window>
