@@ -35,24 +35,24 @@ namespace wpf_sallonnovo.Views.Pages
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             _frame.Content = new Perfil();
+            btInicio.Background = new SolidColorBrush(Color.FromRgb(154, 143, 200));
+            btAgenda.Background = new SolidColorBrush(Color.FromRgb(154, 143, 200));
+            btServico.Background = new SolidColorBrush(Color.FromRgb(154, 143, 200));
+            btPerfil.Background = new SolidColorBrush(Color.FromRgb(47, 53, 89));
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            btPerfil.Background = new SolidColorBrush(Color.FromRgb(154, 143, 200));
+            btAgenda.Background = new SolidColorBrush(Color.FromRgb(154, 143, 200));
+            btServico.Background = new SolidColorBrush(Color.FromRgb(154, 143, 200));
             _frame.Content = new Inicio(_frame);
-            btInicio.Background = new SolidColorBrush(Color.FromRgb(125, 100, 227));
+            btInicio.Background = new SolidColorBrush(Color.FromRgb(47, 53, 89));
         }
 
         /*private void Bt_Sair_Click(object sender, RoutedEventArgs e)
         {
             _window.Close();
-
-
-
-
-
-
-
             /* 
              Agendamento Agenda = new Agendamento();
              Agenda.Close();
@@ -70,6 +70,24 @@ namespace wpf_sallonnovo.Views.Pages
         private void btSair_Click_1(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void BtnServico_Click(object sender, RoutedEventArgs e)
+        {
+            btInicio.Background = new SolidColorBrush(Color.FromRgb(154, 143, 200));
+            btAgenda.Background = new SolidColorBrush(Color.FromRgb(154, 143, 200));
+            btPerfil.Background = new SolidColorBrush(Color.FromRgb(154, 143, 200));
+            btServico.Background = new SolidColorBrush(Color.FromRgb(47, 53, 89));
+            CadastroServico Telas = new CadastroServico();
+            Telas.ShowDialog();
+        }
+
+        private void btAgenda_Click(object sender, RoutedEventArgs e)
+        {
+            btInicio.Background = new SolidColorBrush(Color.FromRgb(154, 143, 200));
+            btPerfil.Background = new SolidColorBrush(Color.FromRgb(154, 143, 200));
+            btServico.Background = new SolidColorBrush(Color.FromRgb(154, 143, 200));
+            btAgenda.Background = new SolidColorBrush(Color.FromRgb(47, 53, 89));
         }
     }
 }

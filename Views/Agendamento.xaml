@@ -45,7 +45,7 @@
                         </Ellipse>
                     </Grid>
                     <Grid Grid.Column="1">
-                        <Label HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#DDFFFFFF" FontWeight="Bold" FontSize="27" Content="USUÁRIO" Margin="0,0,25,0"/>
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Bottom" Foreground="#DDFFFFFF" FontWeight="Bold" FontSize="27" Content="USUÁRIO" Margin="2,0,0,47"/>
                     </Grid>
                 </Grid>
             </Grid>

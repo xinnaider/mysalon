@@ -64,7 +64,7 @@
                             <TextBlock Margin="5 5" VerticalAlignment="Center" FontSize="22"> INÍCIO</TextBlock>
                         </StackPanel>
                     </Button>
-                    <Button Height="60" Margin="0 " Background="#FF9A8FC8" BorderBrush="#ff2f3559" BorderThickness="0,0,0,3">
+                    <Button Height="60" Margin="0" Background="#FF9A8FC8" BorderBrush="#ff2f3559" BorderThickness="0,0,0,3" Cursor="Hand">
                         <StackPanel Width="260" Orientation="Horizontal">
                             <Image Source="/imagens/agenda.png"/>
                             <TextBlock Margin="5 5" VerticalAlignment="Center" FontSize="22"> AGENDA</TextBlock>
