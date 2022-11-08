@@ -43,13 +43,13 @@
                 <StackPanel Margin="20,20,20,20">
                     <Label HorizontalAlignment="Center" FontSize="20" FontWeight="Bold">Cadastro de Serviços</Label>
                     <Label FontSize="20">Nome</Label>
-                    <TextBox FontSize="16" x:Name="txtNome" Cursor="Arrow"></TextBox>
+                    <TextBox FontSize="16" x:Name="txtNomeSer" Cursor="Arrow"></TextBox>
                     <Label FontSize="20">Valor</Label>
-                    <TextBox FontSize="16" x:Name="txtCPF"></TextBox>
+                    <TextBox FontSize="16" x:Name="txtValorSer"></TextBox>
                     <Label FontSize="20">Tipo</Label>
-                    <TextBox FontSize="16" x:Name="txtRG"></TextBox>
+                    <TextBox FontSize="16" x:Name="txtTiposSer"></TextBox>
                     <Label FontSize="20">Descrição</Label>
-                    <TextBox FontSize="16" x:Name="txtTelefone"></TextBox>
+                    <TextBox FontSize="16" x:Name="txtDescSer"></TextBox>
                 </StackPanel>
             </Grid>
             <Grid Grid.Column="1">
