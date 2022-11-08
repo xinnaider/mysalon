@@ -7,6 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="920">
     <Grid Margin="0 20 0 20">
+        <Button x:Name="btnSelectServico" Background="{x:Null}" HorizontalAlignment="Center" Width="880" Height="180" VerticalAlignment="Center" BorderBrush="Red" Click="btnSelectServico_Click">
         <StackPanel Orientation="Horizontal">
             <Border Height="150" Width="150" BorderThickness="4" BorderBrush="#9A8FC8" CornerRadius="25, 25, 25, 25" Margin="80 0 30 0">
                 <Border.Background>
@@ -28,5 +29,6 @@
                 <Label Padding="10 5 10 5" Foreground="#DDFFFFFF" FontFamily="Bahnschrift SemiBold Condensed" FontSize="20" Content="{Binding Preco}"></Label>
             </StackPanel>
         </StackPanel>
+        </Button>
     </Grid>
 </UserControl>

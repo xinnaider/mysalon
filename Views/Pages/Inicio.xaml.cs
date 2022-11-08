@@ -39,7 +39,9 @@ namespace wpf_sallonnovo.Views.Pages
                 var listaSalao = dao.List();
                 foreach (var salao in listaSalao)
                 {
-                    var a = new UserInicial() { Title = $"{salao.Nome}",  Preco = $"PRECO adicionar" };
+                    var a = new UserInicial() { Title = $"{salao.Nome}",  Preco = $"PRECO adicionar", 
+                        Cod = $"{salao.Id}", Tel = $"{salao.Telefone}", RSocial = $"{salao.Razao_Social}",
+                        Email = $"{salao.Email}", Cnpj = $"{salao.Email}"};
 
                     listAgenda.Children.Add(a);
                 }
