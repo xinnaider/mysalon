@@ -70,7 +70,6 @@
                             <TextBlock Margin="5 5" VerticalAlignment="Center" FontSize="22"> AGENDA</TextBlock>
                         </StackPanel>
                     </Button>
-                    <Image Height="100" Width="100"/>
                     <Button Margin="10 185 0 10" Foreground="White" FontFamily="Spartan" FontSize="22" Background="#FF9A8FC8" BorderBrush="#FF9A8FC8">SAIR</Button>
                 </StackPanel>
 

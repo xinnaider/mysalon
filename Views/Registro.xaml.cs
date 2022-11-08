@@ -22,7 +22,7 @@ namespace wpf_sallonnovo.Views
     public partial class Registro : Window
     {
         private Cliente _cliente = new Cliente();
-     
+
         public Registro()
         {
             InitializeComponent();
@@ -69,8 +69,8 @@ namespace wpf_sallonnovo.Views
 
         private void btnRegistrar_Click(object sender, RoutedEventArgs e)
         {
-          
-           
+
+
 
             _cliente.Nome = txtNome.Text;
             _cliente.CPF = txtCPF.Text;

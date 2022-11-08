@@ -62,7 +62,7 @@
                     </Button>
                 </StackPanel>
                 <StackPanel>
-                    <Button x:Name="btnEntrar"  Width="120" Height="45" FontSize="18" BorderThickness="10" FontFamily="Spartan"  Cursor="Hand" Background="#FF2F3559" BorderBrush="#FF2F3559" Click="btnEntrar_Click" Foreground="White">Entrar</Button>
+                    <Button x:Name="btnEntrar"  Width="120" Height="45" FontSize="18" BorderThickness="15" FontFamily="Spartan"  Cursor="Hand" Background="#FF2F3559" BorderBrush="#FF2F3559" Click="btnEntrar_Click" >Entrar</Button>
                 </StackPanel>
             </StackPanel>
         </Grid>
