@@ -253,7 +253,6 @@
     <Resource Include="Imagens\MARIO ROSSI.png" />
     <Resource Include="Imagens\_9A8FC8__1_-removebg-preview.png" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Resource Include="Imagens\aluno.PNG" />
   </ItemGroup>
@@ -268,6 +267,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Views\Pages\estrela.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagens\ServIcon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\MaterialDesignThemes.4.5.0\build\MaterialDesignThemes.targets" Condition="Exists('packages\MaterialDesignThemes.4.5.0\build\MaterialDesignThemes.targets')" />
