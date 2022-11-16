@@ -46,17 +46,17 @@ namespace wpf_sallonnovo.Models
                 conn.Close();
             }
         }
-        public void Insert(Login login)
+        public void Insert(Log log)
         {
             try
             {
                 var comando = conn.Query();
 
-                comando.CommandText = "insert into login values (null, @user, @senha, @cliente);";
+                comando.CommandText = "insert into login values (null, @user, @senha, @fkCliente);";
 
-                comando.Parameters.AddWithValue("@user", login.User) ;
-                comando.Parameters.AddWithValue("@senha", login.Password) ;
-                comando.Parameters.AddWithValue("@cliente", login.Cliente) ;
+                comando.Parameters.AddWithValue("@user", log.User) ;
+                comando.Parameters.AddWithValue("@senha", log.Password) ;
+                comando.Parameters.AddWithValue("@fkCliente", log.FkCliente) ;
                 
 
 

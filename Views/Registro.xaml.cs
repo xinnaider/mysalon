@@ -21,8 +21,9 @@ namespace wpf_sallonnovo.Views
     /// </summary>
     public partial class Registro : Window
     {
+        private Log _log = new Log();
         private Cliente _cliente = new Cliente();
-
+       
         public Registro()
         {
             InitializeComponent();
@@ -33,6 +34,7 @@ namespace wpf_sallonnovo.Views
         {
             InitializeComponent();
             _cliente = cliente;
+            
             Loaded += Registro_Loaded;
         }
 
@@ -45,28 +47,34 @@ namespace wpf_sallonnovo.Views
 
         private void Registro_Loaded(object sender, RoutedEventArgs e)
         {
+            CarregarListagem();
+            
 
-            txtNome.Text = _cliente.Nome;
-            txtCPF.Text = _cliente.CPF;
-            txtRG.Text = _cliente.RG;
-            txtTelefone.Text = _cliente.Telefone;
-            txtEmail.Text = _cliente.Email;
+        }
+        private void CarregarListagem()
+        {
+            try
+            {
+                var dao = new ClienteDAO();
+                List<Cliente> listaCliente = dao.List();
 
-            if (_cliente.Sexo == "Masculino")
-            {
-                rbMasculino.IsChecked = true;
+                dataGridCliente.ItemsSource = listaCliente;
             }
-            else
+            catch (Exception ex)
             {
-                if (_cliente.Sexo == "Femenino")
-                {
-                    rbFeminino.IsChecked = true;
-                }
-                else rbNDizer.IsChecked = true;
+
+                MessageBox.Show(ex.Message);
             }
+
+            int i = dataGridCliente.Items.Count;
+            i = i + 1;
+           
+            _log.FkCliente = i;
+
 
         }
 
+        private void dataGridCliente_SelectionChanged(object sender, SelectedCellsChangedEventArgs e) { }
         private void btnRegistrar_Click(object sender, RoutedEventArgs e)
         {
 
@@ -87,20 +95,19 @@ namespace wpf_sallonnovo.Views
                 else _cliente.Sexo = "Prefiro não dizer";
             }
 
+            _log.User = txtEmail.Text;
+            _log.Password = passbSenha.Password;
+
             try
             {
                 var dao = new ClienteDAO();
 
-                if (_cliente.Id > 0)
-                {
-                    dao.Update(_cliente);
-                    MessageBox.Show("Registro de cliente atualizado com sucesso!");
-                }
-                else
-                {
-                    dao.Insert(_cliente);
-                    MessageBox.Show("Registro de cliente cadastrado com sucesso!");
-                }
+                
+                dao.Insert(_cliente);
+                MessageBox.Show("Registro de cliente cadastrado com sucesso!");
+                var log = new LoginDAO();
+                log.Insert(_log);
+                
 
             }
             catch (Exception ex)

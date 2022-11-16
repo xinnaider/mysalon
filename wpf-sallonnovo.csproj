@@ -117,6 +117,7 @@
     <Compile Include="Models\FuncionarioDAO.cs" />
     <Compile Include="Models\FuncionarioServico.cs" />
     <Compile Include="Models\FuncionarioServicoDAO.cs" />
+    <Compile Include="Models\Log.cs" />
     <Compile Include="Models\Login.cs" />
     <Compile Include="Models\LoginDAO.cs" />
     <Compile Include="Models\Salao.cs" />
