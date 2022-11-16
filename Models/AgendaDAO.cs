@@ -19,15 +19,14 @@ namespace wpf_sallonnovo.Models
             {
                 var comando = _conn.Query();
 
-                comando.CommandText = "insert into agenda values (null, @data, @horario, @valor, " +
-                    "@tempoEstimado, @cliente, @salao);";
+                comando.CommandText = "insert into agenda values (null, @data, @status, @servico, " +
+                    "@cliente, @salao);";
 
-                comando.Parameters.AddWithValue("@data", agenda.Data);
-                comando.Parameters.AddWithValue("@horario", agenda.Horario);
-                comando.Parameters.AddWithValue("@valor", agenda.Valor);
-                comando.Parameters.AddWithValue("@tempoEstimado", agenda.TempoEstimado);
-                comando.Parameters.AddWithValue("@email", agenda.Cliente);
-           //     comando.Parameters.AddWithValue("@sexo", agenda.Salao);
+                comando.Parameters.AddWithValue("@data", agenda.dataHorario);
+                comando.Parameters.AddWithValue("@status", agenda.status);
+                comando.Parameters.AddWithValue("@servico", agenda.Servico);
+                comando.Parameters.AddWithValue("@cliente", agenda.Cliente);
+                comando.Parameters.AddWithValue("@salao", agenda.Salao);
 
                 var resultado = comando.ExecuteNonQuery();
 
@@ -45,6 +44,38 @@ namespace wpf_sallonnovo.Models
 
         }
 
+        public List<Agenda> ListResolvido()
+        {
+            try
+            {
+                var lista = new List<Agenda>();
+                var comando = _conn.Query();
+
+                comando.CommandText = "Select Agenda.id_age as Id, Agenda.dataHorario_age as DataHorario, Agenda.status_age as Status, Servico.nome_ser as Servico, Cliente.nome_cli as Cliente, Salao.nome_sal as Salao from Agenda, Servico, Cliente, Salao where (Agenda.id_ser_fk = Servico.id_ser) and (Agenda.id_cli_fk = Cliente.id_cli) and (Agenda.id_sal_fk = Salao.id_sal);";
+
+                MySqlDataReader reader = comando.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    var agenda = new Agenda();
+                    agenda.Id = reader.GetInt32("Id");
+                    agenda.dataHorario = DAOHelper.GetDateTime(reader, "DataHorario");
+                    agenda.status = DAOHelper.GetString(reader, "Status");
+                    agenda.Servico = DAOHelper.GetString(reader, "Servico");
+                    agenda.Cliente = DAOHelper.GetString(reader, "Cliente");
+                    agenda.Salao = DAOHelper.GetString(reader, "Salao");
+
+                    lista.Add(agenda);
+                }
+                reader.Close();
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        
         public List<Agenda> List()
         {
             try
@@ -60,11 +91,11 @@ namespace wpf_sallonnovo.Models
                 {
                     var agenda = new Agenda();
                     agenda.Id = reader.GetInt32("id_age");
-                    agenda.Data = DAOHelper.GetDateTime(reader, "data_age");
-                    agenda.Horario = DAOHelper.GetString(reader, "horario_age");
-                    agenda.Valor = reader.GetFloat("valor_age");
-                    agenda.TempoEstimado = DAOHelper.GetString(reader, "tempo_estimado");
-                //    agenda.Cliente = reader.GetInt32("id_cli_fk");
+                    agenda.dataHorario = DAOHelper.GetDateTime(reader, "dataHorario_age");
+                    agenda.status = DAOHelper.GetString(reader, "status_age");
+                    agenda.Servico = DAOHelper.GetString(reader, "id_ser_fk");
+                    agenda.Cliente = DAOHelper.GetString(reader, "id_cli_fk");
+                    agenda.Salao = DAOHelper.GetString(reader, "id_sal_fk");
 
                     lista.Add(agenda);
                 }
@@ -109,15 +140,14 @@ namespace wpf_sallonnovo.Models
                 var comando = _conn.Query();
 
                 comando.CommandText = "update agenda set " +
-                    "data_age = @data, horario_age = @horario, valor_age = @valor, " +
-                    "tempo_estimado = @tempo, id_cli_fk = @cliente, id_sal_fk = @salao;";
+                    "dataHorario_age = @data, status_age = @status, id_ser_fk = @servico, " +
+                    "id_cli_fk = @cliente, id_sal_fk = @salao";
 
-                comando.Parameters.AddWithValue("@data", agenda.Data);
-                comando.Parameters.AddWithValue("@horario", agenda.Horario);
-                comando.Parameters.AddWithValue("@valor", agenda.Valor);
-                comando.Parameters.AddWithValue("@tempo_estimado", agenda.TempoEstimado);
+                comando.Parameters.AddWithValue("@data", agenda.dataHorario);
+                comando.Parameters.AddWithValue("@status", agenda.status);
+                comando.Parameters.AddWithValue("@servico", agenda.Servico);
                 comando.Parameters.AddWithValue("@cliente", agenda.Cliente);
-               // comando.Parameters.AddWithValue("@salao", agenda.Salao);
+                comando.Parameters.AddWithValue("@salao", agenda.Salao);
 
                 var resultado = comando.ExecuteNonQuery();
 

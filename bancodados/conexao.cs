@@ -28,7 +28,7 @@ namespace wpf_sallonnovo.bancodados
         {
             try
             {
-                connection = new MySqlConnection($"server={host};database={dbname};port={port};user={user};password={password}");
+                connection = new MySqlConnection($"server={host};database={dbname};port={port};user={user};password={password}; Convert Zero Datetime=True");
                 connection.Open();
 
             }

@@ -109,8 +109,6 @@
     <Compile Include="Models\AbstractDAO.cs" />
     <Compile Include="Models\Agenda.cs" />
     <Compile Include="Models\AgendaDAO.cs" />
-    <Compile Include="Models\AgendaServico.cs" />
-    <Compile Include="Models\AgendaServicoDAO.cs" />
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\ClienteDAO.cs" />
     <Compile Include="Models\Endereco.cs" />
@@ -125,6 +123,9 @@
     <Compile Include="Models\SalaoDAO.cs" />
     <Compile Include="Models\Servico.cs" />
     <Compile Include="Models\ServicoDAO.cs" />
+    <Compile Include="UserControls\UserAgendamento.xaml.cs">
+      <DependentUpon>UserAgendamento.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UserInicial.xaml.cs">
       <DependentUpon>UserInicial.xaml</DependentUpon>
     </Compile>
@@ -136,6 +137,9 @@
     </Compile>
     <Compile Include="Views\CadastroServico.xaml.cs">
       <DependentUpon>CadastroServico.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\AgendamentoUsuario.xaml.cs">
+      <DependentUpon>AgendamentoUsuario.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Pages\CadastroSalao.xaml.cs">
       <DependentUpon>CadastroSalao.xaml</DependentUpon>
@@ -173,6 +177,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="UserControls\UserAgendamento.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControls\UserInicial.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -186,6 +194,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\CadastroServico.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\AgendamentoUsuario.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

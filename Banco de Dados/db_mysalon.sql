@@ -84,8 +84,7 @@ insert into Servico values (null, null, 25, 'Corte 3', 'Corte muito bom', 3);
 
 create table Agenda(
 id_age int primary key auto_increment,
-data_age date,
-horario_age time,
+dataHorario_age datetime,
 status_age varchar(300),
 id_ser_fk int,
 foreign key (id_ser_fk) references Servico (id_ser),
@@ -95,9 +94,9 @@ id_sal_fk int,
 foreign key (id_sal_fk) references Salao (id_sal)
 );
 
-insert into Agenda values (null, '0000-00-00', '00:00:00', 'Indisponível', 1, 1, 1);
-insert into Agenda values (null, '0000-00-00', '00:00:00', 'Indisponível', 2, 2, 2);
-insert into Agenda values (null, '0000-00-00', '00:00:00', 'Indisponível', 3, 3, 3);
+insert into Agenda values (null, '0000-00-00 00:00:00', 'Indisponível', 1, 1, 1);
+insert into Agenda values (null, '0000-00-00 00:00:00', 'Indisponível', 2, 2, 2);
+insert into Agenda values (null, '0000-00-00 00:00:00', 'Indisponível', 3, 3, 3);
 
 create table Funcionario_Servico(
 id_func_ser int primary key auto_increment,

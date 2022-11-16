@@ -9,11 +9,10 @@ namespace wpf_sallonnovo.Models
     public class Agenda
     {
         public int Id { get; set; }
-        public DateTime? Data { get; set; } //fazer esquema para o date -> olhar no projeto da escola!
-        public string Horario { get; set; } //fazer esquema para o date -> olhar no projeto da escola!
-        public float Valor { get; set; }
-        public string TempoEstimado { get; set; } //fazer esquema para o date -> olhar no projeto da escola!
-        public virtual Cliente Cliente { get; set; }
-      //  public virtual Salao Salao { get; set; }
+        public DateTime? dataHorario { get; set; }
+        public string status { get; set; }
+        public string Cliente { get; set; }
+        public string Salao  { get; set; }
+        public string Servico  { get; set; }
     }
 }
