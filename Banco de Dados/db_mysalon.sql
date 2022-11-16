@@ -27,11 +27,14 @@ rg_cli varchar (50),
 telefone_cli varchar (50),
 email_cli varchar (500),
 sexo_cli varchar (50),
-id_end_fk int,
-foreign key (id_end_fk) references Endereco (id_end)
+id_end_fk int
 );
 
-insert into cliente values (null, null, 'douglas', '32131', '32131', '321321', '312@email', 'masculino', 1);
+insert into cliente values (null, null, 'Lucas', '32131', '32131', '321321', '312@email', 'masculino');
+insert into cliente values (null, null, 'Jorge', '32131', '32131', '321321', '312@email', 'masculino');
+insert into cliente values (null, null, 'Matheus', '32131', '32131', '321321', '312@email', 'masculino');
+insert into cliente values (null, null, 'Douglas', '32131', '32131', '321321', '312@email', 'masculino');
+
 
 create table Salao(
 id_sal int primary key auto_increment,
@@ -77,6 +80,10 @@ id_sal_fk int,
 foreign key (id_sal_fk) references Salao (id_sal)
 );
 
+insert into Servico values (null, null, 10, 'Corte 1', 'Corte de cabelo', 1);
+insert into Servico values (null, null, 15, 'Corte 2', 'Corte de cabelo', 2);
+insert into Servico values (null, null, 25, 'Corte 3', 'Corte de cabelo', 3);
+
 create table Agenda(
 id_age int primary key auto_increment,
 data_age date,
@@ -89,6 +96,10 @@ foreign key (id_cli_fk) references Cliente (id_cli),
 id_sal_fk int,
 foreign key (id_sal_fk) references Salao (id_sal)
 );
+
+insert into Agenda values (null, '0000-00-00', '00:00:00', 'Indisponível', 1, 1, 1);
+insert into Agenda values (null, '0000-00-00', '00:00:00', 'Indisponível', 2, 2, 2);
+insert into Agenda values (null, '0000-00-00', '00:00:00', 'Indisponível', 3, 3, 3);
 
 create table Funcionario_Servico(
 id_func_ser int primary key auto_increment,
