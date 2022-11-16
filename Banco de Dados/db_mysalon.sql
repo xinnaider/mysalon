@@ -72,7 +72,7 @@ foto_ser blob,
 valor_ser float,
 nome_ser varchar (500),
 tipo_ser varchar (50),
-descriçao_sal text,
+descricao_sal varchar(300),
 id_sal_fk int,
 foreign key (id_sal_fk) references Salao (id_sal)
 );
@@ -81,22 +81,13 @@ create table Agenda(
 id_age int primary key auto_increment,
 data_age date,
 horario_age time,
-valor_age float,
-tempo_estimado time,
+status_age varchar(300),
+id_ser_fk int,
+foreign key (id_ser_fk) references Servico (id_ser),
 id_cli_fk int, 
 foreign key (id_cli_fk) references Cliente (id_cli),
 id_sal_fk int,
 foreign key (id_sal_fk) references Salao (id_sal)
-);
-
-
-create table Agenda_Servico(
-id_ageSer int primary key auto_increment,
-qtd_ageSer int,
-id_ser_fk int,
-foreign key (id_ser_fk) references Servico (id_ser),
-id_age_fk int,
-foreign key (id_age_fk) references Agenda (id_age)
 );
 
 create table Funcionario_Servico(
