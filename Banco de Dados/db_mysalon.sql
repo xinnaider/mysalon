@@ -26,8 +26,7 @@ cpf_cli varchar (50),
 rg_cli varchar (50),
 telefone_cli varchar (50),
 email_cli varchar (500),
-sexo_cli varchar (50),
-id_end_fk int
+sexo_cli varchar (50)
 );
 
 insert into cliente values (null, null, 'Lucas', '32131', '32131', '321321', '312@email', 'masculino');
@@ -75,14 +74,13 @@ foto_ser blob,
 valor_ser float,
 nome_ser varchar (500),
 tipo_ser varchar (50),
-descricao_sal varchar(300),
 id_sal_fk int,
 foreign key (id_sal_fk) references Salao (id_sal)
 );
 
-insert into Servico values (null, null, 10, 'Corte 1', 'Corte de cabelo', 1);
-insert into Servico values (null, null, 15, 'Corte 2', 'Corte de cabelo', 2);
-insert into Servico values (null, null, 25, 'Corte 3', 'Corte de cabelo', 3);
+insert into Servico values (null, null, 10, 'Corte 1', 'Corte muito bom', 1);
+insert into Servico values (null, null, 15, 'Corte 2', 'Corte muito bom', 2);
+insert into Servico values (null, null, 25, 'Corte 3', 'Corte muito bom', 3);
 
 create table Agenda(
 id_age int primary key auto_increment,
