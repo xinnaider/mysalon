@@ -80,7 +80,7 @@
             </StackPanel>
             <StackPanel Margin="0 490 0 0">
                 <StackPanel Margin="5, 1, 5, 15" Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Button x:Name="botaovoltar" Click="OnClick1" Background="{x:Null}" FontFamily="Spartan" BorderBrush="{x:Null}" Foreground="Gray" Cursor="Hand" Content="Login"/>
+                    <Button  x:Name="botaovoltar" Click="OnClick1" Background="{x:Null}" FontFamily="Spartan" BorderBrush="{x:Null}" Foreground="Gray" Cursor="Hand" Content="Login"/>
                 </StackPanel>
                 <StackPanel Margin="0, -13, 0, 0">
                     <Button Width="120" Height="45" FontSize="18" FontFamily="Spartan" BorderThickness="20" Cursor="Hand" Background="#FF2F3559" BorderBrush="#FF2F3559" x:Name="btnRegistrar" Click="btnRegistrar_Click">Registrar</Button>
@@ -91,6 +91,15 @@
             <TextBlock FontSize="18" Margin="0,0,0,10" FontFamily="Spartan" Foreground="#E6E1E1">Copyright (c) 2022 MySalon All Rights Reserved</TextBlock>
         </Grid>
 
+        <Grid>
+            <DataGrid Visibility="Hidden" x:Name="dataGridCliente" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False"
+                      IsReadOnly="True" AlternatingRowBackground="AliceBlue" AlternationCount="2" >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
+                </DataGrid.Columns>
+                
+            </DataGrid>
+        </Grid>
 
     </Grid>
 </Window>
