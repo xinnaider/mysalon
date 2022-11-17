@@ -30,24 +30,25 @@ namespace wpf_sallonnovo.Views.Pages
 
         private void AgendamentoUsuario_Loaded(object sender, RoutedEventArgs e)
         {
+           
             try
             {
-               
-                
                 var dao = new AgendaDAO();
                 var listaAgenda = dao.ListResolvido();
-                
+
+
                 foreach (var agenda in listaAgenda)
                 {
                     var a = new UserAgendamento()
                     {
                         NomeSalao = $"{agenda.Salao}",
                         NomeServico = $"{agenda.Servico}",
-                        aaaaaa = $"{agenda.dataHorario}"
+                        DataHorario = agenda.dataHorario
                     };
 
                     listAgenda.Children.Add(a);
                 }
+
             }
             catch (Exception ex)
             {

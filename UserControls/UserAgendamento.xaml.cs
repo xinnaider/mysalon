@@ -25,8 +25,9 @@ namespace wpf_sallonnovo.UserControls
         public string NomeServico { get; set; }
         public DateTime? DataHorario { get; set; }
 
+        public string Teste { get; set; }
+
         private Agenda _agenda = new Agenda();
-        internal string aaaaaa;
 
         public UserAgendamento()
         {
@@ -41,9 +42,5 @@ namespace wpf_sallonnovo.UserControls
            _agenda.Servico = NomeServico;
            _agenda.dataHorario = DataHorario;
         }
-
-
-
-
     }
 }
