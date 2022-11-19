@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using wpf_sallonnovo.Models;
 
 namespace wpf_sallonnovo.UserControls
 {
@@ -21,11 +22,20 @@ namespace wpf_sallonnovo.UserControls
     public partial class UserServico : UserControl
     {
         public string Nome {get; set;}
-        public string Preco { get; set;}
+        public float Preco { get; set;}
+
+        public Servico _servico = new Servico();
         public UserServico()
         {
             InitializeComponent();
             this.DataContext = this;
+            Loaded += UserServico_Loaded;
+        }
+
+        private void UserServico_Loaded(object sender, RoutedEventArgs e)
+        {
+            _servico.Name = Nome;
+            _servico.Valor = Preco;
         }
     }
 }

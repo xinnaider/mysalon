@@ -22,8 +22,8 @@
                     </Border.Background>
                 </Border>
                 <StackPanel VerticalAlignment="Center" Margin="0 0 0 50">
-                    <Label FontSize="30" FontFamily="Bahnschrift SemiBold">STUDIO JÉSSICA HELENA</Label>
-                    <Label FontSize="18" FontFamily="Bahnschrift Light Condensed">R. Rio Amazonas, 151 - Jardim dos Migrantes, Ji-Paraná - RO, 76900-730</Label>
+                    <Label FontSize="30" FontFamily="Bahnschrift SemiBold" Content="{Binding}"></Label>
+                    <Label FontSize="18" FontFamily="Bahnschrift Light Condensed" Content="{Binding}"></Label>
                     <StackPanel Orientation="Horizontal">
                         <Image Height="20" Width="20" Source="/Views/Pages/estrela.png"/>
                         <Image Height="20" Width="20" Source="/Views/Pages/estrela.png"/>
@@ -38,48 +38,9 @@
             </StackPanel>
         </Grid>
         <Grid Grid.Row="1">
-            <StackPanel Orientation="Vertical" Margin="0 20" HorizontalAlignment="Center">
-
-                <Border BorderThickness="3" CornerRadius="20" Background="#F1F1F1" Margin="0 5">
-                    <StackPanel Orientation="Horizontal" Height="120" Width="700" VerticalAlignment="Center">
-                        <Ellipse Margin="70 0" Width="105" Height="105">
-                            <Ellipse.Fill>
-                                <ImageBrush ImageSource="/Imagens/aluno.PNG" />
-                            </Ellipse.Fill>
-                        </Ellipse>
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <Label FontFamily="Bahnschrift" Margin="20 0" FontSize="20">CORTE NEYMARZINHO</Label>
-                            <Label FontFamily="Bahnschrift" Margin="50 0" FontSize="20">R$ 30,00</Label>
-                        </StackPanel>
-                    </StackPanel>
-                </Border>
-                <Border BorderThickness="3" CornerRadius="20" Background="#F1F1F1" Margin="0 5">
-                    <StackPanel Orientation="Horizontal" Height="120" Width="700" VerticalAlignment="Center">
-                        <Ellipse Margin="70 0" Width="105" Height="105">
-                            <Ellipse.Fill>
-                                <ImageBrush ImageSource="/Imagens/aluno.PNG" />
-                            </Ellipse.Fill>
-                        </Ellipse>
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <Label FontFamily="Bahnschrift" Margin="20 0" FontSize="20">CORTE NEYMARZINHO</Label>
-                            <Label FontFamily="Bahnschrift" Margin="50 0" FontSize="20">R$ 30,00</Label>
-                        </StackPanel>
-                    </StackPanel>
-                </Border>
-                <Border BorderThickness="3" CornerRadius="20" Background="#F1F1F1" Margin="0 5">
-                    <StackPanel Orientation="Horizontal" Height="120" Width="700" VerticalAlignment="Center">
-                        <Ellipse Margin="70 0" Width="105" Height="105">
-                            <Ellipse.Fill>
-                                <ImageBrush ImageSource="/Imagens/aluno.PNG" />
-                            </Ellipse.Fill>
-                        </Ellipse>
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <Label FontFamily="Bahnschrift" Margin="20 0" FontSize="20">CORTE NEYMARZINHO</Label>
-                            <Label FontFamily="Bahnschrift" Margin="50 0" FontSize="20">R$ 30,00</Label>
-                        </StackPanel>
-                    </StackPanel>
-                </Border>
-            </StackPanel>
+            <ScrollViewer CanContentScroll="True" Width="960" Height="720" HorizontalAlignment="Left">
+                <StackPanel Margin="20 50 20 50" x:Name="listServicos" HorizontalAlignment="Stretch" />
+            </ScrollViewer>
         </Grid>
     </Grid>
 </Page>

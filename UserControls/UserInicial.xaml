@@ -7,9 +7,9 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="920">
     <Grid Margin="0 20 0 20">
-        <Button x:Name="btnSelectServico" Background="{x:Null}" HorizontalAlignment="Center" Width="880" Height="180" VerticalAlignment="Center" BorderBrush="Red" Click="btnSelectServico_Click" Cursor="Hand">
+        <Button x:Name="btnSelectServico" Background="{x:Null}" HorizontalAlignment="Center" Width="880" Height="180" VerticalAlignment="Center" Click="btnSelectServico_Click" Cursor="Hand">
         <StackPanel Orientation="Horizontal">
-            <Border Height="150" Width="150" BorderThickness="4" BorderBrush="#9A8FC8" CornerRadius="25, 25, 25, 25" Margin="80 0 30 0">
+            <Border Height="150" Width="150" BorderThickness="4" BorderBrush="#9A8FC8" CornerRadius="25, 25, 25, 25" Margin="0 0 30 0">
                 <Border.Background>
                     <ImageBrush Stretch="Fill" ImageSource="/Imagens/aluno.PNG"/>
                 </Border.Background>

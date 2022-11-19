@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using wpf_sallonnovo.Models;
+using wpf_sallonnovo.Views.Pages;
 
 namespace wpf_sallonnovo.UserControls
 {
@@ -37,13 +38,16 @@ namespace wpf_sallonnovo.UserControls
 
         private Salao _salao = new Salao();
 
-        public UserInicial()
+        public UserInicial(Frame frame)
         {
             InitializeComponent();
             this.DataContext = this;
             Loaded += UserInicial_Loaded;
-            
+            _frame = frame;
+
         }
+
+        private Frame _frame;
 
         private void UserInicial_Loaded(object sender, RoutedEventArgs e)
         {
@@ -61,10 +65,9 @@ namespace wpf_sallonnovo.UserControls
             MessageBox.Show("ID: " + Convert.ToString(_salao.Id) + "; Nome: " +
                 _salao.Nome + "; Telefone: " + _salao.Telefone + "; Cnpj: " + _salao.CNPJ
                 + "; Razão Social: " + _salao.Razao_Social + "; Email: " + _salao.Email);
-
-
             //Criar tela para poder mandar os dados do salão 
-            
+            _frame.Content = new Subinicio();
+
         }
     }
 }

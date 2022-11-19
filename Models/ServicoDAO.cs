@@ -62,7 +62,6 @@ namespace wpf_sallonnovo.Models
                     servico.Valor = reader.GetFloat("valor_ser");
                     servico.Name = DAOHelper.GetString(reader, "nome_ser");
                     servico.Tipo = DAOHelper.GetString(reader, "tipo_ser");
-                    servico.Descricao = reader.GetString("descricao_ser");
                   //  servico.Salao = reader.GetInt32("id_sal_fk");
 
 
