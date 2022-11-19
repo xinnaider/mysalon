@@ -109,5 +109,37 @@ namespace wpf_sallonnovo.Models
                 throw ex;
             }
         }
+        public Cliente GetByUsuario(string usuarioNome, string senha)
+        {
+            try
+            {
+                var query = _conn.Query();
+                query.CommandText = "SELECT * FROM login LEFT JOIN Cliente ON id_cli = id_cli_fk " +
+                    "WHERE user_log = @usuario AND senha_log = @senha";
+
+                query.Parameters.AddWithValue("@usuario", usuarioNome);
+                query.Parameters.AddWithValue("@senha", senha);
+
+                MySqlDataReader reader = query.ExecuteReader();
+
+                Cliente cli = null;
+
+                while (reader.Read())
+                {
+                    cli = new Cliente() { Id = reader.GetInt32("id_cli"), Nome = reader.GetString("nome_cli"), CPF = reader.GetString("cpf_cli"),
+                    RG = reader.GetString("rg_cli"), Telefone = reader.GetString("telefone_cli"), Email = reader.GetString("email_cli"), Sexo = reader.GetString("sexo_cli")};
+                }
+
+                return cli;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                _conn.Close();
+            }
+        }
     }
 }
