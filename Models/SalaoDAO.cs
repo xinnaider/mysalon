@@ -20,17 +20,16 @@ namespace wpf_sallonnovo.Models
             {
                 var comando = _conn.Query();
 
-                comando.CommandText = "insert into endereco values (null, null, @nome, @telefone, @proprietario, @razaoSocial, @cnpj, @cep);";
+                comando.CommandText = "insert into Salao values (null, null, @nome, @telefone, @razaoSocial, @cnpj, @email, @fkEnd);";
 
                 //comando.Parameters.AddWithValue("@null", salao.Foto);//
 
                 comando.Parameters.AddWithValue("@nome", salao.Nome);
                 comando.Parameters.AddWithValue("@telefone", salao.Telefone);
-                comando.Parameters.AddWithValue("@proprietario", salao.Proprietario);
                 comando.Parameters.AddWithValue("@razaoSocial", salao.Razao_Social);
                 comando.Parameters.AddWithValue("@cnpj", salao.CNPJ);
                 comando.Parameters.AddWithValue("@email", salao.Email);
-
+                comando.Parameters.AddWithValue("@fkEnd", salao.IdEnd);
 
                 var resultado = comando.ExecuteNonQuery();
 
@@ -92,7 +91,7 @@ namespace wpf_sallonnovo.Models
             {
                 var comando = _conn.Query();
 
-                comando.CommandText = "DELETE FROM Endereco WHERE (id_sal = @id)";
+                comando.CommandText = "DELETE FROM Salao WHERE (id_sal = @id)";
 
                 comando.Parameters.AddWithValue("@id", salao.Id);
 
