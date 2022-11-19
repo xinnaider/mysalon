@@ -61,9 +61,6 @@ namespace wpf_sallonnovo.UserControls
             MessageBox.Show("ID: " + Convert.ToString(_salao.Id) + "; Nome: " +
                 _salao.Nome + "; Telefone: " + _salao.Telefone + "; Cnpj: " + _salao.CNPJ
                 + "; Razão Social: " + _salao.Razao_Social + "; Email: " + _salao.Email);
-
-
-            //Criar tela para poder mandar os dados do salão 
             
         }
     }

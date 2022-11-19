@@ -83,38 +83,6 @@ namespace wpf_sallonnovo.Models
             }
 
         }
-        public List<Endereco> ListaResolvido()
-        {
-            try
-            {
-                var lista = new List<Endereco>();
-                var comando = _conn.Query();
-
-                comando.CommandText = "select id_end as Id from endereco;";
-
-                MySqlDataReader reader = comando.ExecuteReader();
-
-                while (reader.Read())
-                {
-                    var endereco = new Endereco();
-                    endereco.Id = reader.GetInt32("Id");
-                    //endereco.Rua = DAOHelper.GetString(reader, "rua_end");
-                    //endereco.Bairro = DAOHelper.GetString(reader, "bairro_end");
-                    //endereco.Numero = reader.GetInt32("numero_end");
-                    //endereco.Cidade = DAOHelper.GetString(reader, "cidade_end");
-                    //endereco.Estado = DAOHelper.GetString(reader, "estado_end");
-                    //endereco.Cep = DAOHelper.GetString(reader, "cep_end");
-
-                    lista.Add(endereco);
-                }
-                reader.Close();
-                return lista;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
         public void Delete(Endereco endereco)
         {
             try

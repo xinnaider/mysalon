@@ -91,15 +91,5 @@
             <TextBlock FontSize="18" Margin="0,0,0,10" FontFamily="Spartan" Foreground="#E6E1E1">Copyright (c) 2022 MySalon All Rights Reserved</TextBlock>
         </Grid>
 
-        <Grid>
-            <DataGrid Visibility="Hidden" x:Name="dataGridCliente" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False"
-                      IsReadOnly="True" AlternatingRowBackground="AliceBlue" AlternationCount="2" >
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
-                </DataGrid.Columns>
-                
-            </DataGrid>
-        </Grid>
-
     </Grid>
 </Window>

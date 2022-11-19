@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
+using wpf_sallonnovo.Helpers;
 using wpf_sallonnovo.bancodados;
 
 namespace wpf_sallonnovo.Models
@@ -76,5 +77,6 @@ namespace wpf_sallonnovo.Models
                 throw ex;
             }
         }
+        
     }
 }

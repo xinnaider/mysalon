@@ -84,7 +84,7 @@ namespace wpf_sallonnovo.Models
                 var lista = new List<Cliente>();
                 var comando = _conn.Query();
 
-                comando.CommandText = "select id_cli from cliente;";
+                comando.CommandText = "select * from cliente;";
 
                 MySqlDataReader reader = comando.ExecuteReader();
 
@@ -92,7 +92,13 @@ namespace wpf_sallonnovo.Models
                 {
                     var cliente = new Cliente();
                     cliente.Id = reader.GetInt32("id_cli");
-                    
+                    cliente.Nome = DAOHelper.GetString(reader, "nome_cli");
+                    cliente.CPF = DAOHelper.GetString(reader, "cpf_cli");
+                    cliente.RG = DAOHelper.GetString(reader, "rg_cli");
+                    cliente.Telefone = DAOHelper.GetString(reader, "telefone_cli");
+                    cliente.Email = DAOHelper.GetString(reader, "email_cli");
+                    cliente.Sexo = DAOHelper.GetString(reader, "sexo_cli");
+
                     lista.Add(cliente);
                 }
                 reader.Close();

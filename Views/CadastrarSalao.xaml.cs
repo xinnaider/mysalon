@@ -48,7 +48,7 @@ namespace wpf_sallonnovo.Views
 
                 var li = new EnderecoDAO();
                 li.Insert(_end);
-                var lista = li.ListaResolvido();
+                var lista = li.List();
                 var a = lista.Count();
                 _salao.IdEnd = a;
                 var dao = new SalaoDAO();
