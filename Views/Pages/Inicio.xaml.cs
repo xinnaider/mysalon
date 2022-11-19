@@ -23,7 +23,7 @@ namespace wpf_sallonnovo.Views.Pages
     public partial class Inicio : Page
     {
         private Frame _frame;
-
+        
         public Inicio(Frame frame)
         {
             InitializeComponent();

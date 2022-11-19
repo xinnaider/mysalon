@@ -66,7 +66,7 @@ namespace wpf_sallonnovo.Models
                     endereco.Id = reader.GetInt32("id_end");
                     endereco.Rua = DAOHelper.GetString(reader, "rua_end");
                     endereco.Bairro = DAOHelper.GetString(reader, "bairro_end");
-                    endereco.Numero = reader.GetInt32("numero_end");
+                    endereco.Numero = DAOHelper.GetString(reader,"numero_end");
                     endereco.Cidade = DAOHelper.GetString(reader, "cidade_end");
                     endereco.Estado = DAOHelper.GetString(reader, "estado_end");
                     endereco.Cep = DAOHelper.GetString(reader, "cep_end");
@@ -76,6 +76,36 @@ namespace wpf_sallonnovo.Models
                 }
                 reader.Close();
                 return lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+        public String BuscarEnd(Salao salao)
+        {
+            try
+            {
+                var a = "";
+                var comando = _conn.Query();
+
+                comando.CommandText = "Select rua_end as Rua, numero_end as Numero from Endereco where (id_end = @idfk)";
+                comando.Parameters.AddWithValue("@idfk", salao.Id);
+
+                MySqlDataReader reader = comando.ExecuteReader();
+                while (reader.Read())
+                {
+                    var endereco = new Endereco();
+                    endereco.Rua = DAOHelper.GetString(reader, "Rua");
+                    endereco.Numero = DAOHelper.GetString(reader, "Numero");
+
+                    a = endereco.Rua + " " + endereco.Numero;
+                    
+                }                
+                reader.Close();
+                
+                return a;
             }
             catch (Exception ex)
             {

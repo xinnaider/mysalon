@@ -24,22 +24,28 @@ namespace wpf_sallonnovo.Views.Pages
     public partial class Subinicio : Page
 
     {
-
+        private Salao salao = new Salao();
         public Subinicio()
         {
             InitializeComponent();
             Loaded += Subinicio_Loaded;
         }
+        public Subinicio(Salao _salao)
+        {
+            InitializeComponent();
+            salao = _salao;
+            CarregarListagem();
+            Loaded += Subinicio_Loaded;
+        }
 
         private void Subinicio_Loaded(object sender, RoutedEventArgs e)
-        {  
-
+        {
+            
             try
             {
                 var dao = new ServicoDAO();
                 var listaServicos = dao.List();
-
-
+                
                 foreach (var servicos in listaServicos)
                 {
                     var a = new UserServico()
@@ -56,6 +62,13 @@ namespace wpf_sallonnovo.Views.Pages
             {
                 MessageBox.Show(ex.Message);
             }
+            
+        }
+        public void CarregarListagem()
+        {
+            lblNome.Content = Convert.ToString(salao.Nome);
+            var end = new EnderecoDAO();
+            lblRua.Content = end.BuscarEnd(salao);
         }
     }
 }

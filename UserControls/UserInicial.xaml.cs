@@ -62,12 +62,7 @@ namespace wpf_sallonnovo.UserControls
 
         private void btnSelectServico_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("ID: " + Convert.ToString(_salao.Id) + "; Nome: " +
-                _salao.Nome + "; Telefone: " + _salao.Telefone + "; Cnpj: " + _salao.CNPJ
-                + "; Razão Social: " + _salao.Razao_Social + "; Email: " + _salao.Email);
-            //Criar tela para poder mandar os dados do salão 
-            _frame.Content = new Subinicio();
-
+            _frame.Content = new Subinicio(_salao);
         }
     }
 }

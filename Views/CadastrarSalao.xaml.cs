@@ -40,7 +40,7 @@ namespace wpf_sallonnovo.Views
             _end.Cidade = txtCidade.Text;
             _end.Bairro = txtBairro.Text;
             _end.Rua = txtRua.Text;
-            _end.Numero = Convert.ToInt32(txtNum.Text);
+            _end.Numero =txtNum.Text;
             _end.Cep = txtCEP.Text;
 
             try

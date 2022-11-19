@@ -22,8 +22,8 @@
                     </Border.Background>
                 </Border>
                 <StackPanel VerticalAlignment="Center" Margin="0 0 0 50">
-                    <Label FontSize="30" FontFamily="Bahnschrift SemiBold" Content="{Binding}"></Label>
-                    <Label FontSize="18" FontFamily="Bahnschrift Light Condensed" Content="{Binding}"></Label>
+                    <Label FontSize="30" FontFamily="Bahnschrift SemiBold" Content="{Binding}" x:Name="lblNome"></Label>
+                    <Label FontSize="18" FontFamily="Bahnschrift Light Condensed" Content="{Binding}" x:Name="lblRua"></Label>
                     <StackPanel Orientation="Horizontal">
                         <Image Height="20" Width="20" Source="/Views/Pages/estrela.png"/>
                         <Image Height="20" Width="20" Source="/Views/Pages/estrela.png"/>
