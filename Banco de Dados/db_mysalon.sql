@@ -6,7 +6,7 @@ create table Endereco(
 id_end int primary key auto_increment,
 rua_end varchar (500),
 bairro_end varchar (500),
-numero_end varchar (50),
+numero_end varchar (20),
 cidade_end varchar (50),
 estado_end varchar (50),
 cep_end varchar (50)
@@ -51,8 +51,8 @@ insert into salao values (null, null, 'salao para feios', '9999', 'spf', '123123
 insert into salao values (null, null, 'salao para lindo', '9999', 'spf', '123123', '2@hotmali.com', 2);
 insert into salao values (null, null, 'salao para cabelos', '9999', 'spf', '123123', '2@hotmali.com', 3);
 insert into salao values (null, null, 'salao para carecas', '9999', 'spf', '123123', '2@hotmali.com', 4);
-
-
+	 
+     
 create table Funcionario(
 id_func int primary key auto_increment,
 foto_cli blob,
@@ -79,8 +79,8 @@ foreign key (id_sal_fk) references Salao (id_sal)
 );
 
 insert into Servico values (null, null, 10, 'Corte 1', 'Corte muito bom', 1);
-insert into Servico values (null, null, 15, 'Corte 2', 'Corte muito bom', 2);
-insert into Servico values (null, null, 25, 'Corte 3', 'Corte muito bom', 3);
+insert into Servico values (null, null, 15, 'Corte 2', 'Corte muito bom', 1);
+insert into Servico values (null, null, 25, 'Corte 3', 'Corte muito bom', 1);
 
 create table Agenda(
 id_age int primary key auto_increment,
@@ -116,3 +116,9 @@ foreign key (id_cli_fk) references Cliente (id_cli)
 
 insert into login values (null, 'user', 'senha', 1);
 
+delimiter $$
+create procedure InserirAgenda(datahora varchar(100),fkser int, fkcli int , fksal int)
+begin
+insert into Agenda values (null, str_to_date(datahora, "%d/%m/%Y %H:%i:%s"), "Indisponível", fkser, fkcli, fksal);
+end;
+$$ delimiter ;
