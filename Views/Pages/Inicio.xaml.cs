@@ -23,11 +23,12 @@ namespace wpf_sallonnovo.Views.Pages
     public partial class Inicio : Page
     {
         private Frame _frame;
-        
-        public Inicio(Frame frame)
+        private Cliente _cli = new Cliente();
+        public Inicio(Frame frame, Cliente cliente)
         {
             InitializeComponent();
             _frame = frame;
+            _cli = cliente;
             Loaded += Inicio_Loaded;
         }
 
@@ -39,7 +40,7 @@ namespace wpf_sallonnovo.Views.Pages
                 var listaSalao = dao.List();
                 foreach (var salao in listaSalao)
                 {
-                    var a = new UserInicial(_frame) { Title = $"{salao.Nome}",  Preco = $"PRECO adicionar", 
+                    var a = new UserInicial(_frame, _cli) { Title = $"{salao.Nome}",  Preco = $"PRECO adicionar", 
                         Cod = $"{salao.Id}", Tel = $"{salao.Telefone}", RSocial = $"{salao.Razao_Social}",
                         Email = $"{salao.Email}", Cnpj = $"{salao.Email}"};
 
@@ -55,7 +56,7 @@ namespace wpf_sallonnovo.Views.Pages
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            _frame.Content = new Subinicio();
+            _frame.Content = new Subinicio(_cli);
         }
 
     }

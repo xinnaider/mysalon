@@ -37,14 +37,15 @@ namespace wpf_sallonnovo.UserControls
         public string Cnpj { get; set; }
 
         private Salao _salao = new Salao();
+        private Cliente _cli = new Cliente();
 
-        public UserInicial(Frame frame)
+        public UserInicial(Frame frame, Cliente cliente)
         {
             InitializeComponent();
             this.DataContext = this;
             Loaded += UserInicial_Loaded;
             _frame = frame;
-
+            _cli = cliente;
         }
 
         private Frame _frame;
@@ -62,7 +63,7 @@ namespace wpf_sallonnovo.UserControls
 
         private void btnSelectServico_Click(object sender, RoutedEventArgs e)
         {
-            _frame.Content = new Subinicio(_salao);
+            _frame.Content = new Subinicio(_frame,_salao, _cli);
         }
     }
 }

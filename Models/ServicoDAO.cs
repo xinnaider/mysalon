@@ -91,10 +91,11 @@ namespace wpf_sallonnovo.Models
                 while (reader.Read())
                 {
                     var servico = new Servico();
+                    servico.Id = reader.GetInt32("id_ser");
                     servico.Valor = reader.GetFloat("valor_ser");
                     servico.Name = DAOHelper.GetString(reader, "nome_ser");
                     servico.Tipo = DAOHelper.GetString(reader, "tipo_ser");
-                    //  servico.Salao = reader.GetInt32("id_sal_fk");
+                    //servico.Salao = reader.GetInt32("id_sal_fk");
 
 
                     lista.Add(servico);

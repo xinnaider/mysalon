@@ -19,14 +19,12 @@ namespace wpf_sallonnovo.Models
             {
                 var comando = _conn.Query();
 
-                comando.CommandText = "insert into agenda values (null, @data, @status, @servico, " +
-                    "@cliente, @salao);";
+                comando.CommandText = "call InserirAgenda(@data, @servico, @cliente, @salao);";
 
-                comando.Parameters.AddWithValue("@data", agenda.dataHorario);
-                comando.Parameters.AddWithValue("@status", agenda.status);
-                comando.Parameters.AddWithValue("@servico", agenda.Servico);
-                comando.Parameters.AddWithValue("@cliente", agenda.Cliente);
-                comando.Parameters.AddWithValue("@salao", agenda.Salao);
+                comando.Parameters.AddWithValue("@data", agenda.DataHora);
+                comando.Parameters.AddWithValue("@servico", agenda.FkSer);
+                comando.Parameters.AddWithValue("@cliente", agenda.FkCli);
+                comando.Parameters.AddWithValue("@salao", agenda.FkSal);
 
                 var resultado = comando.ExecuteNonQuery();
 

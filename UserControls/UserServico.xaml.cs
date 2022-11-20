@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using wpf_sallonnovo.Models;
+using wpf_sallonnovo.Views;
 
 namespace wpf_sallonnovo.UserControls
 {
@@ -23,19 +24,36 @@ namespace wpf_sallonnovo.UserControls
     {
         public string Nome {get; set;}
         public float Preco { get; set;}
+        public int Cod { get; set; }
 
-        public Servico _servico = new Servico();
-        public UserServico()
+        private Servico _servico = new Servico();
+        private Frame _frame;
+        private Salao _salao = new Salao();
+        private Cliente _cli = new Cliente();
+
+        public UserServico(Frame frame ,Salao sal, Cliente cliente)
         {
             InitializeComponent();
             this.DataContext = this;
             Loaded += UserServico_Loaded;
+            _salao = sal;
+            _cli = cliente;
+            _frame = frame;
+            
         }
 
         private void UserServico_Loaded(object sender, RoutedEventArgs e)
         {
             _servico.Name = Nome;
             _servico.Valor = Preco;
+            _servico.Id = Cod;
+        }
+
+        private void btnSelectServico_Click(object sender, RoutedEventArgs e)
+        {
+            var tela = new ConfirmacaoAgendamento(_salao, _servico, _cli);
+            tela.ShowDialog();
+
         }
     }
 }

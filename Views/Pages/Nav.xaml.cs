@@ -50,7 +50,7 @@ namespace wpf_sallonnovo.Views.Pages
             btPerfil.Background = new SolidColorBrush(Color.FromRgb(154, 143, 200));
             btAgenda.Background = new SolidColorBrush(Color.FromRgb(154, 143, 200));
             btServico.Background = new SolidColorBrush(Color.FromRgb(154, 143, 200));
-            _frame.Content = new Inicio(_frame);
+            _frame.Content = new Inicio(_frame, _cli);
             btInicio.Background = new SolidColorBrush(Color.FromRgb(47, 53, 89));
         }
 

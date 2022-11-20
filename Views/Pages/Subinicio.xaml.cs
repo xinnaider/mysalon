@@ -25,17 +25,24 @@ namespace wpf_sallonnovo.Views.Pages
 
     {
         private Salao salao = new Salao();
-        public Subinicio()
+        private Frame _frame;
+        private Cliente _cli = new Cliente();
+        public Subinicio(Cliente cliente)
         {
             InitializeComponent();
+            _cli = cliente;
             Loaded += Subinicio_Loaded;
         }
-        public Subinicio(Salao _salao)
+        public Subinicio(Frame frame ,Salao _salao, Cliente cliente)
         {
             InitializeComponent();
+            this.DataContext = this;
             salao = _salao;
+            _cli = cliente;
             CarregarListagem();
+            
             Loaded += Subinicio_Loaded;
+            _frame = frame;
         }
 
         private void Subinicio_Loaded(object sender, RoutedEventArgs e)
@@ -48,10 +55,12 @@ namespace wpf_sallonnovo.Views.Pages
                 
                 foreach (var servicos in listaServicos)
                 {
-                    var a = new UserServico()
+                    var a = new UserServico(_frame, salao, _cli)
                     {
                         Nome = $"{servicos.Name}",
-                        Preco = servicos.Valor
+                        Cod = servicos.Id,
+                        Preco = servicos.Valor,
+                        
                     };
 
                     listServicos.Children.Add(a);
