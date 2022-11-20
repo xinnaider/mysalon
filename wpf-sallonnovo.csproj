@@ -144,6 +144,9 @@
     <Compile Include="Views\CadastroServico.xaml.cs">
       <DependentUpon>CadastroServico.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\ConfirmacaoAgendamento.xaml.cs">
+      <DependentUpon>ConfirmacaoAgendamento.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Pages\AgendamentoUsuario.xaml.cs">
       <DependentUpon>AgendamentoUsuario.xaml</DependentUpon>
     </Compile>
@@ -201,6 +204,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\CadastroServico.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ConfirmacaoAgendamento.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

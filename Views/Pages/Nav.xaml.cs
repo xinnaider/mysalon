@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using wpf_sallonnovo.Models;
 using wpf_sallonnovo.Views;
 
 namespace wpf_sallonnovo.Views.Pages
@@ -25,10 +26,13 @@ namespace wpf_sallonnovo.Views.Pages
 
         private Frame _frame;
 
-        public Nav(Frame frame, Window window)
+        private Cliente _cli = new Cliente();
+
+        public Nav(Frame frame, Window window, Cliente cliente)
         {
             InitializeComponent();
             _frame = frame;
+            _cli = cliente;
             _window = window;
         }
 
@@ -88,7 +92,7 @@ namespace wpf_sallonnovo.Views.Pages
             btPerfil.Background = new SolidColorBrush(Color.FromRgb(154, 143, 200));
             btServico.Background = new SolidColorBrush(Color.FromRgb(154, 143, 200));
             btAgenda.Background = new SolidColorBrush(Color.FromRgb(47, 53, 89));
-            _frame.Content = new AgendamentoUsuario();
+            _frame.Content = new AgendamentoUsuario(_cli);
         }
     }
 }

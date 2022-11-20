@@ -22,10 +22,17 @@ namespace wpf_sallonnovo.Views.Pages
     /// </summary>
     public partial class AgendamentoUsuario : Page
     {
+        private Cliente _cli = new Cliente();
         public AgendamentoUsuario()
         {
             InitializeComponent();
             Loaded += AgendamentoUsuario_Loaded;
+        }
+        public AgendamentoUsuario(Cliente cliente)
+        {
+            InitializeComponent();
+            Loaded += AgendamentoUsuario_Loaded;
+            _cli = cliente;
         }
 
         private void AgendamentoUsuario_Loaded(object sender, RoutedEventArgs e)
@@ -34,7 +41,7 @@ namespace wpf_sallonnovo.Views.Pages
             try
             {
                 var dao = new AgendaDAO();
-                var listaAgenda = dao.ListResolvido();
+                var listaAgenda = dao.ListResolvido(_cli.Id);
 
 
                 foreach (var agenda in listaAgenda)

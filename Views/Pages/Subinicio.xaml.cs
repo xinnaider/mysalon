@@ -44,7 +44,7 @@ namespace wpf_sallonnovo.Views.Pages
             try
             {
                 var dao = new ServicoDAO();
-                var listaServicos = dao.List();
+                var listaServicos = dao.ListEspecifico(salao.Id);
                 
                 foreach (var servicos in listaServicos)
                 {

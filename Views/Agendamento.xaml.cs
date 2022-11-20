@@ -39,7 +39,7 @@ namespace wpf_sallonnovo.Views
 
         private void Agendamento_Loaded(object sender, RoutedEventArgs e)
         {
-            var menu = new Nav(fraPaginas, this);
+            var menu = new Nav(fraPaginas, this, _cli);
             frmNav.Content = menu;
         }
         private void CarregarListagem()

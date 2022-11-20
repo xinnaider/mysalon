@@ -6,22 +6,24 @@
              xmlns:local="clr-namespace:wpf_sallonnovo.UserControls"
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
              mc:Ignorable="d" 
-             d:DesignHeight="100" d:DesignWidth="920">
-    <Grid Background="#FF9A8FC8" Width="880" Height="50">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
+             d:DesignHeight="150" d:DesignWidth="920">
+    <Border BorderThickness="0" CornerRadius="20" Background="#FF9A8FC8" Width="880" Height="100">
+        <Grid Background="#FF9A8FC8" Width="880" Height="50">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
 
-        <Grid Grid.Column="0">
-            <Label Margin="20 0 0 0" VerticalAlignment="Center" FontSize="24" FontFamily="Bahnschrift SemiBold" Content="{Binding NomeSalao}" HorizontalAlignment="Left"/>
+            <Grid Grid.Column="0">
+                <Label Margin="20 0 0 0" VerticalAlignment="Center" FontSize="24" FontFamily="Bahnschrift SemiBold" Content="{Binding NomeSalao}" HorizontalAlignment="Left"/>
+            </Grid>
+            <Grid Grid.Column="1">
+                <Label VerticalAlignment="Center" FontSize="24" FontFamily="Bahnschrift SemiBold" Content="{Binding NomeServico}" HorizontalAlignment="Center"/>
+            </Grid>
+            <Grid Grid.Column="2">
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding DataHorario}" FontSize="24" IsEnabled="False"/>
+            </Grid>
         </Grid>
-        <Grid Grid.Column="1">
-            <Label VerticalAlignment="Center" FontSize="24" FontFamily="Bahnschrift SemiBold" Content="{Binding NomeServico}" HorizontalAlignment="Center"/>
-        </Grid>
-        <Grid Grid.Column="2">
-            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding DataHorario}" FontSize="24" IsEnabled="False"/>
-        </Grid>
-    </Grid>
+    </Border>
 </UserControl>

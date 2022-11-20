@@ -75,6 +75,39 @@ namespace wpf_sallonnovo.Models
                 throw ex;
             }
         }
+
+        public List<Servico> ListEspecifico(int id)
+        {
+            try
+            {
+                var lista = new List<Servico>();
+                var comando = _conn.Query();
+
+                comando.CommandText = "Select * from Servico where id_sal_fk = " + id + ";";
+
+
+                MySqlDataReader reader = comando.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    var servico = new Servico();
+                    servico.Valor = reader.GetFloat("valor_ser");
+                    servico.Name = DAOHelper.GetString(reader, "nome_ser");
+                    servico.Tipo = DAOHelper.GetString(reader, "tipo_ser");
+                    //  servico.Salao = reader.GetInt32("id_sal_fk");
+
+
+                    lista.Add(servico);
+                }
+                reader.Close();
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public void Delete(Servico servico)
         {
             try
