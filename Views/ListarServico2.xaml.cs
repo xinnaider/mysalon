@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using wpf_sallonnovo.Models;
+using wpf_sallonnovo.Views.Pages;
 
 namespace wpf_sallonnovo.Views
 {
@@ -20,18 +21,21 @@ namespace wpf_sallonnovo.Views
     /// </summary>
     public partial class ListarServico2 : Window
     {
-        public ListarServico2()
+        private Cliente _cli = new Cliente();
+        public ListarServico2(Cliente cliente)
         {
             InitializeComponent();
             Loaded += ListarServico2_Loaded;
+            _cli = cliente;
         }
 
         private void ListarServico2_Loaded(object sender, RoutedEventArgs e)
         {
             try
             {
+                var daoSalao = new SalaoDAO();
                 var dao = new ServicoDAO();
-                List<Servico> servicos = dao.List();
+                List<Servico> servicos = dao.ListEspecifico(daoSalao.RetornarIdSalao(_cli.Id));
 
                 dataGridServico.ItemsSource = servicos;
 

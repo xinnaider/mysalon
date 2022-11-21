@@ -76,7 +76,7 @@ namespace wpf_sallonnovo.Views.Pages
 
         private void btBotaoSalao2_Click(object sender, RoutedEventArgs e)
         {
-            var tela = new ListarServico2();
+            var tela = new ListarServico2(_cli);
             tela.ShowDialog();
         }
     }
