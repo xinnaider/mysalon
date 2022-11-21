@@ -49,7 +49,7 @@ namespace wpf_sallonnovo.Models
                 var lista = new List<Agenda>();
                 var comando = _conn.Query();
 
-                comando.CommandText = "Select Agenda.id_age as Id, Agenda.dataHorario_age as DataHorario, Agenda.status_age as Status, Servico.nome_ser as Servico, Cliente.nome_cli as Cliente, Salao.nome_sal as Salao from Agenda, Servico, Cliente, Salao where (Agenda.id_ser_fk = Servico.id_ser) and (Agenda.id_cli_fk = Cliente.id_cli) and (Agenda.id_sal_fk = Salao.id_sal) and (id_cli_fk = " + id + ");";
+                comando.CommandText = "Select Agenda.id_age as Id, Agenda.dataHorario_age as DataHorario, Agenda.status_age as Status, Servico.nome_ser as Servico, Cliente.nome_cli as Cliente, Salao.nome_sal as Salao from Agenda, Servico, Cliente, Salao where (Agenda.id_ser_fk = Servico.id_ser) and (Agenda.id_cli_fk = Cliente.id_cli) and (Agenda.id_sal_fk = Salao.id_sal) and (Agenda.id_cli_fk = " + id + ");";
 
                 MySqlDataReader reader = comando.ExecuteReader();
 

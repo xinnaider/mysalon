@@ -23,13 +23,12 @@
                         <ImageBrush ImageSource="/Imagens/aluno.PNG" />
                     </Ellipse.Fill>
                 </Ellipse>
-                <TextBox x:Name="tbNome" FontSize="25" Margin="0 15" IsReadOnly="True" TextAlignment="Center" CaretBrush="{x:Null}" SelectionBrush="{x:Null}" Foreground="Black" Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Arrow" >Lukas da Silva</TextBox>
+                <TextBox x:Name="tbNome" FontSize="25" Margin="0 15" IsReadOnly="True" TextAlignment="Center" CaretBrush="{x:Null}" SelectionBrush="{x:Null}" Foreground="Black" Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Arrow" >Preciso mexer aqui</TextBox>
             </StackPanel>
         </Grid>
         <Grid Grid.Row="1" Cursor="Hand">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"></ColumnDefinition>
-                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0">
                 <StackPanel Margin="20">
@@ -37,11 +36,11 @@
                     <Label FontSize="20">Nome</Label>
                     <TextBox IsReadOnly="True" FontSize="16" x:Name="txtNome" Cursor="Arrow">Lukas da Silva Barbosa Neto Ferreira Junior</TextBox>
                     <Label FontSize="20">CPF</Label>
-                    <TextBox IsReadOnly="True" FontSize="16" x:Name="txtCPF">029.457.543-75</TextBox>
+                    <TextBox IsReadOnly="True" FontSize="16" x:Name="txtCPF" Cursor="Arrow">029.457.543-75</TextBox>
                     <Label FontSize="20">RG</Label>
                     <TextBox IsReadOnly="True" FontSize="16" x:Name="txtRG">47.442.721-3</TextBox>
                     <Label FontSize="20">Telefone</Label>
-                    <TextBox IsReadOnly="True" FontSize="16" x:Name="txtTelefone">(69) 992025607</TextBox>
+                    <TextBox IsReadOnly="True" FontSize="16" x:Name="txtTelefone" Cursor="Arrow">(69) 992025607</TextBox>
                     <Label FontSize="20">Sexo</Label>
                     <StackPanel Orientation="Horizontal">
                         <RadioButton IsEnabled="False" Margin="0 0 40 0" x:Name="rbMasculino">Masculino</RadioButton>
@@ -49,16 +48,6 @@
                         <RadioButton IsEnabled="False" x:Name="rbNDizer">Prefiro não dizer</RadioButton>
                     </StackPanel>
                 </StackPanel>
-            </Grid>
-            <Grid Grid.Column="1">
-                <StackPanel Margin="20">
-                    <Label HorizontalAlignment="Center" FontSize="20">Dados de Login</Label>
-                    <Label FontSize="20">Email</Label>
-                    <TextBox IsReadOnly="True" FontSize="16" x:Name="txtEmail">lukasbonitao@gmail.com</TextBox>
-                    <Label FontSize="20">Senha</Label>
-                    <TextBox IsReadOnly="True" FontSize="16" x:Name="pbSenha">Lembrar de trocar para passwordbox</TextBox>
-                </StackPanel>
-               
             </Grid>
         </Grid>
         <Grid Grid.Row="3">

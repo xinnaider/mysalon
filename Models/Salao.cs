@@ -17,5 +17,7 @@ namespace wpf_sallonnovo.Models
 
         public int IdEnd { get; set; }
 
+        public int idUsuario { get; set; }
+
     }
 }

@@ -13,26 +13,26 @@
         <StackPanel Margin="10,0,10,0" Orientation="Vertical" VerticalAlignment="Center" Height="536">
             <Button x:Name="btInicio" Height="60" Margin="0 15 0 0" Background="#FF9A8FC8" Click="Button_Click_1" Cursor="Hand">
                 <StackPanel Width="260" Orientation="Horizontal">
-                    <Image Source="/imagens/silhueta-negra-de-casa-sem-porta.png"/>
-                    <TextBlock Margin="5 5" VerticalAlignment="Center" FontSize="22"> INÍCIO</TextBlock>
+                    <Image Source="/imagens/silhueta-negra-de-casa-sem-porta.png" Width="30"/>
+                    <TextBlock Margin="20 5" VerticalAlignment="Center" FontSize="22"> INÍCIO</TextBlock>
                 </StackPanel>
             </Button>
             <Button x:Name="btAgenda" Height="60" Margin="0 15 0 0" Background="#FF9A8FC8" Click="btAgenda_Click" Cursor="Hand">
                 <StackPanel Width="260" Orientation="Horizontal">
-                    <Image Source="/imagens/agenda.png"/>
-                    <TextBlock Margin="5 5" VerticalAlignment="Center" FontSize="22">AGENDA</TextBlock>
+                    <Image Source="/imagens/agenda.png" Width="30"/>
+                    <TextBlock Margin="20 5" VerticalAlignment="Center" FontSize="22">AGENDA</TextBlock>
                 </StackPanel>
             </Button>
             <Button x:Name="btPerfil" Height="60" Margin="0 15 0 15" Cursor="Hand" Background="#FF9A8FC8" FontFamily="Spartan" Click="Button_Click">
                 <StackPanel Width="260" Orientation="Horizontal">
-                    <Image Source="/Imagens/perfil-de-usuario.png"/>
-                    <TextBlock Margin="5 5" VerticalAlignment="Center" FontSize="22"> PERFIL</TextBlock>
+                    <Image Source="/Imagens/perfil-de-usuario.png" Width="30"/>
+                    <TextBlock Margin="20 5" VerticalAlignment="Center" FontSize="22"> PERFIL</TextBlock>
                 </StackPanel>
             </Button>
-            <Button x:Name="btServico" Height="60" Margin="0" Background="#FF9A8FC8" Click="BtnServico_Click" Cursor="Hand">
+            <Button x:Name="btSalao" Height="60" Margin="0" Background="#FF9A8FC8" Click="BtnSalao_Click" Cursor="Hand">
                 <StackPanel Width="260" Orientation="Horizontal">
-                    <Image Source="/imagens/ServIcon.png"/>
-                    <TextBlock Margin="5 5" VerticalAlignment="Center" FontSize="22">SERVIÇOS</TextBlock>
+                    <Image Source="/imagens/ServIcon.png" Width="30"/>
+                    <TextBlock Margin="20 5" VerticalAlignment="Center" FontSize="22">SALÃO</TextBlock>
                 </StackPanel>
             </Button>
             <Button Margin="0 275 0 10" Foreground="White" FontFamily="Spartan" FontSize="22" Background="#FF9A8FC8" BorderBrush="#FF9A8FC8" x:Name="btSair" Cursor="Hand" Click="btSair_Click_1">SAIR</Button>

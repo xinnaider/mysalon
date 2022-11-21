@@ -38,10 +38,10 @@ namespace wpf_sallonnovo.Views.Pages
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            _frame.Content = new Perfil();
+            _frame.Content = new Perfil(_cli);
             btInicio.Background = new SolidColorBrush(Color.FromRgb(154, 143, 200));
             btAgenda.Background = new SolidColorBrush(Color.FromRgb(154, 143, 200));
-            btServico.Background = new SolidColorBrush(Color.FromRgb(154, 143, 200));
+            btSalao.Background = new SolidColorBrush(Color.FromRgb(154, 143, 200));
             btPerfil.Background = new SolidColorBrush(Color.FromRgb(47, 53, 89));
         }
 
@@ -49,21 +49,10 @@ namespace wpf_sallonnovo.Views.Pages
         {
             btPerfil.Background = new SolidColorBrush(Color.FromRgb(154, 143, 200));
             btAgenda.Background = new SolidColorBrush(Color.FromRgb(154, 143, 200));
-            btServico.Background = new SolidColorBrush(Color.FromRgb(154, 143, 200));
+            btSalao.Background = new SolidColorBrush(Color.FromRgb(154, 143, 200));
             _frame.Content = new Inicio(_frame, _cli);
             btInicio.Background = new SolidColorBrush(Color.FromRgb(47, 53, 89));
         }
-
-        /*private void Bt_Sair_Click(object sender, RoutedEventArgs e)
-        {
-            _window.Close();
-            /* 
-             Agendamento Agenda = new Agendamento();
-             Agenda.Close();
-
-             Salao Salon = new Salao();
-             Salon.Close();
-        }*/
 
         private void btSair_Click(object sender, RoutedEventArgs e)
         {
@@ -76,23 +65,22 @@ namespace wpf_sallonnovo.Views.Pages
 
         }
 
-        private void BtnServico_Click(object sender, RoutedEventArgs e)
-        {
-            btInicio.Background = new SolidColorBrush(Color.FromRgb(154, 143, 200));
-            btAgenda.Background = new SolidColorBrush(Color.FromRgb(154, 143, 200));
-            btPerfil.Background = new SolidColorBrush(Color.FromRgb(154, 143, 200));
-            btServico.Background = new SolidColorBrush(Color.FromRgb(47, 53, 89));
-            CadastroServico Telas = new CadastroServico();
-            Telas.ShowDialog();
-        }
-
         private void btAgenda_Click(object sender, RoutedEventArgs e)
         {
             btInicio.Background = new SolidColorBrush(Color.FromRgb(154, 143, 200));
             btPerfil.Background = new SolidColorBrush(Color.FromRgb(154, 143, 200));
-            btServico.Background = new SolidColorBrush(Color.FromRgb(154, 143, 200));
+            btSalao.Background = new SolidColorBrush(Color.FromRgb(154, 143, 200));
             btAgenda.Background = new SolidColorBrush(Color.FromRgb(47, 53, 89));
             _frame.Content = new AgendamentoUsuario(_cli);
+        }
+
+        private void BtnSalao_Click(object sender, RoutedEventArgs e)
+        {
+            btInicio.Background = new SolidColorBrush(Color.FromRgb(154, 143, 200));
+            btPerfil.Background = new SolidColorBrush(Color.FromRgb(154, 143, 200));
+            btSalao.Background = new SolidColorBrush(Color.FromRgb(47, 53, 89));
+            btAgenda.Background = new SolidColorBrush(Color.FromRgb(154, 143, 200));
+            _frame.Content = new GerencimentoSalao(_cli);
         }
     }
 }

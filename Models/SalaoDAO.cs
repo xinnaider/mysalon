@@ -14,13 +14,15 @@ namespace wpf_sallonnovo.Models
     {
         private static conexao _conn = new conexao();
 
+        public int IdUsuario { get; set; }
+
         public void Insert(Salao salao)
         {
             try
             {
                 var comando = _conn.Query();
 
-                comando.CommandText = "insert into Salao values (null, null, @nome, @telefone, @razaoSocial, @cnpj, @email, @fkEnd);";
+                comando.CommandText = "insert into Salao values (null, null, @nome, @telefone, @razaoSocial, @cnpj, @email, @fkEnd, @fkUsuario);";
 
                 //comando.Parameters.AddWithValue("@null", salao.Foto);//
 
@@ -30,6 +32,7 @@ namespace wpf_sallonnovo.Models
                 comando.Parameters.AddWithValue("@cnpj", salao.CNPJ);
                 comando.Parameters.AddWithValue("@email", salao.Email);
                 comando.Parameters.AddWithValue("@fkEnd", salao.IdEnd);
+                comando.Parameters.AddWithValue("@fkUsuario", salao.idUsuario);
 
                 var resultado = comando.ExecuteNonQuery();
 
@@ -65,7 +68,6 @@ namespace wpf_sallonnovo.Models
                     var salao = new Salao();
 
                     salao.Id = reader.GetInt32("id_sal");
-                    //salao.Foto = DAOHelper.GetString(reader, "foto_sal");//
                     salao.Nome = DAOHelper.GetString(reader, "nome_sal");
                     salao.Telefone = DAOHelper.GetString(reader, "telefone_sal");
                     salao.Razao_Social = DAOHelper.GetString(reader, "razao_social_sal");
@@ -77,6 +79,31 @@ namespace wpf_sallonnovo.Models
 
                 reader.Close();
                 return lista;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public int VerificarExiste(int id)
+        {
+            try
+            {
+                var comando = _conn.Query();
+
+                comando.CommandText = "SELECT * FROM salao where id_cli_fk = " + id + ";";
+
+                MySqlDataReader reader = comando.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    IdUsuario = reader.GetInt32("id_cli_fk");
+                    reader.Close();
+                }
+
+                return IdUsuario;
 
             }
             catch (Exception ex)

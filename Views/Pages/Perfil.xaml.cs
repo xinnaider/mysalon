@@ -37,17 +37,10 @@ namespace wpf_sallonnovo.Views.Pages
 
         private void Perfil_Loaded(object sender, RoutedEventArgs e)
         {
-            /*var dao = new ClienteDAO();
-            var cliente = dao.GetById(1);*/
-
-
-            tbNome.Text = _cli.Nome;
             txtNome.Text = _cli.Nome;
             txtCPF.Text = _cli.CPF;
             txtRG.Text = _cli.RG;
             txtTelefone.Text = _cli.Telefone;
-            txtEmail.Text = _cli.Email;
-
         }
         private void Bt_Salvar_Click(object sender, RoutedEventArgs e)
         {
@@ -63,8 +56,6 @@ namespace wpf_sallonnovo.Views.Pages
                 rbFeminino.IsEnabled = true;
                 rbMasculino.IsEnabled = true;
                 rbNDizer.IsEnabled = true;
-                txtEmail.IsReadOnly = false;
-                pbSenha.IsReadOnly = false;
 
             }
             else
@@ -79,8 +70,6 @@ namespace wpf_sallonnovo.Views.Pages
                 rbFeminino.IsEnabled = false;
                 rbMasculino.IsEnabled = false;
                 rbNDizer.IsEnabled = false;
-                txtEmail.IsReadOnly = true;
-                pbSenha.IsReadOnly = true;
             }
 
         }
@@ -97,8 +86,6 @@ namespace wpf_sallonnovo.Views.Pages
             rbFeminino.IsEnabled = false;
             rbMasculino.IsEnabled = false;
             rbNDizer.IsEnabled = false;
-            txtEmail.IsReadOnly = true;
-            pbSenha.IsReadOnly = true;
         }
     }
 }

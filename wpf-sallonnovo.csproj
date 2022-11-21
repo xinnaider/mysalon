@@ -116,9 +116,6 @@
     <Compile Include="Models\Endereco.cs" />
     <Compile Include="Models\EnderecoDAO.cs" />
     <Compile Include="Models\Funcionario.cs" />
-    <Compile Include="Models\FuncionarioDAO.cs" />
-    <Compile Include="Models\FuncionarioServico.cs" />
-    <Compile Include="Models\FuncionarioServicoDAO.cs" />
     <Compile Include="Models\Log.cs" />
     <Compile Include="Models\Login.cs" />
     <Compile Include="Models\LoginDAO.cs" />
@@ -152,6 +149,9 @@
     </Compile>
     <Compile Include="Views\Pages\CadastroSalao.xaml.cs">
       <DependentUpon>CadastroSalao.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\GerencimentoSalao.xaml.cs">
+      <DependentUpon>GerencimentoSalao.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Pages\Inicio.xaml.cs">
       <DependentUpon>Inicio.xaml</DependentUpon>
@@ -216,6 +216,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Pages\CadastroSalao.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\GerencimentoSalao.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
