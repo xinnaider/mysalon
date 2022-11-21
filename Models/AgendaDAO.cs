@@ -131,6 +131,33 @@ namespace wpf_sallonnovo.Models
                 throw ex;
             }
         }
+
+        public void DeleteWithId(int id)
+        {
+            try
+            {
+                var comando = _conn.Query();
+
+                comando.CommandText = "DELETE FROM Agenda WHERE (id_ser_fk = @id)";
+
+                comando.Parameters.AddWithValue("@id", id);
+
+                var resultado = comando.ExecuteNonQuery();
+
+                if (resultado == 0)
+                {
+                    throw new Exception("Ocorreram erros ao deletar as informações");
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+
         public void Update(Agenda agenda)
         {
             try

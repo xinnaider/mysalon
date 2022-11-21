@@ -15,7 +15,7 @@ namespace wpf_sallonnovo.Models
         private static conexao _conn = new conexao();
 
         public int IdUsuario { get; set; }
-
+        public int IdSalao { get; set; }
         public void Insert(Salao salao)
         {
             try
@@ -100,10 +100,37 @@ namespace wpf_sallonnovo.Models
                 if (reader.Read())
                 {
                     IdUsuario = reader.GetInt32("id_cli_fk");
-                    reader.Close();
                 }
 
+                reader.Close();
+
                 return IdUsuario;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public int RetornarIdSalao(int id)
+        {
+            try
+            {
+                var comando = _conn.Query();
+
+                comando.CommandText = "SELECT * FROM salao where id_cli_fk = " + id + ";";
+
+                MySqlDataReader reader = comando.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    IdSalao = reader.GetInt32("id_sal");
+                }
+
+                reader.Close();
+
+                return IdSalao;
 
             }
             catch (Exception ex)

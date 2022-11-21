@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaterialDesignThemes.Wpf;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -40,15 +41,43 @@ namespace wpf_sallonnovo.Views.Pages
         {
             var dao = new SalaoDAO();
             var teste = dao.VerificarExiste(_cli.Id);
-            if (teste == 0)
-            {
 
-            }
-            else
+            if (teste != 0)
             {
                 btCriarSalao.Visibility = Visibility.Hidden;
                 txtTituloNaoCriou.Visibility = Visibility.Hidden;
+                
             }
+            else
+            {
+                btBotaoSalao1.Visibility = Visibility.Hidden;
+                btBotaoSalao2.Visibility = Visibility.Hidden;
+                btBotaoSalao3.Visibility = Visibility.Hidden;
+                btBotaoSalao4.Visibility = Visibility.Hidden;
+            }
+        }
+
+        private void btCriarSalao_Click(object sender, RoutedEventArgs e)
+        {
+            var tela = new CadastrarSalao(_cli);
+            tela.ShowDialog();
+        }
+
+        private void tbNome_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void btBotaoSalao1_Click(object sender, RoutedEventArgs e)
+        {
+            var tela = new CadastroServico(_cli);
+            tela.ShowDialog();
+        }
+
+        private void btBotaoSalao2_Click(object sender, RoutedEventArgs e)
+        {
+            var tela = new ListarServico2();
+            tela.ShowDialog();
         }
     }
 }

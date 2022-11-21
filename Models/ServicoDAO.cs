@@ -19,12 +19,12 @@ namespace wpf_sallonnovo.Models
             {
                 var comando = _conn.Query();
 
-                comando.CommandText = "insert into servico values (null, @valor, @nome, @tipo, @descricao, null);";
+                comando.CommandText = "insert into servico values (null, null, @valor, @nome, @tipo, @fkSalao);";
 
                 comando.Parameters.AddWithValue("@valor", servico.Valor);
                 comando.Parameters.AddWithValue("@nome", servico.Name);
                 comando.Parameters.AddWithValue("@tipo", servico.Tipo);
-                comando.Parameters.AddWithValue("@descricao", servico.Descricao);
+                comando.Parameters.AddWithValue("@fkSalao", servico.fkSalao);
                 //comando.Parameters.AddWithValue("@salao", servico.Salao);
 
                 var resultado = comando.ExecuteNonQuery();
@@ -59,6 +59,7 @@ namespace wpf_sallonnovo.Models
                 while (reader.Read())
                 {
                     var servico = new Servico();
+                    servico.Id = reader.GetInt32("id_ser");
                     servico.Valor = reader.GetFloat("valor_ser");
                     servico.Name = DAOHelper.GetString(reader, "nome_ser");
                     servico.Tipo = DAOHelper.GetString(reader, "tipo_ser");
@@ -115,7 +116,7 @@ namespace wpf_sallonnovo.Models
             {
                 var comando = _conn.Query();
 
-                comando.CommandText = "DELETE FROM Endereco WHERE (id_ser = @id)";
+                comando.CommandText = "DELETE FROM Servico WHERE (id_ser = @id)";
 
                 comando.Parameters.AddWithValue("@id", servico.Id);
 
@@ -141,14 +142,12 @@ namespace wpf_sallonnovo.Models
                 var comando = _conn.Query();
 
                 comando.CommandText = "update servico set " +
-                    "valor_ser = @valor, nome_ser = @nome, tipo_ser= @tipo, " +
-                    "descricao_ser = @descricao, id_sal_fk = @salao;";
+                    "valor_ser = @valor, nome_ser = @nome, tipo_ser = @tipo where id_ser = @id;";
 
                 comando.Parameters.AddWithValue("@valor", servico.Valor);
                 comando.Parameters.AddWithValue("@nome", servico.Name);
                 comando.Parameters.AddWithValue("@tipo", servico.Tipo);
-                comando.Parameters.AddWithValue("@descricao", servico.Descricao);
-                //comando.Parameters.AddWithValue("@salao", servico.Salao);
+                comando.Parameters.AddWithValue("@id", servico.Id);
 
                 var resultado = comando.ExecuteNonQuery();
 

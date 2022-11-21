@@ -5,50 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:wpf_sallonnovo.Views"
         mc:Ignorable="d"
-        Title="CadastroServico" Height="720" Width="1280">
-    <Grid Background="White">
+        Title="CadastroServico" Height="550" Width="500">
+    <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="200"/>
-            <RowDefinition Height="*"/>
             <RowDefinition Height="100"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Grid Grid.Row="0">
-            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <Ellipse Width="100" Height="100">
-                    <Ellipse.Fill>
-                        <ImageBrush ImageSource="/Imagens/aluno.PNG" />
-                    </Ellipse.Fill>
-                </Ellipse>
-                <TextBox x:Name="tbNome" FontSize="25" Margin="0 15" IsReadOnly="True" TextAlignment="Center" CaretBrush="{x:Null}" SelectionBrush="{x:Null}" Foreground="Black" Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Arrow" >Salão</TextBox>
-            </StackPanel>
-        </Grid>
+        <Label Content="Cadastrar serviço" FontSize="22" HorizontalAlignment="Center" Padding="10" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
 
         <Grid Grid.Row="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <Grid Grid.Column="0">
-                <StackPanel Margin="20,20,20,20">
-                    <Label HorizontalAlignment="Center" FontSize="20" FontWeight="Bold">Cadastro de Serviços</Label>
-                    <Label FontSize="20">Nome</Label>
-                    <TextBox FontSize="16" x:Name="txtNomeSer" Cursor="Arrow"></TextBox>
-                    <Label FontSize="20">Valor</Label>
-                    <TextBox FontSize="16" x:Name="txtValorSer"></TextBox>
-                    <Label FontSize="20">Tipo</Label>
-                    <TextBox FontSize="16" x:Name="txtTiposSer"></TextBox>
-                    <Label FontSize="20">Descrição</Label>
-                    <TextBox FontSize="16" x:Name="txtDescSer"></TextBox>
-                </StackPanel>
-            </Grid>
-            <Grid Grid.Column="1">
-
-            </Grid>
+            <StackPanel Margin="10" Cursor="Arrow">
+                <Label FontSize="20">Nome</Label>
+                <TextBox FontSize="16" x:Name="txtNomeSer" Cursor="Arrow"></TextBox>
+                <Label FontSize="20">Valor</Label>
+                <TextBox FontSize="16" x:Name="txtValorSer"></TextBox>
+                <Label FontSize="20">Tipo</Label>
+                <TextBox FontSize="16" x:Name="txtTiposSer"></TextBox>
+            </StackPanel>
         </Grid>
-        <Grid Grid.Row="2" Cursor="Hand">
-            <Button Width="120" Height="45" Margin="1000 0 0 0" FontSize="18" FontFamily="Spartan" BorderThickness="10" Cursor="Hand" Background="#FF2F3559" BorderBrush="#FF2F3559" x:Name="btnRegistrarSer"  Foreground="White">Registrar</Button>
-            <Button Width="120" Height="45" Margin="700 0 0 0" FontSize="18" FontFamily="Spartan" BorderThickness="10" Cursor="Hand" Background="#FF2F3559" BorderBrush="#FF2F3559" x:Name="btnEditarSer"  Foreground="White">Editar</Button>
-        </Grid>
+        
+        <Button x:Name="btnSalvar" Content="Salvar" Height="30"  Width="100" Click="btnSalvar_Click" HorizontalAlignment="Center" Margin="0 0 0 30" Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Bottom" Cursor="Hand"/>
     </Grid>
+
+
 </Window>

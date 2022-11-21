@@ -48,10 +48,10 @@ id_cli_fk int,
 foreign key (id_cli_fk) references Cliente (id_cli)
 );
 
-insert into salao values (null, null, 'salao para feios', '9999', 'spf', '123123', '2@hotmali.com', 1);
-insert into salao values (null, null, 'salao para lindo', '9999', 'spf', '123123', '2@hotmali.com', 2);
-insert into salao values (null, null, 'salao para cabelos', '9999', 'spf', '123123', '2@hotmali.com', 3);
-insert into salao values (null, null, 'salao para carecas', '9999', 'spf', '123123', '2@hotmali.com', 4);
+insert into salao values (null, null, 'salao para feios', '9999', 'spf', '123123', '2@hotmali.com', 1, 1);
+insert into salao values (null, null, 'salao para lindo', '9999', 'spf', '123123', '2@hotmali.com', 2, 2);
+insert into salao values (null, null, 'salao para cabelos', '9999', 'spf', '123123', '2@hotmali.com', 3, 3);
+insert into salao values (null, null, 'salao para carecas', '9999', 'spf', '123123', '2@hotmali.com', 4, 4);
 
 create table Servico(
 id_ser int primary key auto_increment,
@@ -79,6 +79,10 @@ id_sal_fk int,
 foreign key (id_sal_fk) references Salao (id_sal)
 );
 
+select * from servico;
+
+
+
 insert into Agenda values (null, '0000-00-00 00:00:00', 'Indisponível', 1, 1, 1);
 insert into Agenda values (null, '0000-00-00 00:00:00', 'Indisponível', 2, 2, 2);
 insert into Agenda values (null, '0000-00-00 00:00:00', 'Indisponível', 3, 3, 3);
@@ -99,3 +103,7 @@ begin
 insert into Agenda values (null, str_to_date(datahora, "%d/%m/%Y %H:%i:%s"), "Indisponível", fkser, fkcli, fksal);
 end;
 $$ delimiter ;
+
+SELECT * FROM salao where id_cli_fk = 1;
+
+select * from login;
