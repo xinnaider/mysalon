@@ -49,8 +49,8 @@ namespace wpf_sallonnovo
 
             if (Login.Loginn(usuario, senha))
             {
-                //var cliente = new ClienteDAO().GetByUsuario(usuario, senha);
-                Agendamento main = new Agendamento();
+                var cliente = new ClienteDAO().GetByUsuario(usuario, senha);
+                Agendamento main = new Agendamento(cliente);
                 main.Show();
                 this.Close();
             }

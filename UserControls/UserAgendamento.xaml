@@ -25,6 +25,11 @@
             <Grid Grid.Column="3">
                 <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding DataHorario}" FontSize="24" IsEnabled="False"/>
             </Grid>
+            <Grid Grid.Column="1">
+                <Button x:Name="btnDeletar" Click="btnDeletar_Click">
+                    
+                </Button>
+            </Grid>
         </Grid>
     </Border>
 </UserControl>

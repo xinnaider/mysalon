@@ -129,8 +129,9 @@ namespace wpf_sallonnovo.Models
                     cli = new Cliente() { Id = reader.GetInt32("id_cli"), Nome = reader.GetString("nome_cli"), CPF = reader.GetString("cpf_cli"),
                     RG = reader.GetString("rg_cli"), Telefone = reader.GetString("telefone_cli"), Email = reader.GetString("email_cli"), Sexo = reader.GetString("sexo_cli")};
                 }
-
+                reader.Close();
                 return cli;
+                
             }
             catch (Exception e)
             {

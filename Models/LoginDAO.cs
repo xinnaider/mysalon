@@ -42,10 +42,7 @@ namespace wpf_sallonnovo.Models
             {
                 throw e;
             }
-            finally
-            {
-                conn.Close();
-            }
+            
         }
         public void Insert(Log log)
         {

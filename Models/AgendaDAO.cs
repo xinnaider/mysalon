@@ -19,7 +19,7 @@ namespace wpf_sallonnovo.Models
             {
                 var comando = _conn.Query();
 
-                comando.CommandText = "call InserirAgenda(@data, @servico, @cliente, @salao);";
+                comando.CommandText = "call InsertAgenda(@data, @servico, @cliente, @salao);";
 
                 comando.Parameters.AddWithValue("@data", agenda.DataHora);
                 comando.Parameters.AddWithValue("@servico", agenda.FkSer);

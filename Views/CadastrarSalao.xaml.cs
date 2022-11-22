@@ -35,10 +35,10 @@ namespace wpf_sallonnovo.Views
         private void btnSalvar_Click(object sender, RoutedEventArgs e)
         {
 
-            //Se o usúario não digitar o nome, exibir mensagem de solicitação!
-            // colocar o foco no campo, selecioná-lo por completo e terminar o método:
 
-            if(txtNSalao.Text.Trim().Length < 1)
+
+
+            /*if(txtNSalao.Text.Trim().Length < 1)
             {
                 MessageBox.Show("Por favor, digite o nome!", "Campo - obrigatório!", MessageBoxButton.OK);
                
@@ -46,9 +46,9 @@ namespace wpf_sallonnovo.Views
                 txtNSalao.SelectAll();
 
                 return;
-            }
+            }*/
 
-            //_salao.Nome = txtNSalao.Text;//
+            _salao.Nome = txtNSalao.Text;
 
             _salao.Telefone = txtTelfone.Text;
             _salao.Razao_Social = txtRazaoSocial.Text;

@@ -38,7 +38,7 @@
             </StackPanel>
         </Grid>
         <Grid Grid.Row="1">
-            <ScrollViewer CanContentScroll="True" Width="960" Height="720" HorizontalAlignment="Left">
+            <ScrollViewer CanContentScroll="True" Width="960" Height="485" HorizontalAlignment="Left">
                 <StackPanel Margin="20 5 20 50" x:Name="listServicos" HorizontalAlignment="Stretch" />
             </ScrollViewer>
         </Grid>

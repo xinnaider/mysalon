@@ -28,8 +28,15 @@
                 <Grid Grid.Column="1">
                     <Label VerticalAlignment="Center" FontFamily="Bahnschrift" FontSize="20" Content="{Binding Nome}"/>
                 </Grid>
+                
                 <Grid Grid.Column="2">
-                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="Bahnschrift" Margin="50 0" FontSize="20" Text="{Binding Preco}"/>
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Label HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 0 1 0" FontSize="20" FontFamily="Bahnschrift">R$</Label>
+                        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Bahnschrift" Margin="0 0 0 0" FontSize="20" Text="{Binding Preco}"></TextBlock>
+                    </StackPanel>
+                    
+                    
                 </Grid>
             </Grid>
             

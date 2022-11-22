@@ -25,6 +25,8 @@ namespace wpf_sallonnovo.UserControls
         public string NomeServico { get; set; }
         public DateTime? DataHorario { get; set; }
 
+        public int Id { get; set; }
+
         public string Teste { get; set; }
 
         private Agenda _agenda = new Agenda();
@@ -35,12 +37,18 @@ namespace wpf_sallonnovo.UserControls
             this.DataContext = this;
             Loaded += UserAgendamento_Loaded;
         }
-
+       
         private void UserAgendamento_Loaded(object sender, RoutedEventArgs e)
         {
            _agenda.Salao = NomeSalao;
            _agenda.Servico = NomeServico;
            _agenda.dataHorario = DataHorario;
+        }
+
+        private void btnDeletar_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(Convert.ToString(_agenda.Cliente));
+
         }
     }
 }

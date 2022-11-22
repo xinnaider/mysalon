@@ -32,7 +32,7 @@ namespace wpf_sallonnovo.Views
         {
             MainWindow telas = new MainWindow();
             this.Close();
-            telas.ShowDialog();
+            telas.Show();
         }
         private void btnRegistrar_Click(object sender, RoutedEventArgs e)
         {
