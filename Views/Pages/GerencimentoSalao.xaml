@@ -31,8 +31,8 @@
                         <Button x:Name="btCriarSalao" Cursor="Hand" Margin="10" Click="btCriarSalao_Click"> Criar salão </Button>
                         <Button x:Name="btBotaoSalao1" Cursor="Hand" Margin="10" Click="btBotaoSalao1_Click"> Cadastrar serviço </Button>
                         <Button x:Name="btBotaoSalao2" Cursor="Hand" Margin="10" Click="btBotaoSalao2_Click"> Editar serviços </Button>
-                        <Button x:Name="btBotaoSalao3" Cursor="Hand" Margin="10"> Editar informaçõs do salão </Button>
-                        <Button x:Name="btBotaoSalao4" Cursor="Hand" Margin="10"> Verificar agenda </Button>
+                        <Button x:Name="btBotaoSalao3" Cursor="Hand" Margin="10" Click="btBotaoSalao3_Click"> Editar informaçõs do salão </Button>
+                        <Button x:Name="btBotaoSalao4" Cursor="Hand" Margin="10" Click="btBotaoSalao4_Click"> Verificar agenda </Button>
                     </StackPanel>
                 </Grid>
             </Grid>

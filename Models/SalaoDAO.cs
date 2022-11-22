@@ -170,11 +170,10 @@ namespace wpf_sallonnovo.Models
             {
                 var comando = _conn.Query();
 
-                comando.CommandText = "update salao set " +
-                    "foto_sal = @foto, nome_sal = @nome, telefone_sal= @telefone, " +
-                    "razao_social_sal = @razaoSocial, cnpj_sal = @cnpj, email_sal = @email;";
+                comando.CommandText = "call updateSalao(@nome, @telefone, @razaoSocial, @cnpj, @email, @id);";
 
-                //comando.Parameters.AddWithValue("@foto", salao.Foto);//
+                
+                comando.Parameters.AddWithValue("@id", salao.Id);
                 comando.Parameters.AddWithValue("@nome", salao.Nome);
                 comando.Parameters.AddWithValue("@telefone", salao.Telefone);
                 comando.Parameters.AddWithValue("@razaoSocial", salao.Razao_Social);
@@ -187,6 +186,41 @@ namespace wpf_sallonnovo.Models
                 {
                     throw new Exception("Ocorreram erros ao salvar as informações");
                 }
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public Salao InfoSal(int id)
+        {
+            try
+            {
+                var salao = new Salao();
+                var comando = _conn.Query();
+
+
+
+                comando.CommandText = "SELECT * FROM salao where (id_cli_fk = " + id + ");";
+
+                MySqlDataReader reader = comando.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    salao.Id = reader.GetInt32("id_sal");
+                    salao.Nome = DAOHelper.GetString(reader, "nome_sal");
+                    salao.Telefone = DAOHelper.GetString(reader, "telefone_sal");
+                    salao.Razao_Social = DAOHelper.GetString(reader, "razao_social_sal");
+                    salao.CNPJ = DAOHelper.GetString(reader, "cnpj_sal");
+                    salao.Email = DAOHelper.GetString(reader, "email_sal");
+
+                    
+                }
+
+                reader.Close();
+                return salao;
 
             }
             catch (Exception ex)

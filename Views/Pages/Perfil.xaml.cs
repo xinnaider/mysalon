@@ -24,6 +24,7 @@ namespace wpf_sallonnovo.Views.Pages
 
         public Perfil()
         {
+            
             InitializeComponent();
             Loaded += Perfil_Loaded;
         }
@@ -41,6 +42,11 @@ namespace wpf_sallonnovo.Views.Pages
             txtCPF.Text = _cli.CPF;
             txtRG.Text = _cli.RG;
             txtTelefone.Text = _cli.Telefone;
+            if (_cli.Sexo != "masculino")
+            {
+                if(_cli.Sexo != "feminino") { rbFeminino.IsChecked = true; }
+                else { rbNDizer.IsChecked = true; }
+            } else { rbMasculino.IsChecked = true; }
         }
         private void Bt_Salvar_Click(object sender, RoutedEventArgs e)
         {
@@ -70,6 +76,31 @@ namespace wpf_sallonnovo.Views.Pages
                 rbFeminino.IsEnabled = false;
                 rbMasculino.IsEnabled = false;
                 rbNDizer.IsEnabled = false;
+
+                _cli.Nome = txtNome.Text;
+                _cli.CPF = txtCPF.Text;
+                _cli.RG = txtRG.Text;
+                _cli.Telefone = txtTelefone.Text;
+                if ((bool)rbMasculino.IsChecked)
+                    _cli.Sexo = "masculino";
+                else
+                {
+                    if ((bool)rbFeminino.IsChecked)
+                        _cli.Sexo = "femenino";
+                    else _cli.Sexo = "prefiro nao dizer";
+                }
+
+                try
+                {
+                    var dao = new ClienteDAO();
+                    dao.Update(_cli);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                
+
             }
 
         }

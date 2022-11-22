@@ -44,10 +44,13 @@ namespace wpf_sallonnovo
             string usuario = txtUsuario.Text;
             string senha = passbSenha.Password.ToString();
 
+            usuario = "user";
+            senha = "senha";
+
             if (Login.Loginn(usuario, senha))
             {
-                var cliente = new ClienteDAO().GetByUsuario(usuario, senha);
-                Agendamento main = new Agendamento(cliente);
+                //var cliente = new ClienteDAO().GetByUsuario(usuario, senha);
+                Agendamento main = new Agendamento();
                 main.Show();
                 this.Close();
             }

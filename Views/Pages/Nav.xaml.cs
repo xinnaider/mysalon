@@ -80,7 +80,7 @@ namespace wpf_sallonnovo.Views.Pages
             btPerfil.Background = new SolidColorBrush(Color.FromRgb(154, 143, 200));
             btSalao.Background = new SolidColorBrush(Color.FromRgb(47, 53, 89));
             btAgenda.Background = new SolidColorBrush(Color.FromRgb(154, 143, 200));
-            _frame.Content = new GerencimentoSalao(_cli);
+            _frame.Content = new GerencimentoSalao(_cli, _frame);
         }
     }
 }

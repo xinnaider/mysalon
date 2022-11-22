@@ -44,8 +44,8 @@
                     <Label FontSize="20">Sexo</Label>
                     <StackPanel Orientation="Horizontal">
                         <RadioButton IsEnabled="False" Margin="0 0 40 0" x:Name="rbMasculino">Masculino</RadioButton>
-                        <RadioButton IsEnabled="False" Margin="0 0 40 0" x:Name="rbFeminino">Feminino</RadioButton>
-                        <RadioButton IsEnabled="False" x:Name="rbNDizer">Prefiro não dizer</RadioButton>
+                        <RadioButton IsEnabled="False" Margin="0 0 40 0" x:Name="rbFeminino" >Feminino</RadioButton>
+                        <RadioButton IsEnabled="False" x:Name="rbNDizer" >Prefiro não dizer</RadioButton>
                     </StackPanel>
                 </StackPanel>
             </Grid>

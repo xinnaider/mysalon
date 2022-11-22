@@ -24,16 +24,18 @@ namespace wpf_sallonnovo.Views.Pages
     {
 
         private Cliente _cli = new Cliente();
+        private Frame _frame;
 
         public GerencimentoSalao()
         {
             InitializeComponent();
         }
-        public GerencimentoSalao(Cliente cliente)
+        public GerencimentoSalao(Cliente cliente, Frame frame)
         {
             InitializeComponent();
             Loaded += GerencimentoSalao_Loaded;
             _cli = cliente;
+            _frame = frame;
         }
 
 
@@ -78,6 +80,17 @@ namespace wpf_sallonnovo.Views.Pages
         {
             var tela = new ListarServico2(_cli);
             tela.ShowDialog();
+        }
+
+        private void btBotaoSalao3_Click(object sender, RoutedEventArgs e)
+        {
+            var tela = new EditarSalao(_cli);
+            tela.ShowDialog();
+        }
+
+        private void btBotaoSalao4_Click(object sender, RoutedEventArgs e)
+        {
+            _frame.Content = new AgendamentoSalao(_cli);
         }
     }
 }

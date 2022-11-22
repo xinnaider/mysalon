@@ -52,7 +52,7 @@ namespace wpf_sallonnovo.Views
             }
 
             _log.User = txtEmail.Text;
-            _log.Password = passbSenha.Password;
+            _log.Password = passbSenha.Password.ToString(); ;
 
             try
             {
@@ -69,6 +69,11 @@ namespace wpf_sallonnovo.Views
             {
                 MessageBox.Show(ex.Message);
             }
+
+        }
+
+        private void txtTelefone_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
 
         }
     }

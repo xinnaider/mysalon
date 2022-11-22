@@ -41,7 +41,7 @@
                     FontSize="25"
                     FontFamily="Spartan"
                     x:Name="txtUsuario"
-                    materialDesign:HintAssist.Hint="Usuário" Cursor="Arrow">
+                    materialDesign:HintAssist.Hint="Email" Cursor="Arrow">
                     <TextBox.Text>
                         <Binding
                           Path="Name"

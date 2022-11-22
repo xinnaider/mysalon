@@ -1,0 +1,44 @@
+﻿<Window x:Class="wpf_sallonnovo.Views.EditarSalao"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:wpf_sallonnovo.Views"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="17"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        mc:Ignorable="d"
+        Title="EditarSalao" Height="500" Width="400" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid>
+        <Grid>
+            <Label FontSize="22" HorizontalAlignment="Center" VerticalAlignment="Top" Margin=" 0 40 0 0">Editar Dados do Salão</Label>
+            
+            <StackPanel Margin="10" Cursor="Arrow" VerticalAlignment="Center">
+
+                <TextBox Margin="0 0 0 5" x:Name="txtNSalao" Width="250" materialDesign:HintAssist.Hint="Nome do Salão" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Center"/>
+
+                <TextBox Margin="0 0 0 5" x:Name="txtTelfone" Width="250" materialDesign:HintAssist.Hint="Telefone" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Center"/>
+
+                <TextBox Margin="0 0 0 5" x:Name="txtRazaoSocial" Width="250" materialDesign:HintAssist.Hint="Razão Social" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Center" Cursor="Arrow"/>
+
+                <TextBox Margin="0 0 0 5" x:Name="txtCNPJ" Width="250" materialDesign:HintAssist.Hint="CNPJ" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Center"/>
+
+                <TextBox Margin="0 0 0 5" x:Name="txtEmail" Width="250" materialDesign:HintAssist.Hint="Email" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Center"/>
+
+            </StackPanel>
+            
+            <StackPanel Orientation="Horizontal" Margin="0 20 0 35" VerticalAlignment="Bottom"  HorizontalAlignment="Center">
+                <Button Width="100" Margin="0 0 45 0" x:Name="Sair" Content="Sair" Click="Sair_Click"/>
+                <Button Width="100" x:Name="btnSalvar" Content="Salvar" Click="btnSalvar_Click"/>
+            </StackPanel>
+            
+        </Grid>
+
+      
+    </Grid>
+</Window>
