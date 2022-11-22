@@ -45,5 +45,23 @@ namespace wpf_sallonnovo.Views.Pages
         {
 
         }
+
+        private void txtEmail_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+
+
+        }
+
+        private void txtCNPJ_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+
+        }
+
+        private void txtCEP_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

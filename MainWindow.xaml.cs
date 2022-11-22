@@ -60,5 +60,10 @@ namespace wpf_sallonnovo
 
             }
         }
+
+        private void txtUsuario_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

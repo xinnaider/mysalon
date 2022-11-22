@@ -39,13 +39,13 @@
                     <Label FontSize="20">Razão Social</Label>
                     <TextBox IsReadOnly="True" FontSize="16" x:Name="txtRazaoSocial">Jessica Horrigo LTDA</TextBox>
                     <Label FontSize="20">CNPJ</Label>
-                    <TextBox IsReadOnly="True" FontSize="16" x:Name="txtCNPJ">17.740.470/0001-94</TextBox>
+                    <TextBox IsReadOnly="True" FontSize="16" x:Name="txtCNPJ" TextChanged="txtCNPJ_TextChanged">17.740.470/0001-94</TextBox>
                     <Label FontSize="20">Telefone</Label>
                     <TextBox IsReadOnly="True" FontSize="16" x:Name="txtTelefone">(69) 992025607</TextBox>
                     <Label FontSize="20">Proprietário</Label>
                     <TextBox IsReadOnly="True" FontSize="16" x:Name="txtProprietaio">Jéssica Horrigo da Silva</TextBox>
                     <Label FontSize="20">E-mail</Label>
-                    <TextBox IsReadOnly="True" FontSize="16" x:Name="txtEmail">jessica123@gmail.com</TextBox>
+                    <TextBox IsReadOnly="True" FontSize="16" x:Name="txtEmail" TextChanged="txtEmail_TextChanged">jessica123@gmail.com</TextBox>
                 </StackPanel>
             </Grid>
             <Grid Grid.Column="1" Margin="0 -20 0 0">
@@ -62,7 +62,7 @@
                     <Label FontSize="20">Estado</Label>
                     <TextBox IsReadOnly="True" FontSize="16" x:Name="txtEstado">Sergipe</TextBox>
                     <Label FontSize="20">CEP</Label>
-                    <TextBox IsReadOnly="True" FontSize="16" x:Name="txtCEP">76901-664</TextBox>
+                    <TextBox IsReadOnly="True" FontSize="16" x:Name="txtCEP" TextChanged="txtCEP_TextChanged">76901-664</TextBox>
                 </StackPanel>
                 
             </Grid>
