@@ -23,17 +23,19 @@ namespace wpf_sallonnovo.Views.Pages
     public partial class AgendamentoUsuario : Page
     {
         private Cliente _cli = new Cliente();
+        private Frame _frame;
 
         public AgendamentoUsuario()
         {
             InitializeComponent();
             Loaded += AgendamentoUsuario_Loaded;
         }
-        public AgendamentoUsuario(Cliente cliente)
+        public AgendamentoUsuario(Cliente cliente, Frame frame)
         {
             InitializeComponent();
             Loaded += AgendamentoUsuario_Loaded;
             _cli = cliente;
+            _frame = frame;
         }
 
         private void AgendamentoUsuario_Loaded(object sender, RoutedEventArgs e)
@@ -47,7 +49,7 @@ namespace wpf_sallonnovo.Views.Pages
                 
                 foreach (var agenda in listaAgenda)
                 {
-                    var a = new UserAgendamento()
+                    var a = new UserAgendamento(_cli, _frame)
                     {
                         NomeSalao = $"{agenda.Salao}",
                         NomeServico = $"{agenda.Servico}",

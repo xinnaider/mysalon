@@ -104,7 +104,7 @@ $$ delimiter ;
 create table Servico(
 id_ser int primary key auto_increment,
 foto_ser blob,
-valor_ser float,
+valor_ser double,
 nome_ser varchar (500),
 tipo_ser varchar (50),
 id_sal_fk int,

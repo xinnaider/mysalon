@@ -15,7 +15,7 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
         ResizeMode="NoResize"
-        WindowStartupLocation="CenterOwner">
+        WindowStartupLocation="CenterScreen">
     <Grid Background="#FF9A8FC8">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -75,7 +75,8 @@
                   FontFamily="Spartan" 
                   x:Name="passbSconfirma"/>
                 <StackPanel Margin="0, 20, 0, 0">
-                    <CheckBox FontFamily="Spartan" Foreground="Gray" x:Name="chcbTermos">Concordo com os termos de uso</CheckBox>
+                    <!-- <CheckBox FontFamily="Spartan" Foreground="Gray" x:Name="chcbTermos">Concordo com os termos de uso</CheckBox>   -->
+                    
                 </StackPanel>
             </StackPanel>
             <StackPanel Margin="0 490 0 0">

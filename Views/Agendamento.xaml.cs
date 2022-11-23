@@ -26,7 +26,8 @@ namespace wpf_sallonnovo.Views
         {
             InitializeComponent();
             Loaded += Agendamento_Loaded;
-                
+            MessageBox.Show(_cli.Nome);
+ 
         }
         public Agendamento(Cliente cliente)
         {

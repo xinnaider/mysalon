@@ -6,10 +6,10 @@
       xmlns:local="clr-namespace:wpf_sallonnovo.Views.Pages" 
       xmlns:uc="clr-namespace:wpf_sallonnovo.UserControls"
       mc:Ignorable="d" 
-      d:DesignHeight="720" d:DesignWidth="980" Title="Inicio">
+      d:DesignHeight="1080" d:DesignWidth="1720" Title="Inicio">
 
-    <Grid Background="White">
-        <ScrollViewer CanContentScroll="True" Width="960" Height="720" HorizontalAlignment="Left">
+    <Grid Background="White" HorizontalAlignment="Center">
+        <ScrollViewer CanContentScroll="True" Width="1720" Height="1080" HorizontalAlignment="Left">
             <StackPanel Margin="20 50 20 50" x:Name="listAgenda" HorizontalAlignment="Stretch" />
         </ScrollViewer>
     </Grid>

@@ -61,6 +61,8 @@ namespace wpf_sallonnovo.Views
                     dao.Update(_servico);
 
                     MessageBox.Show("Registro de escola cadastrado com sucesso.");
+                    
+                    Close();
                 }
                 else
                 {

@@ -8,10 +8,12 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Navigation;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using wpf_sallonnovo.Models; 
+using wpf_sallonnovo.Models;
+using wpf_sallonnovo.Views.Pages;
 
 namespace wpf_sallonnovo.Views
 {
@@ -25,11 +27,13 @@ namespace wpf_sallonnovo.Views
         private Cliente _cli = new Cliente();
         Salao _salao = new Salao();
         Endereco _end = new Endereco();
+        private Frame _frame;
 
-        public CadastrarSalao(Cliente cliente)
+        public CadastrarSalao(Cliente cliente, Frame frame)
         {
             InitializeComponent();
             _cli = cliente;
+            _frame = frame;
         }
 
         private void btnSalvar_Click(object sender, RoutedEventArgs e)
@@ -62,7 +66,7 @@ namespace wpf_sallonnovo.Views
             _end.Rua = txtRua.Text;
             _end.Numero =txtNum.Text;
             _end.Cep = txtCEP.Text;
-            
+
 
             try
             {
@@ -75,16 +79,15 @@ namespace wpf_sallonnovo.Views
                 var dao = new SalaoDAO();
                 dao.Insert(_salao);
                 MessageBox.Show("Salão Cadastrado com sucesso!");
-
+                Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
 
-
-
-
+            _frame.Content = new GerencimentoSalao(_cli, _frame);            
+            
         }
     }
 }

@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using wpf_sallonnovo.Models;
+using wpf_sallonnovo.Views.Pages;
 
 namespace wpf_sallonnovo.UserControls
 {
@@ -26,11 +27,14 @@ namespace wpf_sallonnovo.UserControls
         public DateTime? DataHorario { get; set; }
 
         public string Teste { get; set; }
-
+        private Frame _frame;
         private Agenda _agenda = new Agenda();
-        public UserSalaoAgendamento()
+        private Cliente _cli = new Cliente();
+        public UserSalaoAgendamento(Cliente cliente,Frame frame)
         {
             InitializeComponent();
+            _frame = frame;
+            _cli = cliente;
             this.DataContext = this;
             Loaded += UserSalaoAgendamento_Loaded;
         }
@@ -40,6 +44,22 @@ namespace wpf_sallonnovo.UserControls
             _agenda.Cliente = NomeCliente;
             _agenda.Servico = NomeServico;
             _agenda.dataHorario = DataHorario;
+        }
+
+        private void btnDeletar_Click(object sender, RoutedEventArgs e)
+        {
+            var dao = new AgendaDAO();
+            try
+            {
+                dao.Delete(Convert.ToString(_agenda.dataHorario));
+                MessageBox.Show("Lembrete Removido", "Confirmação", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            _frame.Content = new AgendamentoSalao(_cli, _frame);
         }
     }
 }

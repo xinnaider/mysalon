@@ -23,13 +23,13 @@ namespace wpf_sallonnovo.UserControls
     public partial class UserInicial : UserControl
     {
         public string Title { get; set; }
-        public string Descricao { get; set; }
+
         public string Preco { get; set; }
 
         public string Cod { get; set; }
 
         public string Tel { get; set; }
-
+        public string Endereco { get; set; }
         public string RSocial { get; set; }
         public string Email { get; set; }
         public string FkEnd { get; set; }
@@ -38,7 +38,7 @@ namespace wpf_sallonnovo.UserControls
 
         private Salao _salao = new Salao();
         private Cliente _cli = new Cliente();
-
+       
         public UserInicial(Frame frame, Cliente cliente)
         {
             InitializeComponent();
@@ -58,7 +58,11 @@ namespace wpf_sallonnovo.UserControls
             _salao.Razao_Social = RSocial;
             _salao.CNPJ = Cnpj;
             _salao.Email = Email;
-
+            var end = new EnderecoDAO();
+            lblEndereco.Content = end.BuscarEnd(_salao);
+            var dao = new ServicoDAO();
+            
+            lblPreco.Content = "A partir de: R$ " + Convert.ToString(dao.MinPreco(_salao)); 
         }
 
         private void btnSelectServico_Click(object sender, RoutedEventArgs e)

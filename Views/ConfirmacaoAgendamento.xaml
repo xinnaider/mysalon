@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:wpf_sallonnovo.Views"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="wpf_sallonnovo.Views.ConfirmacaoAgendamento"
         mc:Ignorable="d"
-        Title="ConfirmacaoAgendamento" Height="450" Width="400">
+        Title="ConfirmacaoAgendamento" Height="450" Width="400" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>

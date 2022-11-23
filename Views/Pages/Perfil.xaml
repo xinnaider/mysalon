@@ -5,10 +5,10 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:wpf_sallonnovo.Views.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="720" d:DesignWidth="980"
+      d:DesignHeight="1080" d:DesignWidth="1720" 
       Title="Perfil">
 
-    <Grid Background="White">
+    <Grid Background="White" Width="1720" Height="1080">
         <Grid.RowDefinitions>
 
             <RowDefinition Height="200"/>
@@ -23,16 +23,17 @@
                         <ImageBrush ImageSource="/Imagens/aluno.PNG" />
                     </Ellipse.Fill>
                 </Ellipse>
-                <TextBox x:Name="tbNome" FontSize="25" Margin="0 15" IsReadOnly="True" TextAlignment="Center" CaretBrush="{x:Null}" SelectionBrush="{x:Null}" Foreground="Black" Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Arrow" >Preciso mexer aqui</TextBox>
+               <!-- <TextBox x:Name="tbNome" FontSize="25" Margin="0 15" IsReadOnly="True" TextAlignment="Center" CaretBrush="{x:Null}" SelectionBrush="{x:Null}" Foreground="Black" Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Arrow" >Preciso mexer aqui</TextBox>
+         -->
             </StackPanel>
         </Grid>
         <Grid Grid.Row="1" Cursor="Hand">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Grid Grid.Column="0">
-                <StackPanel Margin="20">
-                    <Label HorizontalAlignment="Center" FontSize="20">Informações pessoais</Label>
+            <Grid Grid.Column="0" VerticalAlignment="Center">
+                <StackPanel Margin="20" Width="1000" HorizontalAlignment="Center">
+                    <Label HorizontalAlignment="Center" FontSize="20" >Informações pessoais</Label>
                     <Label FontSize="20">Nome</Label>
                     <TextBox IsReadOnly="True" FontSize="16" x:Name="txtNome" Cursor="Arrow">Lukas da Silva Barbosa Neto Ferreira Junior</TextBox>
                     <Label FontSize="20">CPF</Label>

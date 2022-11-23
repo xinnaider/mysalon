@@ -138,15 +138,17 @@ namespace wpf_sallonnovo.Models
 
         }
 
-        public void Delete(Agenda agenda)
+        public void Delete( string data)
         {
             try
             {
                 var comando = _conn.Query();
 
-                comando.CommandText = "DELETE FROM Agenda WHERE (id_end = @id)";
+                //comando.CommandText = "call deleteAgenda(@id, @data)";
+                comando.CommandText = "delete from agenda where (dataHorario_age = str_to_date(@data, '%d/%m/%Y %H:%i:%s'))";
 
-                comando.Parameters.AddWithValue("@id", agenda.Id);
+                //comando.Parameters.AddWithValue("@id", id);
+                comando.Parameters.AddWithValue("@data", data);
 
                 var resultado = comando.ExecuteNonQuery();
 

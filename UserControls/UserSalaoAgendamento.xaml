@@ -4,8 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:wpf_sallonnovo.UserControls"
-             mc:Ignorable="d" 
-                          d:DesignHeight="150" d:DesignWidth="920">
+             mc:Ignorable="d" Background="White"
+                          d:DesignHeight="1080" d:DesignWidth="1720">
     <Border BorderThickness="0" CornerRadius="10" Background="#FF9A8FC8" Width="880" Height="80" Margin="0 10 0 10">
         <Grid Background="#FF9A8FC8" Width="880" Height="50">
             <Grid.ColumnDefinitions>
@@ -15,6 +15,17 @@
                 <ColumnDefinition Width="293*"/>
             </Grid.ColumnDefinitions>
 
+            <Grid Grid.Column="1">
+                <Image Source="/Imagens/erase.png">
+
+                </Image>
+                <Button x:Name="btnDeletar" Click="btnDeletar_Click" Width="50" Height="45" Cursor="Hand" >
+                    <Button.Background>
+                        <ImageBrush Stretch="None"/>
+                    </Button.Background>
+                </Button>
+            </Grid>
+            
             <Grid Grid.Column="0" Grid.ColumnSpan="2">
                 <Label Margin="20 0 0 0" VerticalAlignment="Center" FontSize="24" FontFamily="Bahnschrift SemiBold" Content="{Binding NomeCliente}" HorizontalAlignment="Left"/>
             </Grid>
@@ -25,5 +36,7 @@
                 <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding DataHorario}" FontSize="24" IsEnabled="False"/>
             </Grid>
         </Grid>
+        
+        
     </Border>
 </UserControl>

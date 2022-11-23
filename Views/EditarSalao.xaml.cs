@@ -62,7 +62,8 @@ namespace wpf_sallonnovo.Views
             {
                 var dao = new SalaoDAO();
                 dao.Update(sal);
-                MessageBox.Show("Deu certo man!");
+                MessageBox.Show("Registros alterados com Sucesso!", "Confirmação", MessageBoxButton.OK, MessageBoxImage.Information);
+                Close();
             }
             catch (Exception ex)
             {

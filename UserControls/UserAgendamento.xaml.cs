@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using wpf_sallonnovo.Models;
+using wpf_sallonnovo.Views.Pages;
 
 namespace wpf_sallonnovo.UserControls
 {
@@ -24,6 +25,7 @@ namespace wpf_sallonnovo.UserControls
         public string NomeSalao { get; set; }
         public string NomeServico { get; set; }
         public DateTime? DataHorario { get; set; }
+        private Frame _frame;
 
         public int Id { get; set; }
 
@@ -31,13 +33,25 @@ namespace wpf_sallonnovo.UserControls
 
         private Agenda _agenda = new Agenda();
 
-        public UserAgendamento()
+        private Cliente cliente = new Cliente();
+        private int id;
+        public UserAgendamento(int i, Frame frame)
         {
             InitializeComponent();
             this.DataContext = this;
+            id = i;
             Loaded += UserAgendamento_Loaded;
         }
-       
+        public UserAgendamento(Cliente _cli, Frame frame)
+        {
+            InitializeComponent();
+            this.DataContext = this;
+            cliente = _cli;
+            _frame = frame;
+            Loaded += UserAgendamento_Loaded;
+            
+        }
+
         private void UserAgendamento_Loaded(object sender, RoutedEventArgs e)
         {
            _agenda.Salao = NomeSalao;
@@ -47,8 +61,19 @@ namespace wpf_sallonnovo.UserControls
 
         private void btnDeletar_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(Convert.ToString(_agenda.Cliente));
+            var dao = new AgendaDAO();
+            try
+            {
+                dao.Delete(Convert.ToString(_agenda.dataHorario));
+                MessageBox.Show("Lembrete Removido", "Confirmação", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
+            _frame.Content = new AgendamentoUsuario(cliente, _frame);
+            
         }
     }
 }

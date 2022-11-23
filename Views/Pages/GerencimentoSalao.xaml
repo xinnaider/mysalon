@@ -5,34 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:wpf_sallonnovo.Views.Pages"
         mc:Ignorable="d" 
-        d:DesignHeight="720" d:DesignWidth="980"
+        d:DesignHeight="1080" d:DesignWidth="1720"  
         Title="Gerenciamento Salão">
-    <Grid>
+    <Grid Background="White">
         <Grid>
             <Grid.RowDefinitions>
 
                 <RowDefinition Height="100"/>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="100"/>
+                
             </Grid.RowDefinitions>
-            <Grid Grid.Row="0">
-                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBox x:Name="tbNome" FontSize="35
-                             " Margin="0 15" IsReadOnly="True" TextAlignment="Center" CaretBrush="{x:Null}" SelectionBrush="{x:Null}" Foreground="Black" Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Arrow" TextChanged="tbNome_TextChanged" >Gerenciar salão // PROBLEMA: NO REFRESH</TextBox>
-                </StackPanel>
+            <Grid Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                
+              <!--  <TextBox x:Name="tbNome" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="35
+                             " Margin="0 10" IsReadOnly="True" TextAlignment="Center" CaretBrush="{x:Null}" SelectionBrush="{x:Null}" Foreground="Black" Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Arrow" TextChanged="tbNome_TextChanged" >Gerenciar salão</TextBox> -->
             </Grid>
             <Grid Grid.Row="1" Cursor="Hand">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                <Grid Grid.Column="0">
-                    <StackPanel Margin="20" Width="500" VerticalAlignment="Center">
+                
+                <Grid Width="1720" Height="980" VerticalAlignment="Center">
+                    <TextBox x:Name="tbNome" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="35" Margin="0 10"
+                                 IsReadOnly="True" TextAlignment="Center" CaretBrush="{x:Null}" SelectionBrush="{x:Null}" Foreground="Black" Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Arrow" TextChanged="tbNome_TextChanged" >Gerenciar salão</TextBox>
+                    <StackPanel Margin="0" Width="500" Height="980" VerticalAlignment="Top">
+                        
                         <Label x:Name="txtTituloNaoCriou" FontSize="30" HorizontalAlignment="Center" Margin="10 10 10 50"> Você ainda não criou um salão :(</Label>
-                        <Button x:Name="btCriarSalao" Cursor="Hand" Margin="10" Click="btCriarSalao_Click"> Criar salão </Button>
-                        <Button x:Name="btBotaoSalao1" Cursor="Hand" Margin="10" Click="btBotaoSalao1_Click"> Cadastrar serviço </Button>
-                        <Button x:Name="btBotaoSalao2" Cursor="Hand" Margin="10" Click="btBotaoSalao2_Click"> Editar serviços </Button>
-                        <Button x:Name="btBotaoSalao3" Cursor="Hand" Margin="10" Click="btBotaoSalao3_Click"> Editar informaçõs do salão </Button>
-                        <Button x:Name="btBotaoSalao4" Cursor="Hand" Margin="10" Click="btBotaoSalao4_Click"> Verificar agenda </Button>
+                        <Button x:Name="btCriarSalao" Cursor="Hand" Margin="10" Click="btCriarSalao_Click" Height="60" FontSize="22"> Criar salão </Button>
+                        <Button x:Name="btBotaoSalao1" Cursor="Hand" Margin="10" Click="btBotaoSalao1_Click" Height="60" FontSize="22"> Cadastrar serviço </Button>
+                        <Button x:Name="btBotaoSalao2" Cursor="Hand" Margin="10" Click="btBotaoSalao2_Click" Height="60" FontSize="22"> Editar serviços </Button>
+                        <Button x:Name="btBotaoSalao3" Cursor="Hand" Margin="10" Click="btBotaoSalao3_Click" Height="60" FontSize="22"> Editar informaçõs do salão </Button>
+                        <Button x:Name="btBotaoSalao4" Cursor="Hand" Margin="10" Click="btBotaoSalao4_Click" Height="60" FontSize="22"> Verificar agenda </Button>
                     </StackPanel>
                 </Grid>
             </Grid>

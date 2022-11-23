@@ -10,7 +10,7 @@ namespace wpf_sallonnovo.Models
     {
         public int Id { get; set; }
         // foto
-        public float Valor { get; set; }
+        public double Valor { get; set; }
         public string Name { get; set; }
         public string Tipo { get; set; }
         public int fkSalao { get; set; }

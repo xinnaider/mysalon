@@ -23,7 +23,7 @@ namespace wpf_sallonnovo.UserControls
     public partial class UserServico : UserControl
     {
         public string Nome {get; set;}
-        public float Preco { get; set;}
+        public double Preco { get; set;}
         public int Cod { get; set; }
 
         private Servico _servico = new Servico();
@@ -45,6 +45,8 @@ namespace wpf_sallonnovo.UserControls
         private void UserServico_Loaded(object sender, RoutedEventArgs e)
         {
             _servico.Name = Nome;
+
+
             _servico.Valor = Preco;
             _servico.Id = Cod;
         }

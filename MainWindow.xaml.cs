@@ -44,8 +44,8 @@ namespace wpf_sallonnovo
             string usuario = txtUsuario.Text;
             string senha = passbSenha.Password.ToString();
 
-            usuario = "user";
-            senha = "senha";
+            //usuario = "user";
+            //senha = "senha";
 
             if (Login.Loginn(usuario, senha))
             {

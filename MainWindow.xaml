@@ -15,7 +15,7 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
         ResizeMode="NoResize"
-        WindowStartupLocation="CenterOwner">
+        WindowStartupLocation="CenterScreen"> 
     <Grid Background="#FF9A8FC8">
         <Grid.OpacityMask>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -55,9 +55,9 @@
                   FontFamily="Spartan"
                   materialDesign:HintAssist.Hint="Senha"
                   materialDesign:TextFieldAssist.HasClearButton="True"/>
-                <StackPanel Margin="5, 15, 5, 15" Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Button Margin="0, 0, 170, 0" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Spartan" Foreground="#DD000000">Esqueci minha senha
-                    </Button>
+                <StackPanel Margin="5, 15, 5, 15" Orientation="Horizontal" HorizontalAlignment="Left">
+                 <!--   <Button Margin="0, 0, 170, 0" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Spartan" Foreground="#DD000000">Esqueci minha senha
+                    </Button> -->
                     <Button Click="OnClick2" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Spartan" Foreground="#DD000000" Cursor="Hand">Não tenho uma conta
                     </Button>
                 </StackPanel>

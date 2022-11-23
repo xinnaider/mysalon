@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:wpf_sallonnovo.Views.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="720" d:DesignWidth="980"
+      d:DesignHeight="1080" d:DesignWidth="1720"
       Title="Subinicio">
 
     <Grid Background="White">
@@ -14,7 +14,7 @@
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <Grid Grid.Row="0">
+        <Grid Grid.Row="0" HorizontalAlignment="Center">
             <StackPanel Orientation="Horizontal">
                 <Border Height="150" Width="150" BorderThickness="4" BorderBrush="#9A8FC8" CornerRadius="25, 25, 25, 25" Margin="80 0 30 0">
                     <Border.Background>
@@ -33,13 +33,13 @@
                     </StackPanel>
                 </StackPanel>
                 <StackPanel Background="Black" Height="35" Margin="59 0 0 18" HorizontalAlignment="Left" VerticalAlignment="Bottom">
-                    <Label Padding="10 5 10 5" Foreground="#DDFFFFFF" FontFamily="Bahnschrift SemiBold Condensed" FontSize="20">A partir de R$30</Label>
+                  <!--  <Label Padding="10 5 10 5" Foreground="#DDFFFFFF" FontFamily="Bahnschrift SemiBold Condensed" FontSize="20">A partir de R$30</Label> -->
                 </StackPanel>
             </StackPanel>
         </Grid>
-        <Grid Grid.Row="1">
-            <ScrollViewer CanContentScroll="True" Width="960" Height="485" HorizontalAlignment="Left">
-                <StackPanel Margin="20 5 20 50" x:Name="listServicos" HorizontalAlignment="Stretch" />
+        <Grid Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <ScrollViewer CanContentScroll="True" Width="1700" Height="830" HorizontalAlignment="Left" VerticalAlignment="Center">
+                <StackPanel Margin="20 5 20 50" x:Name="listServicos" HorizontalAlignment="Stretch" Width="1200"/>
             </ScrollViewer>
         </Grid>
     </Grid>

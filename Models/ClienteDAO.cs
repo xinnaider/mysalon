@@ -52,8 +52,9 @@ namespace wpf_sallonnovo.Models
 
                 comando.CommandText = "update cliente set " +
                     "nome_cli = @nome, cpf_cli = @cpf, rg_cli= @rg, " +
-                    "telefone_cli = @telefone, email_cli = @email, sexo_cli = @sex;";
+                    "telefone_cli = @telefone, email_cli = @email, sexo_cli = @sex where (id_cli = @id);";
 
+                comando.Parameters.AddWithValue("@id" , cliente.Id);
                 comando.Parameters.AddWithValue("@nome", cliente.Nome);
                 comando.Parameters.AddWithValue("@cpf", cliente.CPF);
                 comando.Parameters.AddWithValue("@rg", cliente.RG);

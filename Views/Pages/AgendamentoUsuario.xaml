@@ -5,11 +5,11 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:wpf_sallonnovo.Views.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="720" d:DesignWidth="980"
+      d:DesignHeight="1080" d:DesignWidth="1720"
       Title="AgendamentoUsuario">
 
     <Grid Background="White">
-        <ScrollViewer CanContentScroll="True" Width="960" Height="720" HorizontalAlignment="Left">
+        <ScrollViewer CanContentScroll="True" Width="1690" Height="1080" HorizontalAlignment="Center" VerticalAlignment="Center">
             <StackPanel Margin="20 50 20 50" x:Name="listAgenda" HorizontalAlignment="Stretch" />
         </ScrollViewer>
     </Grid>

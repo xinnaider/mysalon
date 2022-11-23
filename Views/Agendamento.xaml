@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:wpf_sallonnovo.Views"
         mc:Ignorable="d"
-        Title="Agendamento" Height="720" Width="1280"
+        Title="Agendamento" Height="1080" Width="1920" 
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
@@ -15,10 +15,10 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
         ResizeMode="NoResize"
-        WindowStartupLocation="CenterOwner">
+        WindowStartupLocation="CenterScreen" WindowState="Maximized">
     <Grid>
         <Grid.ColumnDefinitions>
-
+            <!--  1080 1920 -->
             <ColumnDefinition Width="300"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
@@ -56,8 +56,8 @@
                 </StackPanel>
             </Grid>
         </Grid>
-        <Grid Grid.Column="2">
-            <StackPanel>
+        <Grid Grid.Column="2" Background="White" VerticalAlignment="Center">
+            <StackPanel x:Name="stackPanel">
                 <Frame x:Name="fraPaginas" NavigationUIVisibility="Hidden"/>
             </StackPanel>
         </Grid>

@@ -16,7 +16,7 @@
             </Border>
             <StackPanel VerticalAlignment="Center" Margin="0 0 0 50" MinWidth="460">
                 <Label FontSize="30" FontFamily="Bahnschrift SemiBold" Content="{Binding Title}" />
-                <Label FontSize="18" FontFamily="Bahnschrift Light Condensed" Content="{Binding Descricao}"></Label>
+                <Label FontSize="18" FontFamily="Bahnschrift Light Condensed" Content="{Binding Endereco}" x:Name="lblEndereco"></Label>
                 <StackPanel Orientation="Horizontal">
                     <Image Height="20" Width="20" Source="/Views/Pages/estrela.png"/>
                     <Image Height="20" Width="20" Source="/Views/Pages/estrela.png"/>
@@ -26,7 +26,7 @@
                 </StackPanel>
             </StackPanel>
             <StackPanel Background="Black" Height="35" Margin="59 0 0 18" HorizontalAlignment="Left" VerticalAlignment="Bottom">
-                <Label Padding="10 5 10 5" Foreground="#DDFFFFFF" FontFamily="Bahnschrift SemiBold Condensed" FontSize="20" Content="{Binding Preco}"></Label>
+                <Label Padding="10 5 10 5" Foreground="#DDFFFFFF" FontFamily="Bahnschrift SemiBold Condensed" FontSize="20" Content="{Binding Preco}" x:Name="lblPreco"></Label>
             </StackPanel>
         </StackPanel>
         </Button>

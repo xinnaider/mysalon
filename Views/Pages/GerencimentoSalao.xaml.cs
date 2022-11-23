@@ -29,6 +29,7 @@ namespace wpf_sallonnovo.Views.Pages
         public GerencimentoSalao()
         {
             InitializeComponent();
+            Loaded += GerencimentoSalao_Loaded;
         }
         public GerencimentoSalao(Cliente cliente, Frame frame)
         {
@@ -36,6 +37,7 @@ namespace wpf_sallonnovo.Views.Pages
             Loaded += GerencimentoSalao_Loaded;
             _cli = cliente;
             _frame = frame;
+
         }
 
 
@@ -49,9 +51,11 @@ namespace wpf_sallonnovo.Views.Pages
                 btCriarSalao.Visibility = Visibility.Hidden;
                 txtTituloNaoCriou.Visibility = Visibility.Hidden;
                 
+                
             }
             else
             {
+                tbNome.Visibility = Visibility.Hidden;
                 btBotaoSalao1.Visibility = Visibility.Hidden;
                 btBotaoSalao2.Visibility = Visibility.Hidden;
                 btBotaoSalao3.Visibility = Visibility.Hidden;
@@ -61,8 +65,9 @@ namespace wpf_sallonnovo.Views.Pages
 
         private void btCriarSalao_Click(object sender, RoutedEventArgs e)
         {
-            var tela = new CadastrarSalao(_cli);
+            var tela = new CadastrarSalao(_cli, _frame);
             tela.ShowDialog();
+
         }
 
         private void tbNome_TextChanged(object sender, TextChangedEventArgs e)
@@ -90,7 +95,7 @@ namespace wpf_sallonnovo.Views.Pages
 
         private void btBotaoSalao4_Click(object sender, RoutedEventArgs e)
         {
-            _frame.Content = new AgendamentoSalao(_cli);
+            _frame.Content = new AgendamentoSalao(_cli, _frame);
         }
     }
 }

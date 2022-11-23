@@ -163,6 +163,38 @@ namespace wpf_sallonnovo.Models
             }
         }
 
+        public double MinPreco(Salao salao)
+        {
+
+            try
+            {
+                var comando = _conn.Query();
+                double preco = 0;
+                comando.CommandText = "select min(valor_ser) as Preco from Servico where (id_sal_fk = @id)";
+
+                comando.Parameters.AddWithValue("@id", salao.Id);
+
+                MySqlDataReader reader = comando.ExecuteReader();
+                while (reader.Read())
+                {
+                    var servico = new Servico();
+                   servico.Valor = DAOHelper.GetDouble(reader, "Preco");
+
+                    preco = servico.Valor;
+
+                }
+                reader.Close();
+
+                return preco;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+
+        }
+
 
     }
 

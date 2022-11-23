@@ -63,7 +63,7 @@ namespace wpf_sallonnovo.Views
                     dao.Delete(servicoSelecionado);
 
                     MessageBox.Show("Registro removido com sucesso!");
-                    CarregarListagem();
+                   
 
                 }
 
@@ -72,6 +72,7 @@ namespace wpf_sallonnovo.Views
             {
                 MessageBox.Show(ex.Message);
             }
+            CarregarListagem();
         }
 
         private void Button_Atualizar_Click(object sender, RoutedEventArgs e)
@@ -89,10 +90,23 @@ namespace wpf_sallonnovo.Views
 
         private void CarregarListagem()
         {
-            try
+            /*try
             {
                 var dao = new ServicoDAO();
                 List<Servico> servicos = dao.List();
+
+                dataGridServico.ItemsSource = servicos;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }*/
+            try
+            {
+                var daoSalao = new SalaoDAO();
+                var dao = new ServicoDAO();
+                List<Servico> servicos = dao.ListEspecifico(daoSalao.RetornarIdSalao(_cli.Id));
 
                 dataGridServico.ItemsSource = servicos;
 

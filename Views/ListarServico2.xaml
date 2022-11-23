@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:wpf_sallonnovo.Views"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
         Title="ListarServiços" Height="450" Width="800">
     <Grid Background="#ff9a8fc8">
 
@@ -19,7 +20,7 @@
                   CanUserDeleteRows="False" IsReadOnly="True" AlternatingRowBackground="#FFE5E5E5" AlternationCount="2">
 
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="Id" Binding="{Binding Id}" Selector.IsSelected="True"/>
                 <DataGridTextColumn Header="Valor" Binding="{Binding Valor}"/>
                 <DataGridTextColumn Header="Nome" Binding="{Binding Name }" />
                 <DataGridTextColumn Header="Tipo" Binding="{Binding Tipo }" />
