@@ -8,6 +8,7 @@
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
         TextElement.FontSize="17"
+        TextElement.FontFamily="Bahnschrift Light Condensed"
         TextOptions.TextFormattingMode="Ideal" 
         TextOptions.TextRenderingMode="Auto"        
         Background="{DynamicResource MaterialDesignPaper}"
@@ -16,7 +17,7 @@
         Title="EditarSalao" Height="500" Width="400" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
         <Grid>
-            <Label FontSize="22" HorizontalAlignment="Center" VerticalAlignment="Top" Margin=" 0 40 0 0">Editar Dados do Salão</Label>
+            <Label FontSize="25" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Bahnschrift Bold" Margin=" 0 40 0 0">Editar Dados do Salão</Label>
             
             <StackPanel Margin="10" Cursor="Arrow" VerticalAlignment="Center">
 
@@ -33,8 +34,8 @@
             </StackPanel>
             
             <StackPanel Orientation="Horizontal" Margin="0 20 0 35" VerticalAlignment="Bottom"  HorizontalAlignment="Center">
-                <Button Width="100" Margin="0 0 45 0" x:Name="Sair" Content="Sair" Click="Sair_Click"/>
-                <Button Width="100" x:Name="btnSalvar" Content="Salvar" Click="btnSalvar_Click"/>
+                <Button FontFamily="Bahnschrift" Height="35" Width="100" Margin="0 0 45 0" x:Name="Sair" Content="Sair" Click="Sair_Click"/>
+                <Button Height="35" FontFamily="Bahnschrift" Width="100" x:Name="btnSalvar" Content="Salvar" Click="btnSalvar_Click"/>
             </StackPanel>
             
         </Grid>

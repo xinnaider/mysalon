@@ -329,6 +329,21 @@
   <ItemGroup>
     <Resource Include="Imagens\erase.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagens\sidyespaço.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagens\logop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagens\logotop.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagens\servpadrao.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagens\user.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\MaterialDesignThemes.4.5.0\build\MaterialDesignThemes.targets" Condition="Exists('packages\MaterialDesignThemes.4.5.0\build\MaterialDesignThemes.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

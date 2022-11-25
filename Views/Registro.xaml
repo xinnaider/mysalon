@@ -81,10 +81,10 @@
             </StackPanel>
             <StackPanel Margin="0 490 0 0">
                 <StackPanel Margin="5, 1, 5, 15" Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Button  x:Name="botaovoltar" Click="OnClick1" Background="{x:Null}" FontFamily="Spartan" BorderBrush="{x:Null}" Foreground="Gray" Cursor="Hand" Content="Login"/>
+                    <Button  x:Name="botaovoltar" Click="OnClick1" Background="{x:Null}" FontFamily="Bahnschrift " BorderBrush="{x:Null}" Foreground="Gray" Cursor="Hand" Content="Login"/>
                 </StackPanel>
                 <StackPanel Margin="0, -13, 0, 0">
-                    <Button Width="120" Height="45" FontSize="18" FontFamily="Spartan" BorderThickness="20" Cursor="Hand" Background="#FF2F3559" BorderBrush="#FF2F3559" x:Name="btnRegistrar" Click="btnRegistrar_Click">Registrar</Button>
+                    <Button Width="120" Height="45" FontSize="18" FontFamily="Bahnschrift " BorderThickness="20" Cursor="Hand" Background="#FF2F3559" BorderBrush="#FF2F3559" x:Name="btnRegistrar" Click="btnRegistrar_Click">Registrar</Button>
                 </StackPanel>
             </StackPanel>
         </Grid>

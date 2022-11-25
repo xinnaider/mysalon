@@ -9,12 +9,14 @@
     <Grid Margin="0 20 0 20">
         <Button x:Name="btnSelectServico" HorizontalAlignment="Center" Width="880" Height="180" VerticalAlignment="Center" Click="btnSelectServico_Click" Cursor="Hand" Background="{x:Null}" BorderBrush="White" Foreground="{x:Null}">
         <StackPanel Orientation="Horizontal">
-            <Border Height="150" Width="150" BorderThickness="4" BorderBrush="#9A8FC8" CornerRadius="25, 25, 25, 25" Margin="0 0 30 0">
-                <Border.Background>
-                    <ImageBrush Stretch="Fill" ImageSource="/Imagens/aluno.PNG"/>
-                </Border.Background>
-            </Border>
-            <StackPanel VerticalAlignment="Center" Margin="0 0 0 50" MinWidth="460">
+                <Border Height="150" Width="150" BorderThickness="4" BorderBrush="#9A8FC8" CornerRadius="25, 25, 25, 25" Margin="0 0 30 0">
+                    <Border.Background>
+                        <ImageBrush ImageSource="/Imagens/logotop.jpg" Stretch="Fill"/>
+
+                    </Border.Background>
+                </Border>
+
+                <StackPanel VerticalAlignment="Center" Margin="0 0 0 50" MinWidth="460">
                 <Label FontSize="30" FontFamily="Bahnschrift SemiBold" Content="{Binding Title}" />
                 <Label FontSize="18" FontFamily="Bahnschrift Light Condensed" Content="{Binding Endereco}" x:Name="lblEndereco"></Label>
                 <StackPanel Orientation="Horizontal">

@@ -94,15 +94,15 @@ namespace wpf_sallonnovo.Views.Pages
                 {
                     var dao = new ClienteDAO();
                     dao.Update(_cli);
-                    
+                    var tela = new Agendamento(_cli);
+                    tela.lblUsuario.Visibility = Visibility.Hidden;
 
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
-                //var tela = new Agendamento(_cli);
-                //tela.lblUsuario.Content = _cli.Nome;
+                
 
                 
             }

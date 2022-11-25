@@ -42,7 +42,6 @@ namespace wpf_sallonnovo.Views.Pages
                 var dao = new AgendaDAO();
                 var listaAgenda = dao.ListResolvidoSal(sal.Id);
 
-
                 foreach (var agenda in listaAgenda)
                 {
                     var a = new UserSalaoAgendamento(cli,_frame)

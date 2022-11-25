@@ -6,6 +6,8 @@
         xmlns:local="clr-namespace:wpf_sallonnovo.Views"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="wpf_sallonnovo.Views.ConfirmacaoAgendamento"
         mc:Ignorable="d"
+        TextElement.FontSize="18"
+        TextElement.FontFamily="Bahnschrift Light Condensed"
         Title="ConfirmacaoAgendamento" Height="450" Width="400" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
@@ -15,11 +17,11 @@
 
         <Grid Grid.Row="0">
             <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <Label FontSize="28" FontFamily="Bahnschrift Light Condensed" HorizontalAlignment="Center" >Salão</Label>
+                <Label Foreground="Black" FontSize="25" FontFamily="Bahnschrift Bold" HorizontalAlignment="Center" >Salão</Label>
                 <Label Background="BlanchedAlmond" Padding="10" FontSize="18" FontFamily="Bahnschrift Light Condensed" HorizontalAlignment="Center" x:Name="lblNSalao">Salão para calvos</Label>
-                <Label FontSize="28" FontFamily="Bahnschrift Light Condensed" HorizontalAlignment="Center" Margin="0 10 0 0" >Serviço prestado</Label>
+                <Label Foreground="Black" FontSize="25" FontFamily="Bahnschrift Bold" HorizontalAlignment="Center" Margin="0 10 0 0" >Serviço prestado</Label>
                 <Label Background="BlanchedAlmond" Padding="10" FontSize="18" FontFamily="Bahnschrift Light Condensed" HorizontalAlignment="Center" x:Name="lblNServico">Corte neymarzinho</Label>
-                <Label FontSize="28" FontFamily="Bahnschrift Light Condensed" HorizontalAlignment="Center" Margin="0 10 0 0" >Data e horário desejado</Label>
+                <Label Foreground="Black" FontSize="25" FontFamily="Bahnschrift Bold" HorizontalAlignment="Center" Margin="0 10 0 0" >Data e horário desejado</Label>
 
                 <StackPanel Background="BlanchedAlmond">
                     <DatePicker   Name="LocaleDatePicker"   Width="200" RenderTransformOrigin="1,1" Padding="10" BorderBrush="Black"   />
@@ -29,7 +31,7 @@
         </Grid>
 
         <Grid Grid.Row="1">
-            <Button Content="Agendar" Width="198" Click="Button_Click"/>
+            <Button FontSize="18" Content="Agendar" Width="198" Click="Button_Click" Height="40" FontFamily="Bahnschrift"/>
             
         </Grid>
 

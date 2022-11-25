@@ -42,7 +42,7 @@ namespace wpf_sallonnovo.Views.Pages
                 {
                     var a = new UserInicial(_frame, _cli) { Title = $"{salao.Nome}",  Preco = $"PRECO adicionar", 
                         Cod = $"{salao.Id}", Tel = $"{salao.Telefone}", RSocial = $"{salao.Razao_Social}",
-                        Email = $"{salao.Email}", Cnpj = $"{salao.Email}"};
+                        Email = $"{salao.Email}", Cnpj = $"{salao.Email}",};
 
                     listAgenda.Children.Add(a);
                 }

@@ -177,10 +177,10 @@ namespace wpf_sallonnovo.Models
 
                 var resultado = comando.ExecuteNonQuery();
 
-                if (resultado == 0)
+                /*if (resultado == 0)
                 {
                     throw new Exception("Ocorreram erros ao deletar as informações");
-                }
+                }*/
 
             }
             catch (Exception ex)

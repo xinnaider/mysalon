@@ -48,18 +48,18 @@ namespace wpf_sallonnovo.Views
         {
 
             _age.DataHora = LocaleDatePicker.Text + " " + timePicker.Text;
-            MessageBox.Show(_age.DataHora);
+            MessageBox.Show(_age.DataHora, "Horário Confirmado", MessageBoxButton.OK, MessageBoxImage.Asterisk);
 
             try
             {
                 var dao = new AgendaDAO();
                 dao.Insert(_age);
-                MessageBox.Show("Agendamento Concluido");
+                MessageBox.Show("Agendamento Concluido", "Agendamento Confirmado", MessageBoxButton.OK, MessageBoxImage.Asterisk);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                throw;
+                
             }
              
         }

@@ -5,6 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:wpf_sallonnovo.Views"
         mc:Ignorable="d"
+        TextElement.FontFamily="Bahnschrift Light Condensed"
+        ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
         Title="CadastroServico" Height="550" Width="500">
     <Grid>
@@ -13,20 +15,20 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Label Content="Cadastrar serviço" FontSize="22" HorizontalAlignment="Center" Padding="10" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
+        <Label Foreground="Black" Content="Cadastrar serviço" FontSize="38" FontFamily="Bahnschrift Bold" HorizontalAlignment="Center" Padding="10" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
 
         <Grid Grid.Row="1">
-            <StackPanel Margin="10" Cursor="Arrow">
-                <Label FontSize="20">Nome</Label>
-                <TextBox FontSize="16" x:Name="txtNomeSer" Cursor="Arrow"></TextBox>
-                <Label FontSize="20">Valor</Label>
-                <TextBox FontSize="16" x:Name="txtValorSer"></TextBox>
-                <Label FontSize="20">Tipo</Label>
-                <TextBox FontSize="16" x:Name="txtTiposSer"></TextBox>
+            <StackPanel Margin="20" Cursor="Arrow" >
+                <Label FontSize="20" HorizontalAlignment="Center">Nome</Label>
+                <TextBox FontSize="20" x:Name="txtNomeSer" HorizontalAlignment="Center" Cursor="Arrow" Margin="0 0 0 20" Width="300"></TextBox>
+                <Label FontSize="20" HorizontalAlignment="Center">Valor</Label>
+                <TextBox FontSize="20" x:Name="txtValorSer" HorizontalAlignment="Center" Margin="0 0 0 20" Width="300"></TextBox>
+                <Label FontSize="20" HorizontalAlignment="Center">Tipo</Label>
+                <TextBox FontSize="20" x:Name="txtTiposSer" HorizontalAlignment="Center" Margin="0 0 0 20" Width="300"></TextBox>
             </StackPanel>
         </Grid>
-        
-        <Button x:Name="btnSalvar" Content="Salvar" Height="30"  Width="100" Click="btnSalvar_Click" HorizontalAlignment="Center" Margin="0 0 0 30" Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Bottom" Cursor="Hand"/>
+
+        <Button FontFamily="Bahnschrift " FontSize="19"  x:Name="btnSalvar" Content="Salvar" Height="40"  Width="100" Click="btnSalvar_Click" HorizontalAlignment="Center" Margin="0 0 0 80" Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Bottom" Cursor="Hand"/>
     </Grid>
 
 

@@ -5,10 +5,12 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:wpf_sallonnovo.Views.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="1080" d:DesignWidth="1720" 
+      TextElement.FontFamily="Bahnschrift Light Condensed"
+      TextElement.FontSize="22"
+      d:DesignHeight="1080" d:DesignWidth="1080" 
       Title="Perfil">
 
-    <Grid Background="White" Width="1720" Height="1080">
+    <Grid Background="White" Width="1080" Height="1080" Margin="0 90 0 0">
         <Grid.RowDefinitions>
 
             <RowDefinition Height="200"/>
@@ -20,7 +22,7 @@
             <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <Ellipse Width="90" Height="90">
                     <Ellipse.Fill>
-                        <ImageBrush ImageSource="/Imagens/aluno.PNG" />
+                        <ImageBrush ImageSource="/Imagens/user.PNG" />
                     </Ellipse.Fill>
                 </Ellipse>
                <!-- <TextBox x:Name="tbNome" FontSize="25" Margin="0 15" IsReadOnly="True" TextAlignment="Center" CaretBrush="{x:Null}" SelectionBrush="{x:Null}" Foreground="Black" Background="{x:Null}" BorderBrush="{x:Null}" Cursor="Arrow" >Preciso mexer aqui</TextBox>
@@ -31,32 +33,34 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Grid Grid.Column="0" VerticalAlignment="Center">
-                <StackPanel Margin="20" Width="1000" HorizontalAlignment="Center">
-                    <Label HorizontalAlignment="Center" FontSize="20" >Informações pessoais</Label>
-                    <Label FontSize="20">Nome</Label>
-                    <TextBox IsReadOnly="True" FontSize="16" x:Name="txtNome" Cursor="Arrow">Lukas da Silva Barbosa Neto Ferreira Junior</TextBox>
-                    <Label FontSize="20">CPF</Label>
-                    <TextBox IsReadOnly="True" FontSize="16" x:Name="txtCPF" Cursor="Arrow">029.457.543-75</TextBox>
-                    <Label FontSize="20">RG</Label>
-                    <TextBox IsReadOnly="True" FontSize="16" x:Name="txtRG">47.442.721-3</TextBox>
-                    <Label FontSize="20">Telefone</Label>
-                    <TextBox IsReadOnly="True" FontSize="16" x:Name="txtTelefone" Cursor="Arrow">(69) 992025607</TextBox>
-                    <Label FontSize="20">Sexo</Label>
+            <Grid Grid.Column="0" VerticalAlignment="Top">
+                <StackPanel Margin="20" Width="1000" HorizontalAlignment="Center" VerticalAlignment="Top">
+                    <Label HorizontalAlignment="Center" FontSize="30" FontFamily="Bahnschrift Bold" Foreground="Black">Informações pessoais</Label>
+                    <Label FontSize="24">Nome</Label>
+                    <TextBox IsReadOnly="True" FontSize="22" x:Name="txtNome" Cursor="Arrow">Lukas da Silva Barbosa Neto Ferreira Junior</TextBox>
+                    <Label FontSize="24">CPF</Label>
+                    <TextBox IsReadOnly="True" FontSize="22" x:Name="txtCPF" Cursor="Arrow">029.457.543-75</TextBox>
+                    <Label FontSize="24">RG</Label>
+                    <TextBox IsReadOnly="True" FontSize="22" x:Name="txtRG">47.442.721-3</TextBox>
+                    <Label FontSize="24">Telefone</Label>
+                    <TextBox IsReadOnly="True" FontSize="22" x:Name="txtTelefone" Cursor="Arrow">(69) 992025607</TextBox>
+                    <Label FontSize="24">Sexo</Label>
                     <StackPanel Orientation="Horizontal">
                         <RadioButton IsEnabled="False" Margin="0 0 40 0" x:Name="rbMasculino">Masculino</RadioButton>
                         <RadioButton IsEnabled="False" Margin="0 0 40 0" x:Name="rbFeminino" >Feminino</RadioButton>
                         <RadioButton IsEnabled="False" x:Name="rbNDizer" >Prefiro não dizer</RadioButton>
                     </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 100 0 0 ">
+                        <Button FontFamily="Bahnschrift " Foreground="White" x:Name="bt_Cancelar" Visibility="Visible" Click="bt_Cancelar_Click" Height="40" Width="100" Cursor="Hand">Cancelar</Button>
+                        <Button FontFamily="Bahnschrift " Foreground="White" Margin="30 0 30 0" Cursor="Hand" x:Name="Bt_Salvar" Width="100" Height="40" Click="Bt_Salvar_Click" >Editar</Button>
+
+                    </StackPanel>
                 </StackPanel>
+                
             </Grid>
         </Grid>
         <Grid Grid.Row="3">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                <Button x:Name="bt_Cancelar" Visibility="Visible" Click="bt_Cancelar_Click">Cancelar</Button>
-                <Button Margin="30 0 30 0" Cursor="Hand" x:Name="Bt_Salvar" Width="86.3366666666667" Click="Bt_Salvar_Click" >Editar</Button>
-
-            </StackPanel>
+            
         </Grid>
 
     </Grid>

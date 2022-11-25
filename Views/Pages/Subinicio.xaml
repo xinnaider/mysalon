@@ -18,7 +18,7 @@
             <StackPanel Orientation="Horizontal">
                 <Border Height="150" Width="150" BorderThickness="4" BorderBrush="#9A8FC8" CornerRadius="25, 25, 25, 25" Margin="80 0 30 0">
                     <Border.Background>
-                        <ImageBrush Stretch="Fill" ImageSource="/Imagens/aluno.PNG"/>
+                        <ImageBrush Stretch="Fill" ImageSource="/Imagens/logotop.jpg"/>
                     </Border.Background>
                 </Border>
                 <StackPanel VerticalAlignment="Center" Margin="0 0 0 50">

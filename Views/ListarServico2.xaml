@@ -4,9 +4,13 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:wpf_sallonnovo.Views"
+        
         mc:Ignorable="d"
+        TextElement.FontFamily="Bahnschrift Light Condensed"
+        TextElement.FontSize="20"
         WindowStartupLocation="CenterScreen"
-        Title="ListarServiços" Height="450" Width="800">
+        MinWidth="1200" MinHeight="700"
+        Title="ListarServiços" Height="700" Width="1200">
     <Grid Background="#ff9a8fc8">
 
         <Grid.RowDefinitions>
@@ -14,23 +18,23 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0" Text="Listagem de serviços" FontSize="24" Padding="10"/>
+        <TextBlock Grid.Row="0" Text="Listagem de serviços" FontSize="30" Margin="10 0" Padding="10" FontFamily="Bahnschrift Bold" HorizontalAlignment="Left"/>
 
-        <DataGrid Grid.Row="1" x:Name="dataGridServico" Margin="5" AutoGenerateColumns="False" CanUserAddRows="False"
-                  CanUserDeleteRows="False" IsReadOnly="True" AlternatingRowBackground="#FFE5E5E5" AlternationCount="2">
+        <DataGrid Grid.Row="1" x:Name="dataGridServico" Margin="5" AutoGenerateColumns="False" CanUserAddRows="False" HorizontalContentAlignment="Center"
+                  FontSize="23" CanUserDeleteRows="False" IsReadOnly="True" AlternatingRowBackground="#FFE5E5E5" AlternationCount="2">
 
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Id" Binding="{Binding Id}" Selector.IsSelected="True"/>
-                <DataGridTextColumn Header="Valor" Binding="{Binding Valor}"/>
+                <!--DataGridTextColumn Header="Id" Binding="{Binding Id}" Selector.IsSelected="True"/>-->
+                <DataGridTextColumn Header="Valor" Binding="{Binding Valor}" Selector.IsSelected="True"/>
                 <DataGridTextColumn Header="Nome" Binding="{Binding Name }" />
-                <DataGridTextColumn Header="Tipo" Binding="{Binding Tipo }" />
+                <DataGridTextColumn Header="Descrição" Binding="{Binding Tipo }" />
 
                 <DataGridTemplateColumn Header="Ações">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                <Button Content="Atualizar registro" Margin="5 0" Click="Button_Atualizar_Click" />
-                                <Button Content="Excluir registro" Click="Button_Remover_Click" />
+                                <Button FontFamily="Bahnschrift " Content="Atualizar registro" Margin="5 0" Click="Button_Atualizar_Click" Height="40"/>
+                                <Button FontFamily="Bahnschrift " Content="Excluir registro" Click="Button_Remover_Click" Height="40"/>
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>

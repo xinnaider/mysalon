@@ -60,7 +60,7 @@ namespace wpf_sallonnovo.Views
                 {
                     dao.Update(_servico);
 
-                    MessageBox.Show("Registro de escola cadastrado com sucesso.");
+                    MessageBox.Show("Serviço atualizado com sucesso.", "Confirmação", MessageBoxButton.OK, MessageBoxImage.Information);
                     
                     Close();
                 }
@@ -68,7 +68,7 @@ namespace wpf_sallonnovo.Views
                 {
                     dao.Insert(_servico);
 
-                    MessageBox.Show("Registro de escola cadastrado com sucesso.");
+                    MessageBox.Show("Serviço cadastrado com sucesso.", "Confirmação", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
 
             }

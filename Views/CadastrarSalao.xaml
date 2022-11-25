@@ -8,11 +8,13 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
-        TextElement.FontSize="17"
+        TextElement.FontFamily="Bahnschrift Light Condensed"
+        TextElement.FontSize="18"
         TextOptions.TextFormattingMode="Ideal" 
         TextOptions.TextRenderingMode="Auto"        
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
+        
         Title="CadastrarSalao" Height="445" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
@@ -26,12 +28,12 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <Label Content="Cadastro do Salão" FontSize="22" HorizontalAlignment="Center" Padding="10" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
+        <Label Foreground="Black" Content="Cadastro do Salão" FontSize="32" FontFamily="Bahnschrift Bold" HorizontalAlignment="Center" Padding="10" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
 
         <Grid Grid.Row="1">
             <StackPanel Margin="10" Cursor="Arrow" >
-                
-                <TextBox Margin="0 0 0 5" x:Name="txtNSalao" Width="250" materialDesign:HintAssist.Hint="Nome do Salão" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Center"/>
+
+                <TextBox Margin="0 0 0 5"  x:Name="txtNSalao" Width="250" materialDesign:HintAssist.Hint="Nome do Salão" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Center"/>
 
                 <TextBox Margin="0 0 0 5" x:Name="txtTelfone" Width="250" materialDesign:HintAssist.Hint="Telefone" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Center"/>
 
@@ -91,7 +93,7 @@
                 </StackPanel>
             </StackPanel>
         </Grid>
-        <Button x:Name="btnSalvar" Content="Salvar" Height="30"  Width="100" Click="btnSalvar_Click" HorizontalAlignment="Center" 
-                Margin="0 0 0 30" Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Bottom"/>
+        <Button x:Name="btnSalvar" Content="Salvar" Height="40"  Width="100" Click="btnSalvar_Click" HorizontalAlignment="Center" 
+              FontFamily="Bahnschrift "  Margin="0 0 0 30" Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Bottom"/>
     </Grid>
 </Window>

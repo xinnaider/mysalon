@@ -62,7 +62,7 @@ namespace wpf_sallonnovo.Views
                     var dao = new ServicoDAO();
                     dao.Delete(servicoSelecionado);
 
-                    MessageBox.Show("Registro removido com sucesso!");
+                    MessageBox.Show("Registro removido com sucesso!", "Confirmação", MessageBoxButton.OK, MessageBoxImage.Information);
                    
 
                 }
@@ -82,8 +82,11 @@ namespace wpf_sallonnovo.Views
             var resultado = MessageBox.Show($"Deseja realmente atualizar os dados do servico '{servicoSelecionado.Name}' ?", "Confirmação de alteração",
                 MessageBoxButton.YesNo, MessageBoxImage.Warning);
 
-            var form = new CadastroServico(servicoSelecionado);
-            form.ShowDialog();
+            if (resultado == MessageBoxResult.Yes)
+            {
+                var form = new CadastroServico(servicoSelecionado);
+                form.ShowDialog();
+            }
 
             CarregarListagem();
         }

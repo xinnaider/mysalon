@@ -33,7 +33,7 @@ namespace wpf_sallonnovo.UserControls
         public string RSocial { get; set; }
         public string Email { get; set; }
         public string FkEnd { get; set; }
-
+        public string Img { get; set; }
         public string Cnpj { get; set; }
 
         private Salao _salao = new Salao();
@@ -61,7 +61,8 @@ namespace wpf_sallonnovo.UserControls
             var end = new EnderecoDAO();
             lblEndereco.Content = end.BuscarEnd(_salao);
             var dao = new ServicoDAO();
-            
+           // _salao.Imagem = ;
+                   
             lblPreco.Content = "A partir de: R$ " + Convert.ToString(dao.MinPreco(_salao)); 
         }
 

@@ -40,7 +40,7 @@
                     <Grid Grid.Column="0">
                         <Ellipse Width="90" Height="90">
                             <Ellipse.Fill>
-                                <ImageBrush ImageSource="/Imagens/aluno.PNG" />
+                                <ImageBrush ImageSource="/Imagens/user.png" />
                             </Ellipse.Fill>
                         </Ellipse>
                     </Grid>

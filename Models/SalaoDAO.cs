@@ -16,7 +16,7 @@ namespace wpf_sallonnovo.Models
 
         public int IdUsuario { get; set; }
         public int IdSalao { get; set; }
-        public void Insert(Salao salao)
+        public void Insert(Salao salao) 
         {
             try
             {
@@ -73,6 +73,7 @@ namespace wpf_sallonnovo.Models
                     salao.Razao_Social = DAOHelper.GetString(reader, "razao_social_sal");
                     salao.CNPJ = DAOHelper.GetString(reader, "cnpj_sal");
                     salao.Email = DAOHelper.GetString(reader, "email_sal");
+
 
                     lista.Add(salao);
                 }
@@ -142,7 +143,7 @@ namespace wpf_sallonnovo.Models
         public void Delete(Salao salao)
         {
             try
-            {
+            {   
                 var comando = _conn.Query();
 
                 comando.CommandText = "DELETE FROM Salao WHERE (id_sal = @id)";

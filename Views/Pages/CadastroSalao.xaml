@@ -20,7 +20,7 @@
             <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <Ellipse Width="90" Height="90">
                     <Ellipse.Fill>
-                        <ImageBrush ImageSource="/Imagens/aluno.PNG" />
+                        <ImageBrush ImageSource="/Imagens/logotop.jpg" />
                     </Ellipse.Fill>
                 </Ellipse>
                 <TextBox FontSize="25" Margin="0 15" IsReadOnly="True" TextAlignment="Center" CaretBrush="{x:Null}" SelectionBrush="{x:Null}" Foreground="Black" Background="{x:Null}" BorderBrush="{x:Null}">Salão Jessica Horrigo</TextBox>
