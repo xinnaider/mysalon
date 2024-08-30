@@ -1,0 +1,1 @@
+Bem-vindo ao MySalon! Este é um projeto desenvolvido como trabalho final do curso técnico, inspirado no modelo de aplicativos de delivery, como o iFood, mas voltado para o agendamento de serviços de beleza em salões de cabeleireiro.
